@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/login.css" />
+    <title>Login Movie Booking tikets</title>
+  </head>
+  <body>
+    <!-- ****** header ***** -->
+    <header>
+      <nav>
+        <img
+          src="../assets/images/login_image/login_logo.png"
+          alt=""
+          class="logo_icon"
+        />
+        <ul class="menu">
+          <li>
+            <a href="">Home</a>
+          </li>
+          <li>
+            <a href="">About</a>
+          </li>
+          <li>
+            <a href="">Contact</a>
+          </li>
+          <li>
+            <a href="">FAQ</a>
+          </li>
+        </ul>
+        <div class="login_up">
+          <a href="./signup.html" class="signup">Sign up</a>
+          <a href="./login.html" class="login">Log In</a>
+        </div>
+      </nav>
+    </header>
+    <!-- ****** form login ***** -->
+    <div class="form_login">
+      <form action="#">
+        <h1>WELCOME BACK!</h1>
+        <div class="signup">
+          <span>Don't have an account?</span>
+          <a href="./signup.html">Sign up</a>
+        </div>
+        <div class="username_container">
+          <input
+            type="text"
+            id="username"
+            name="username"
+            class="custom_username"
+            placeholder="Email address / Phone number"
+            required
+          />
+        </div>
+        <div class="password_container">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="custom_password"
+            placeholder="Password"
+            required
+          />
+          <!-- <label for="tooglePassword" class="tooglePassword">
+            eye open
+            <img
+              src="../image/login_image/visible.svg"
+              alt="openeye"
+              class="eye"
+            />
+            <img
+              src="../image/login_image/unvisible.svg"
+              alt="closeyes"
+              class="eye hidden"
+            />
+          </label> -->
+          <!-- <input
+            type="checkbox"
+            id="tooglePassword"
+            class="tooglePassword_checkbox"
+          /> -->
+        </div>
+        <div class="remember">
+          <input type="checkbox" class="remember_checkbox" />
+          <span>Remember me</span>
+        </div>
+        <input type="button" value="Login" class="login_btn" />
+      </form>
+    </div>
+    <!-- footer -->
+    <footer>
+      <p class="Copyright">
+        Copyright © 2022 TicketBooker. All rights reserved.
+      </p>
+      <div class="icon">
+        <a href="">
+          <img
+            src="../assets/images/login_image/ph_instagram-logo.svg"
+            alt="insta"
+          />
+        </a>
+        <a href="">
+          <img
+            src="../assets/images/login_image/ri_linkedin-box-fill.svg"
+            alt="linkd"
+          />
+        </a>
+        <a href="">
+          <img
+            src="../assets/images/login_image/mdi_twitter.svg"
+            alt="twitter"
+          />
+        </a>
+      </div>
+      <div class="pt">
+        <a href="">Privacy Policy</a>
+        <a href="">Term of Use</a>
+      </div>
+    </footer>
+  </body>
+</html>

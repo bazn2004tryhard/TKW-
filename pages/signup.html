@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/signup.css" />
+    <title>Login Movie Booking tikets</title>
+  </head>
+  <body>
+    <!-- ****** header ***** -->
+    <header>
+      <nav>
+        <img
+          src="../assets/images/signup_image/login_logo.png"
+          alt=""
+          class="logo_icon"
+        />
+        <ul class="menu">
+          <li>
+            <a href="">Home</a>
+          </li>
+          <li>
+            <a href="">About</a>
+          </li>
+          <li>
+            <a href="">Contact</a>
+          </li>
+          <li>
+            <a href="">FAQ</a>
+          </li>
+        </ul>
+        <div class="login_up">
+          <a href="./signup.html" class="signup">Sign up</a>
+          <a href="./login.html" class="login">Log In</a>
+        </div>
+      </nav>
+    </header>
+    <form action="" class="signup">
+      <h1>Create an account</h1>
+      <div class="already">
+        <span>Already have one ? </span>
+        <a href="./login.html">Login</a>
+      </div>
+      <div class="check_role">
+        <input type="radio" name="role" id="individual" value="individual" />
+        <label for="individual">Individual</label>
+        <input type="radio" name="role" id="Business" value="Business" />
+        <label for="Business">Business</label>
+      </div>
+      <div class="name">
+        <input
+          type="text"
+          class="firstname"
+          required
+          placeholder="First name"
+        />
+        <input type="text" class="lastname" required placeholder="Last name" />
+      </div>
+      <div class="username_container">
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Email address / Phone number"
+          class="custom_username"
+          required
+        />
+      </div>
+      <div class="password_container">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="custom_password"
+          placeholder="Password"
+          required
+        />
+      </div>
+      <div class="confrim_password_container">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="custom_confirm_password"
+          placeholder="Confrim Password"
+          required
+        />
+      </div>
+      <div class="agree">
+        <input type="checkbox" required class="agree_checkbox" />
+        <span
+          >I agree to the <a href="">Term of Use</a> &
+          <a href="">Privacy Policy</a></span
+        >
+      </div>
+
+      <input type="button" value="Create account" class="cre_account" />
+    </form>
+    <footer>
+      <p class="Copyright">
+        Copyright © 2022 TicketBooker. All rights reserved.
+      </p>
+      <div class="icon">
+        <a href="">
+          <img
+            src="../assets/images/signup_image/ph_instagram-logo.svg"
+            alt="insta"
+          />
+        </a>
+        <a href="">
+          <img
+            src="../assets/images/signup_image/ri_linkedin-box-fill.svg"
+            alt="linkd"
+          />
+        </a>
+        <a href="">
+          <img
+            src="../assets/images/signup_image/mdi_twitter.svg"
+            alt="twitter"
+          />
+        </a>
+      </div>
+      <div class="pt">
+        <a href="">Privacy Policy</a>
+        <a href="">Term of Use</a>
+      </div>
+    </footer>
+  </body>
+</html>
