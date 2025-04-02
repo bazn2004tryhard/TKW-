@@ -15,7 +15,7 @@ function loadComponent(url, placeholderId) {
 }
 
 // Chèn header
-loadComponent("header.html", "header-placeholder");
+loadComponent("/pages/partials/header.html", "header-placeholder");
 
 // Chèn footer
-loadComponent("footer.html", "footer-placeholder");
+loadComponent("/pages/partials/footer.html", "footer-placeholder");

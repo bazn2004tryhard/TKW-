@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/detail.css">
+    <title>Chi tiết phim và đặt vé</title>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <!-- Vị trí để chèn header -->
+
+    <main>
+        <div class="detail_of_film">
+            <div class="power_left">
+                <img src="/assets/image/detail_imgae/avatar.png" alt="" class="poster">
+                <div class="name_review">
+                    <p id="namefilm">Avengers: Infinity </p>
+                    <div class="TL_NPH">
+                        <p id="thoiluong">2h59m</p>
+                        <p> • </p>
+                        <p id="ngayphathanh">12.12.2022</p>
+                    </div>
+                    <div class="review">
+                        <p>Review</p>
+                        <img src="/assets/image/detail_imgae/Star 7.png" alt="star">
+                        <p class="numberOfstar">4.8</p>
+                        <p class="numberOfreview">(1.222)</p>
+                    </div>
+                    <div class="review_bottom">
+                        <div class="rating">
+                            <input type="radio" id="star5" name="rating_input" value="5">
+                            <label for="star5">★</label>
+                            
+                            <input type="radio" id="star4" name="rating_input" value="4">
+                            <label for="star4">★</label>
+                            
+                            <input type="radio" id="star3" name="rating_input" value="3">
+                            <label for="star3">★</label>
+                            
+                            <input type="radio" id="star2" name="rating_input" value="2">
+                            <label for="star2">★</label>
+                            
+                            <input type="radio" id="star1" name="rating_input" value="1">
+                            <label for="star1">★</label>
+                          </div>
+                        <button type="button" class="readnews"><img src="/assets/image/detail_imgae/readnewa poligon.png" alt=""> Read news</button>
+                    </div>
+                </div>
+            </div>
+            <div class="power_right">
+                 <div class="mcl">
+                    <span class="details">Movie Genre   :     <p class="movie_genre"> Action, adventure, sci-fi</p></span class="details"><br>
+                    <span class="details">Censorship      :     <p class="Censorship"> 13+</p></span class="details"><br>
+                    <span class="details">Language        :     <p class="language">English</p></span class="details"><br>
+                 </div>
+                 <div class="storyline">
+                    <p>Storyline</p>
+                    <div class="line"></div>
+                    <div class="st">
+                        <p class="desc">As the Advenger and their allies have to continue to protect the world from threats 
+                            to large for any one hero to handle, a new danger has emerged from the cosmic 
+                            shadow : Thanos and nosone hero to handle, a new danger has emerged from the cosmic 
+                            shadow : Thanos and nosone hero to handle, a new danger has emerged from the cosmic 
+                            shadow : Thanos and nos
+                        </p>
+                        <span class="see-more"  onclick="toggleText()">...See more</span>
+                    </div>
+                    
+
+                 </div>
+                 <div class="dicrector">
+                    <p>Director</p>
+                    <div class="line"></div>
+                    <div class="list_director">
+                        <div class="dir">
+                            <img src="/assets/image/detail_imgae/director.png" alt="director" class="pic_director">
+                            <p class="name_director">James Gunn </p>
+                        </div>
+                        <div class="dir">
+                            <img src="/assets/image/detail_imgae/robert downey junioe.png" alt="director" class="pic_director">
+                            <p class="name_director">Robert Downey Jr. </p>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="Actor">
+                    <p>Actor</p>
+                    <div class="line"></div>
+                    <div class="list_actor">
+                        <div class="act">
+                            <img src="/assets/image/detail_imgae/neymar.png" alt="actor" class="pic_actor">
+                            <p class="name_director">Neymar Junior</p>
+                        </div>
+                        <div class="act">
+                            <img src="/assets/image/detail_imgae/tom holland.png" alt="actor" class="pic_actor">
+                            <p class="name_director">Tom Holland</p>
+                        </div>
+                        <div class="act">
+                            <img src="/assets/image/detail_imgae/ronakldo.png" alt="actor" class="pic_actor">
+                            <p class="name_director">Cristiano Ronaldo</p>
+                        </div>
+                        <div class="act">
+                            <img src="/assets/image/detail_imgae/messi.png" alt="actor" class="pic_actor">
+                            <p class="name_director">Lionek Messi</p>
+                        </div>
+
+                    </div>
+                 </div>
+                 <div class="descript_bottom">
+                    <div class="thacamxuc">
+                        <div class="like">
+                            <svg class="like_icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M19.9999 13.3334L19.0133 13.1694C18.9894 13.3126 18.9971 13.4593 19.0357 13.5993C19.0743 13.7393 19.143 13.8692 19.2369 13.98C19.3308 14.0907 19.4477 14.1797 19.5795 14.2408C19.7112 14.3018 19.8547 14.3334 19.9999 14.3334V13.3334ZM5.33325 13.3334V12.3334C5.06804 12.3334 4.81368 12.4387 4.62615 12.6263C4.43861 12.8138 4.33325 13.0681 4.33325 13.3334H5.33325ZM7.99992 27.6667H23.1466V25.6667H7.99992V27.6667ZM24.7466 12.3334H19.9999V14.3334H24.7466V12.3334ZM20.9866 13.4974L22.0613 7.0507L20.0879 6.72136L19.0133 13.1694L20.9866 13.4974ZM19.7599 4.33336H19.4746V6.33336H19.7586L19.7599 4.33336ZM15.3133 6.56003L11.9599 11.5907L13.6239 12.7L16.9773 7.66936L15.3133 6.56003ZM10.5733 12.3334H5.33325V14.3334H10.5733V12.3334ZM4.33325 13.3334V24H6.33325V13.3334H4.33325ZM26.7426 24.72L28.3426 16.72L26.3826 16.3267L24.7826 24.3267L26.7426 24.72ZM11.9599 11.5907C11.8078 11.8191 11.6016 12.005 11.3597 12.1346C11.1178 12.2641 10.8477 12.332 10.5733 12.332V14.332C11.7999 14.332 12.9439 13.72 13.6239 12.7L11.9599 11.5907ZM22.0613 7.0507C22.1168 6.71652 22.0989 6.37292 22.0089 6.04635C21.9188 5.71978 21.7587 5.41674 21.5397 5.15829C21.3207 4.89983 21.0481 4.69216 20.7407 4.5497C20.4334 4.40725 20.0987 4.33342 19.7599 4.33336L19.7586 6.33336C19.8069 6.33348 19.856 6.34411 19.8998 6.36451C19.9436 6.38491 19.9825 6.41459 20.0137 6.4515C20.0449 6.48841 20.0677 6.53166 20.0805 6.57826C20.0933 6.62486 20.0958 6.67369 20.0879 6.72136L22.0613 7.0507ZM24.7466 14.332C25.7999 14.332 26.5866 15.2947 26.3813 16.3254L28.3426 16.7187C28.4487 16.1868 28.4355 15.6367 28.3039 15.1105C28.1723 14.5844 27.9257 14.094 27.5817 13.6746C27.2378 13.2553 26.8051 12.9175 26.3148 12.6856C25.8246 12.4536 25.2889 12.3333 24.7466 12.3334V14.332ZM23.1466 27.6667C23.9942 27.6669 24.8157 27.372 25.4713 26.8348C26.1269 26.2976 26.5761 25.5498 26.7426 24.7187L24.7826 24.3254C24.707 24.7035 24.5026 25.0437 24.2043 25.2881C23.906 25.5324 23.5322 25.6671 23.1466 25.6667V27.6667ZM19.4746 4.33336C18.6515 4.33342 17.8411 4.53536 17.1154 4.92379C16.3897 5.31222 15.7711 5.87381 15.3146 6.5587L16.9773 7.66936C17.2513 7.25824 17.6227 6.91984 18.0583 6.68677C18.494 6.4537 18.9805 6.33318 19.4746 6.33336V4.33336ZM7.99992 25.6667C7.07992 25.6667 6.33325 24.92 6.33325 24H4.33325C4.33325 24.9725 4.71956 25.9051 5.40719 26.5928C6.09483 27.2804 7.02746 27.6667 7.99992 27.6667V25.6667Z" fill="white"/>
+                                <path d="M10.6665 13.3333V26.6666" stroke="white" stroke-width="1.5"/>
+                              </svg>
+                              <span>(<span class="like_count">1.2k</span>)</span>
+                        </div>
+                        <div class="unlike">
+                            <svg class="unlike_icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M19.9999 18.6666L19.0133 18.8306C18.9894 18.6873 18.9971 18.5406 19.0357 18.4006C19.0743 18.2606 19.143 18.1308 19.2369 18.02C19.3308 17.9092 19.4477 17.8202 19.5795 17.7592C19.7112 17.6982 19.8547 17.6666 19.9999 17.6666V18.6666ZM5.33325 18.6666V19.6666C5.06804 19.6666 4.81368 19.5612 4.62615 19.3737C4.43861 19.1862 4.33325 18.9318 4.33325 18.6666H5.33325ZM7.99992 4.33325H23.1466V6.33325H7.99992V4.33325ZM24.7466 19.6666H19.9999V17.6666H24.7466V19.6666ZM20.9866 18.5026L22.0613 24.9493L20.0879 25.2786L19.0133 18.8306L20.9866 18.5026ZM19.7599 27.6666H19.4746V25.6666H19.7586L19.7599 27.6666ZM15.3133 25.4399L11.9599 20.4093L13.6239 19.2999L16.9773 24.3306L15.3133 25.4399ZM10.5733 19.6666H5.33325V17.6666H10.5733V19.6666ZM4.33325 18.6666V7.99992H6.33325V18.6666H4.33325ZM26.7426 7.27992L28.3426 15.2799L26.3826 15.6733L24.7826 7.67325L26.7426 7.27992ZM11.9599 20.4093C11.8078 20.1809 11.6016 19.9949 11.3597 19.8654C11.1178 19.7358 10.8477 19.668 10.5733 19.6679V17.6679C11.7999 17.6679 12.9439 18.2799 13.6239 19.2999L11.9599 20.4093ZM22.0613 24.9493C22.117 25.2835 22.0993 25.6273 22.0093 25.954C21.9194 26.2807 21.7593 26.584 21.5403 26.8426C21.3213 27.1012 21.0486 27.309 20.7411 27.4515C20.4336 27.594 20.0988 27.6666 19.7599 27.6666V25.6679C19.8082 25.6678 19.856 25.6572 19.8998 25.6368C19.9436 25.6164 19.9825 25.5867 20.0137 25.5498C20.0449 25.5129 20.0677 25.4696 20.0805 25.423C20.0933 25.3764 20.0958 25.3263 20.0879 25.2786L22.0613 24.9493ZM24.7466 17.6679C24.9932 17.668 25.2367 17.6133 25.4596 17.5078C25.6825 17.4024 25.8793 17.2488 26.0357 17.0581C26.192 16.8674 26.3041 16.6444 26.3639 16.4052C26.4237 16.1659 26.4296 15.9164 26.3813 15.6746L28.3426 15.2813C28.4489 15.8132 28.4359 16.3635 28.3044 16.8898C28.1729 17.4161 27.9263 17.9067 27.5823 18.3262C27.2384 18.7457 26.8056 19.0836 26.3152 19.3157C25.8248 19.5477 25.2891 19.668 24.7466 19.6679V17.6679ZM23.1466 4.33325C23.9942 4.33309 24.8157 4.62792 25.4713 5.16514C26.1269 5.70237 26.5761 6.44881 26.7426 7.27992L24.7826 7.67325C24.7073 7.29487 24.503 6.95567 24.2047 6.71107C23.9063 6.46646 23.5324 6.33293 23.1466 6.33325V4.33325ZM19.4746 27.6666C18.6515 27.6665 17.8411 27.4646 17.1154 27.0762C16.3897 26.6877 15.7711 26.1261 15.3146 25.4412L16.9773 24.3319C17.2513 24.743 17.6227 25.0801 18.0583 25.3132C18.494 25.5462 18.9805 25.6668 19.4746 25.6666V27.6666ZM7.99992 6.33325C7.07992 6.33325 6.33325 7.07992 6.33325 7.99992H4.33325C4.33325 7.02746 4.71956 6.09483 5.40719 5.40719C6.09483 4.71956 7.02746 4.33325 7.99992 4.33325V6.33325Z" fill="white"/>
+                                <path d="M10.6665 18.6666V5.33325" stroke="white" stroke-width="1.5"/>
+                                </svg>
+                                <span>(<span class="unlike_count">1.2k</span>)</span>
+                        </div>
+
+                    </div>
+                    <div class="booking_trailer">
+                        <button type="button" class="booking"><a href="#seattime-top">Booking</a></button>
+                        <button type="button" class="trailer"><img src="/assets/image/detail_imgae/trailer poligon.png" alt=""> Trailer</button>
+                    </div>
+                 </div>
+            </div>
+        </div>
+        <div class="thanhngang" id="seattime-top"></div>
+        <div class="seat_time" >
+            <div class="st_left">
+                <p>Select Seats</p>
+                <div class="manchieu">
+                    <svg  xmlns="http://www.w3.org/2000/svg" width="431" height="84" viewBox="0 0 431 84" fill="none">
+                        <path d="M28 0H403L430.5 84H0L28 0Z" fill="url(#paint0_linear_121_2835)"/>
+                        <defs>
+                        <linearGradient id="paint0_linear_121_2835" x1="215.25" y1="-87.5" x2="215.25" y2="84" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.213877" stop-color="#FCC434"/>
+                        <stop offset="1" stop-opacity="0"/>
+                        </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                    <div class="seat-selection">
+                        <div class="seats">
+                          <!-- Render seats dynamically in JS -->
+                          <div id="seat-container"></div>
+                          <div class="descriptionOfseat">
+                            <div class="cosan"></div>
+                            <p>Availabel</p>
+                            <div class="conguoidat"></div>
+                            <p>Occupied</p>
+                            <div class="chobanchon"></div>
+                            <p>Selected</p>
+                          </div>
+                        </div>
+                        
+                      </div>
+                      <button class="submit_seats" onclick="submit_seats()" id="submit-seats">Submit Seats</button>
+            </div>
+            <div class="st_right">
+    <p>Select Date & Time</p>
+    <form id="dateTimeForm">
+          <label for="year">Year:</label>
+          <input type="text" id="year" readonly>
+      
+
+      <label for="month">Month:</label>
+      <select id="month" onchange="updateDays()">
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+
+      <label for="day">Day:</label>
+      <select id="day">
+        <!-- Days sẽ được thêm bằng JavaScript -->
+      </select>
+
+      <label for="partOfDay">Part of Day:</label>
+      <select id="partOfDay">
+        <option value="morning">Morning</option>
+        <option value="afternoon">Afternoon</option>
+        <option value="evening">Evening</option>
+      </select>
+      
+
+      <button type="button" onclick="submittime()" class="subtime">Submit Time</button>
+    </form>
+
+            </div>
+        </div>
+        <div class="thanhngang"></div>
+        <div class="pay">
+            <h1>Payment Method</h1>
+            <div class="payment">
+                <div class="pl">
+                    <ul class="menu">
+                        <li id="toggleElement" class="toggle-element momo">
+                            <div class="left">
+                                <img src="/assets/image/detail_imgae/momo.png" alt="">
+                                <span>Momo</span>
+                            </div>
+                            <div class="right">></div>
+                        </li>
+                        <li id="toggleElement" class="toggle-element zalopay">
+                            <div class="left">
+                                <img src="/assets/image/detail_imgae/zalopay.png" alt="">
+                                <span>Zalo Pay</span>
+                            </div>
+                            <div class="right">></div>
+                        </li>
+                        <li id="toggleElement" class="toggle-element shopeepay">
+                            <div class="left">
+                                <img src="/assets/image/detail_imgae/shopeepay.png" alt="">
+                                <span>Shopee Pay</span>
+                            </div>
+                            <div class="right">></div>
+                        </li>
+                        <li id="toggleElement" class="toggle-element atmcard">
+                            <div class="left">
+                                <img src="/assets/image/detail_imgae/atm.png" alt="">
+                                <span>ATM Card</span>
+                            </div>
+                            <div class="right">></div>
+                        </li>
+                        <li id="toggleElement" class="toggle-element visa">
+                            <div class="left">
+                                <img src="/assets/image/detail_imgae/visa.png" alt="">
+                                <span>International payments</span>
+                            </div>
+                            <div class="right">></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pr">
+                    <div class="line">
+                        <span>Order ID</span>
+                        <p id="orderID">XXXXXXXXX</p> 
+                    </div>
+                    <div class="line">
+                        <span>Seats</span>
+                        <p id="seats_buy">XX</p> 
+                    </div>
+                    <div class="line">
+                        <span>Date&Time</span>
+                        <p id="datetimeticket">XX/XX/XXXX</p> 
+                    </div>
+                    <div class="line">
+                        <span>Price</span>
+                        <p id="price">XXXXXXXXXX <span>VND</span></p>
+                    </div>
+                    <div class="line">
+                        <input type="text" placeholder="Discount code" id="discount">
+                        <button type="button" onclick="applyDiscount()" class="apply-dis" >APPLY</button>
+                    </div>
+                    <div class="line thanh"></div>
+                    <div class="line total">
+                        <span>Total</span>
+                        <p class="totalprice" id="totalPrice">XXXXXXXX <span> VND</span></p>
+                    </div>
+                    <div class="line buytick">
+                        <button type="button" onclick="buyticket()" id="showMessageButton" class="buyticket">Buy Ticket</button>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="customMessage" class="hidden">
+                <img src="/assets/image/detail_imgae/qr thanh toan.png" alt="qr thanh toan" class="qr" />
+                <div class="thanhngang"></div>
+                <div class="list_tt">
+                  <p>Order ID</p>
+                  <p id="orderIDtb">XXXXXXXX</p>
+                </div>
+                <div class="list_tt">
+                  <p>Seats</p>
+                  <p id="seats_buytb">XXXXXXXX</p>
+                </div>
+                <div class="list_tt">
+                  <p>Date&Time</p>
+                  <p id="datetimetickettb">XXXXXXXX</p>
+                </div>
+                <div class="list_tt">
+                  <p>Price</p>
+                  <p id="pricetb">XXXXXXXX</p>
+                </div>
+                <div class="list_tt">
+                  <p>Discount</p>
+                  <p id="discounttb">XXXXXXXX</p>
+                </div>
+                <div class="list_tt">
+                  <p>Total</p>
+                  <p id="totalPricetb">XXXXXXXX <span> VND</span></p>
+                </div>
+                <div class="list_tt">
+                  <button id="closeMessageButton">Close</button>
+                  <button id="acceptMessageButton">Accept</button>
+                </div>
+              </div>
+        </div>
+
+    </main>
+    <div id="footer-placeholder">
+    </div>
+    <!-- Vị trí để chèn footer -->
+    <script src="/assets/javascript/loadHeaderFooter.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    // Kiểm tra chiều cao của phần tử văn bản
+    const desc = document.querySelector('.desc');
+    const seeMore = document.querySelector('.see-more');
+    
+    // Kiểm tra nếu chiều cao của đoạn văn bản lớn hơn 3 dòng
+    if (desc.scrollHeight > desc.clientHeight) {
+        seeMore.style.display = 'inline-block'; // Hiển thị "See more"
+    } else {
+        seeMore.style.display = 'none'; // Ẩn "See more" nếu văn bản không vượt quá 3 dòng
+    }
+});
+
+function toggleText() {
+    const storyline = document.querySelector('.st');
+    const seeMore = document.querySelector('.see-more');
+    storyline.classList.toggle('open'); // Thêm hoặc bỏ lớp 'open'
+
+    if (storyline.classList.contains('open')) {
+        seeMore.style.display = 'none'; // Ẩn nút "See more" khi nội dung đã mở rộng
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const seatContainer = document.getElementById("seat-container");
+  
+    // Create seat grid
+    const rows = 10;
+    const cols = 13;
+    for (let i = 1; i <= rows; i++) {
+      for (let j = 1; j <= cols; j++) {
+        const seat = document.createElement("div");
+        seat.className = "seat";
+        seat.innerText = `${String.fromCharCode(64 + i)}${j}`;
+        seatContainer.appendChild(seat);
+  
+        seat.addEventListener("click", () => {
+          if (!seat.classList.contains("occupied")) {
+            seat.classList.toggle("selected"); // tggle là dùng để thêm class vào class đã có
+          }
+        });
+      }
+    }
+  });
+
+  ////////////////////////// dung de sinh time 
+  // Hàm kiểm tra năm nhuận
+function isLeapYear(year) {
+  return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+}
+
+// Hàm cập nhật số ngày trong tháng
+function updateDays() {
+  const year = new Date().getFullYear(); // Lấy năm hiện tại
+  const month = parseInt(document.getElementById('month').value, 10);
+
+  let daysInMonth;
+  if (month === 2) {
+    daysInMonth = isLeapYear(year) ? 29 : 28; // Tháng 2
+  } else if ([4, 6, 9, 11].includes(month)) {
+    daysInMonth = 30; // Các tháng có 30 ngày
+  } else {
+    daysInMonth = 31; // Các tháng có 31 ngày
+  }
+
+  const daySelect = document.getElementById('day');
+  daySelect.innerHTML = ""; // Xóa các tùy chọn cũ
+  for (let i = 1; i <= daysInMonth; i++) {
+    const option = document.createElement('option');
+    option.value = i;
+    option.textContent = i;
+    daySelect.appendChild(option);
+  }
+}
+
+// Khởi tạo năm hiện tại
+function setCurrentYear() {
+  const currentYear = new Date().getFullYear();
+  document.getElementById('year').value = currentYear; // Hiển thị năm hiện tại
+}
+
+// Gọi hàm khởi tạo khi tải trang
+window.onload = () => {
+  setCurrentYear(); // Hiển thị năm hiện tại
+  updateDays(); // Cập nhật số ngày
+};
+// ********* bấm chọn phưognt hức thanh toán
+// document.getElementById("toggleElement").addEventListener("click", function() {
+//     // Kiểm tra xem phần tử đã có class "active" hay chưa
+//     if (this.classList.contains("active")) {
+//         // Nếu có, loại bỏ class "active" và trở lại màu nền ban đầu
+//         this.classList.remove("active");
+//     } else {
+//         // Nếu chưa, thêm class "active" và thay đổi màu nền
+//         this.classList.add("active");
+//     }
+// });
+// Lắng nghe sự kiện click vào tất cả các phần tử có class "toggle-element"
+document.querySelectorAll('.toggle-element').forEach(function(element) {
+    element.addEventListener('click', function() {
+        // Tự động loại bỏ class "active" khỏi tất cả các phần tử
+        document.querySelectorAll('.toggle-element').forEach(function(el) {
+            el.classList.remove('active');
+        });
+
+        // Thêm class "active" vào phần tử hiện tại
+        this.classList.add('active');
+    });
+});
+
+// xuwr lys su kien
+function submit_seats() {
+  // Lấy tất cả các ghế đã được chọn
+  const selectedSeats = document.querySelectorAll(".seat.selected");
+
+  // Lấy thông tin (nội dung) của các ghế đã chọn
+  const selectedSeatNumbers = Array.from(selectedSeats).map(seat => seat.innerText);
+
+  // Hiển thị danh sách ghế đã chọn trong thẻ <p> có id="seats_buy"
+  const seatsBuyElement = document.getElementById("seats_buy");
+  const priceElement = document.getElementById("price");
+  const totalPriceElement = document.getElementById('totalPrice');
+  if (selectedSeatNumbers.length > 0) {
+    // Cập nhật danh sách ghế đã chọn vào phần tử với id="seats_buy"
+    seatsBuyElement.textContent = `${selectedSeatNumbers.join(", ")}`;
+
+    // Tính tổng số ghế đã chọn và hiển thị
+    const totalSeats = selectedSeatNumbers.length;
+    const pricePerSeat = 160000; // Giá mỗi ghế (ví dụ: 160k VND)
+    const totalPrice = totalSeats * pricePerSeat;
+
+    // Hiển thị tổng tiền vào phần tử với id="price"
+    priceElement.innerHTML = `${totalPrice} <span>VND</span>`;
+    totalPriceElement.innerHTML = `${totalPrice} <span>VND</span>`;
+
+    // Log số ghế đã chọn và tổng số ghế ra console
+    console.log("Ghế đã chọn:", selectedSeatNumbers.join(", "));
+    console.log("Tổng số ghế:", totalSeats);
+    console.log("Tổng giá:", totalPrice, "VND");
+  } else {
+    // Nếu không có ghế nào được chọn
+    alert("Bạn chưa chọn ghế nào cả !!!!!!");
+    seatsBuyElement.textContent = "XXXX";
+    priceElement.innerHTML = "XXXX <span>VND</span>";
+    totalPriceElement.innerHTML = "XXXX <span>VND</span>";
+  }
+}
+
+function submittime() {
+  // Lấy giá trị từ các trường trong form
+  const year = document.getElementById('year').value;
+  const month = document.getElementById('month').value;
+  const day = document.getElementById('day').value;
+  const partOfDay = document.getElementById('partOfDay').value;
+
+  // Tạo chuỗi thời gian đã chọn
+  const timedachon = `${day}/${month}/${year}, ${partOfDay}`;
+
+  // Hiển thị thời gian đã chọn trong thẻ <p> có id="datetimeticket"
+  const dateTimeTicketElement = document.getElementById('datetimeticket');
+  dateTimeTicketElement.textContent = timedachon;
+
+  // Log thông tin ra console (tuỳ chọn)
+  console.log(timedachon);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Tạo Order ID ngẫu nhiên
+  function generateOrderID() {
+    return Math.floor(100000000 + Math.random() * 900000000); // Tạo số ngẫu nhiên 9 chữ số
+  }
+
+  // Hiển thị Order ID khi trang tải hiển thị qua <p id="orderID">XXXXXXXXX</p>
+  const orderIDElement = document.getElementById("orderID");
+  orderIDElement.textContent = generateOrderID();
+});
+  
+// Một số mã giảm giá giả
+const discountCodes = {
+    'GIAM30': 0.30, // 30% giảm
+    'GIAM50': 0.50, // 50% giảm
+    'GIAM10': 0.10,  // 10% giảm
+    'GIAM70': 0.70,
+    'GIAM20': 0.20,
+    'GIAM40': 0.40,
+    'GIAM60': 0.60,
+    'GIAM80': 0.80,
+    'GIAM90': 0.90,
+    'GIAM100': 0.0
+};
+
+function applyDiscount() {
+    // Lấy giá trị mã giảm giá từ input
+    const discountCode = document.getElementById('discount').value.trim().toUpperCase();
+    const priceElement = document.getElementById('price');
+    const totalPriceElement = document.getElementById('totalPrice');
+    
+    // Lấy giá gốc từ phần tử price
+    let price = parseInt(priceElement.textContent.replace(' VND', '').trim(), 10);
+
+    // Kiểm tra mã giảm giá có hợp lệ không
+    if (discountCodes[discountCode]) {
+        const discount = discountCodes[discountCode]; // Lấy phần trăm giảm
+        const discountedPrice = price - (price * discount); // Tính giá sau giảm
+
+        // Cập nhật giá sau khi giảm
+        totalPriceElement.textContent = `${discountedPrice} VND`;
+    } else if(discountCode==""){
+        totalPriceElement.textContent = `${price} VND`;
+    } else{
+        // Nếu mã giảm giá không hợp lệ, thông báo lỗi
+        alert("Mã giảm giá không hợp lệ.");
+    }
+}
+
+// thong baos
+function buyticket() {
+    var order = document.getElementById("orderID").textContent;
+    var seat = document.getElementById("seats_buy").textContent;
+    var dt = document.getElementById("datetimeticket").textContent;
+    var price = document.getElementById("price").textContent;
+    var total = document.getElementById("totalPrice").textContent;
+
+    // Lấy mã giảm giá
+    const discountCode = document.getElementById('discount').value.trim().toUpperCase();
+    let discount = 0; // Mặc định không có giảm giá
+
+    // Kiểm tra mã giảm giá
+    if (discountCodes[discountCode]) {
+        discount = discountCodes[discountCode] * 100 + "%"; // Chuyển thành phần trăm
+    } else {
+        discount = "0%"; // Không có mã giảm giá
+    }
+
+    // Gán giá trị cho thông báo
+    document.getElementById("discounttb").textContent = discount;
+    document.getElementById("orderIDtb").textContent = order;
+    document.getElementById("seats_buytb").textContent = seat;
+    document.getElementById("datetimetickettb").textContent = dt;
+    document.getElementById("pricetb").textContent = price;
+    document.getElementById("totalPricetb").textContent = total;
+
+    console.log(order, seat, dt, price, discount, total);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const showButton = document.getElementById('showMessageButton');
+    const closeButton = document.getElementById('closeMessageButton');
+    const acceptButton = document.getElementById('acceptMessageButton');
+    const customMessage = document.getElementById('customMessage');
+  
+    
+
+    // Hiển thị thông báo với hiệu ứng
+    showButton.addEventListener('click', () => {
+      customMessage.classList.remove('hidden');
+      customMessage.classList.add('show');
+      
+      
+    });
+  
+    // Ẩn thông báo với hiệu ứng
+    closeButton.addEventListener('click', () => {
+      customMessage.classList.remove('show');
+      customMessage.classList.add('hidden');
+    });
+    
+    acceptButton.addEventListener('click', () => {
+      customMessage.classList.remove('show');
+      customMessage.classList.add('hidden');
+    });
+});
+
+/////////// fix lỗi làm mờ khi chưa chọn chỗ 
+document.addEventListener("DOMContentLoaded", function() {
+    const buyTicketButton = document.getElementById("showMessageButton");
+    const submitSeatsButton = document.getElementById("submit-seats");
+    const submitTimeButton = document.querySelector(".subtime");
+
+    // Mặc định nút Buy Ticket bị vô hiệu hóa
+    buyTicketButton.disabled = true;
+
+    // Kiểm tra điều kiện khi chọn ghế
+    submitSeatsButton.addEventListener("click", function() {
+        const seatSelected = document.querySelectorAll('.seat.selected').length > 0;
+        checkButtonStatus(seatSelected);
+    });
+
+    // Kiểm tra điều kiện khi chọn thời gian
+    submitTimeButton.addEventListener("click", function() {
+        const timeSelected = document.getElementById('year').value !== "" && 
+                             document.getElementById('month').value !== "" && 
+                             document.getElementById('day').value !== "" && 
+                             document.getElementById('partOfDay').value !== "";
+        checkButtonStatus(true, timeSelected);  // Cả hai điều kiện đều phải được kiểm tra
+    });
+
+    // Hàm kiểm tra trạng thái nút Buy Ticket
+    function checkButtonStatus(seatSelected = false, timeSelected = false) {
+        if (seatSelected && timeSelected) {
+            buyTicketButton.disabled = false; // Kích hoạt nút khi cả hai điều kiện được chọn
+        } else {
+            buyTicketButton.disabled = true;  // Giữ nút mờ đi nếu chưa chọn đủ
+        }
+    }
+
+    // Cập nhật lại trạng thái nút khi load trang nếu ghế và thời gian đã được chọn từ trước
+    const seatSelected = document.querySelectorAll('.seat.selected').length > 0;
+    const timeSelected = document.getElementById('year').value !== "" && 
+                         document.getElementById('month').value !== "" && 
+                         document.getElementById('day').value !== "" && 
+                         document.getElementById('partOfDay').value !== "";
+    checkButtonStatus(seatSelected, timeSelected);
+});
+
+
+
+
+
+    </script>
+</body>
+</html>
