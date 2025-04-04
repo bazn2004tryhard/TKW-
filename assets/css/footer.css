@@ -3,11 +3,16 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 html {
   font-size: 62.5%;
 }
+
 body {
-  width: 1440px;
+  /* change responsive */
+  width: 100%;
+  max-width: 1440px;
+  min-width: 320px;
   height: 924px;
   background: var(--Background---Dark, #000);
   font-size: 1.6rem;
@@ -15,13 +20,16 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
 a {
   text-decoration: none;
   color: white;
 }
+
 ul {
   list-style: none;
 }
+
 /* **********  footer ******** */
 footer {
   width: 100%;
@@ -29,18 +37,23 @@ footer {
   display: flex;
   margin-top: 150px;
   align-items: center;
+  /* add padding left right  */
+  padding: 0 20px;
 }
+
 footer a,
 footer p {
   color: #fff;
   font-size: 1.5rem;
   font-family: Inter;
 }
+
 footer p.Copyright {
   width: 378px;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 500;
 }
+
 footer .icon {
   width: 120px;
   display: flex;
