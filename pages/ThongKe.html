@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thống kê người dùng & vé tháng | CineTicket</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    h2 {
+      color: #007bff;
+      margin-top: 40px;
+    }
+
+    canvas {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📊 Thống kê theo tháng</h1>
+
+    <h2>👥 Số lượng người dùng đăng ký theo tháng</h2>
+    <canvas id="userChart" height="100"></canvas>
+
+    <h2>🎟️ Số lượng vé bán theo tháng</h2>
+    <canvas id="ticketChart" height="100"></canvas>
+  </div>
+
+  <script>
+    const months = ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"];
+
+    // Dữ liệu mẫu: số lượng người dùng
+    const userData = [120, 150, 200, 180, 250, 300, 280, 320, 310, 400, 380, 420];
+
+    // Dữ liệu mẫu: số lượng vé bán
+    const ticketData = [800, 950, 1100, 1050, 1300, 1600, 1500, 1700, 1650, 1900, 1800, 2000];
+
+    // Biểu đồ người dùng
+    new Chart(document.getElementById('userChart'), {
+      type: 'bar',
+      data: {
+        labels: months,
+        datasets: [{
+          label: 'Người dùng mới',
+          data: userData,
+          backgroundColor: 'rgba(54, 162, 235, 0.6)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Số người dùng'
+            }
+          }
+        }
+      }
+    });
+
+    // Biểu đồ vé bán
+    new Chart(document.getElementById('ticketChart'), {
+      type: 'line',
+      data: {
+        labels: months,
+        datasets: [{
+          label: 'Vé bán ra',
+          data: ticketData,
+          fill: true,
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgba(255, 99, 132, 1)',
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Số vé'
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
