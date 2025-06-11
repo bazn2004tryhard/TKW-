@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hồ sơ người dùng | CineTicket</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    .profile-container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table th, table td {
+      text-align: left;
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    button {
+      padding: 8px 12px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .review {
+      background-color: #f0f0f0;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <header>
+      <h1>🎟️ Hồ sơ người dùng</h1>
+    </header>
+
+    <section class="profile-info">
+      <h2>👤 Thông tin cá nhân</h2>
+      <p><strong>Họ tên:</strong> Nguyễn Văn A</p>
+      <p><strong>Email:</strong> nguyenvana@email.com</p>
+      <p><strong>Số điện thoại:</strong> 0912 345 678</p>
+      <p><strong>Ngày sinh:</strong> 12/06/1995</p>
+      <p><strong>Thành viên từ:</strong> 01/01/2022</p>
+      <button>Chỉnh sửa thông tin</button>
+    </section>
+
+    <section class="ticket-history">
+      <h2>🕘 Lịch sử đặt vé</h2>
+      <table>
+        <tr>
+          <th>Ngày</th>
+          <th>Phim</th>
+          <th>Rạp</th>
+          <th>Suất chiếu</th>
+          <th>Ghế</th>
+          <th>Tổng tiền</th>
+        </tr>
+        <tr>
+          <td>02/05/2025</td>
+          <td>Avengers: Secret Wars</td>
+          <td>CGV Vincom</td>
+          <td>19:30</td>
+          <td>D5, D6</td>
+          <td>180,000₫</td>
+        </tr>
+        <tr>
+          <td>20/04/2025</td>
+          <td>The Batman</td>
+          <td>Galaxy Tân Bình</td>
+          <td>21:00</td>
+          <td>E8</td>
+          <td>95,000₫</td>
+        </tr>
+        <tr>
+          <td>05/04/2025</td>
+          <td>Spirited Away</td>
+          <td>Lotte Gò Vấp</td>
+          <td>17:00</td>
+          <td>A1, A2</td>
+          <td>150,000₫</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="favorites">
+      <h2>❤️ Phim yêu thích</h2>
+      <ul>
+        <li>Interstellar</li>
+        <li>Inception</li>
+        <li>Your Name</li>
+        <li>Parasite</li>
+      </ul>
+      <button>Thêm phim yêu thích</button>
+    </section>
+
+    <section class="reviews">
+      <h2>✍️ Đánh giá của bạn</h2>
+      <div class="review">
+        <p><strong>Dune Part 2</strong> – ⭐⭐⭐⭐☆</p>
+        <p>“Kỹ xảo đỉnh cao, âm thanh xuất sắc.”</p>
+      </div>
+      <div class="review">
+        <p><strong>Everything Everywhere All At Once</strong> – ⭐⭐⭐⭐⭐</p>
+        <p>“Một bộ phim độc đáo và cảm xúc.”</p>
+      </div>
+    </section>
+
+    <section class="settings">
+      <h2>⚙️ Cài đặt & Tùy chọn</h2>
+      <p><label><input type="checkbox" checked> Nhận thông báo phim mới qua email</label></p>
+      <p>Ngôn ngữ: <strong>Tiếng Việt</strong></p>
+      <p>Giao diện: <button>🌞 Sáng</button> <button>🌙 Tối</button></p>
+    </section>
+  </div>
+</body>
+</html>
