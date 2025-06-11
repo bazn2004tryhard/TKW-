@@ -1,11 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
 }
 
 body {
+  /* change responsive */
+  width: 100%;
+  max-width: 1440px;
+  min-width: 320px;
+  height: 924px;
   background: var(--Background---Dark, #000);
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a {
@@ -22,7 +35,7 @@ footer {
   width: 100%;
   height: 80px;
   display: flex;
-  margin-top: 100px;
+  margin-top: 150px;
   align-items: center;
   /* add padding left right  */
   padding: 0 20px;

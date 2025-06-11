@@ -217,14 +217,13 @@ main .detail_of_film {
 
 /* button readnews */
 .detail_of_film .power_left .name_review .review_bottom button.readnews {
-  padding: 8px 8px;
+  padding: 8px 12px;
   align-items: center;
   gap: var(--Number, 4px);
   display: flex;
   height: 34px;
-  width: 133px;
+  width: 110px;
   margin-left: 50px;
-  margin-right: 9px;
   border-radius: var(--Number, 4px);
   border: 1px solid var(--Neutral-N50, #bfbfbf);
   background-color: #1c1c1c;
@@ -1052,8 +1051,4 @@ main .seat_time .st_right button.subtime:active {
 #showMessageButton:disabled {
   opacity: 0.5; /* Làm mờ nút */
   cursor: not-allowed; /* Thay đổi con trỏ chuột */
-}
-#acceptMessageButton > a {
-  text-decoration: none;
-  color: white;
 }

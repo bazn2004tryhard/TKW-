@@ -1,0 +1,27 @@
+body {
+      background-color: #121212;
+      color: white;
+    }
+    .table-dark th, .table-dark td {
+      vertical-align: middle;
+    }
+    .form-control,
+    .form-select {
+      background-color: white;
+      color: black;
+      border: 1px solid #444;
+    }
+    .form-control:focus {
+      background-color: #1e1e1e;
+      color: white;
+      border-color: #00bfff;
+      box-shadow: 0 0 0 0.2rem rgba(0,191,255,.25);
+    }
+    .btn-light {
+      background-color: #00bfff;
+      color: black;
+      border: none;
+    }
+    .btn-light:hover {
+      background-color: #33ccff;
+    }
