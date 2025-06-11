@@ -4,15 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hồ sơ người dùng | CineTicket</title>
-  <link rel="stylesheet" href="/TKW-/assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <!-- Thêm jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <!-- Thêm Bootstrap Bundle (JS + Popper) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
+  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+  <script src="../assets/javascript/jquery-3.7.1.min.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -119,10 +112,10 @@
       <div class="col-2"></div>
       <div class="col-8 bg-secondary text-white rounded-3 mg-0">
         <div class="row">
-          <div class="col-1 list-inline-item"><img src="/TKW-/assets/image/login_image/login_logo.png" alt="" class="bg-dark"></div>
+          <div class="col-1 list-inline-item"><img src="../assets/image/login_image/login_logo.png" alt="" class="bg-dark"></div>
           <div class="col-11">
             <ul class="list-inline d-flex ">
-              <li class="list-inline-item flex-fill "><a href="/TKW-/index.html" class="text-white text-decoration-none ">HOME</a></li>
+              <li class="list-inline-item flex-fill "><a href="../index.html" class="text-white text-decoration-none ">HOME</a></li>
               <li class="list-inline-item flex-fill tab-item active" data-target="tttk">THÔNG TIN TÀI KHOẢN</li>
               <li class="list-inline-item flex-fill tab-item" data-target="ttv">THẺ THÀNH VIÊN </li>
               <li class="list-inline-item flex-fill tab-item"data-target="lsdv">LỊCH SỬ ĐẶT VÉ</li>
@@ -430,51 +423,6 @@
             </div>
           </div>
         </div>
-        <!-- Tích điểm  -->
-        <!-- <div id="td" class="tab-content d-none mt-4">
-        <h5 class="text-primary fw-bold mb-3">🏆 Thông tin tích điểm</h5>
-
-        <div class="table-responsive">
-          <table class="table table-bordered text-center align-middle">
-            <thead class="table-light">
-              <tr>
-                <th>Số thẻ</th>
-                <th>Hạng thẻ</th>
-                <th>Ngày kích hoạt</th>
-                <th>Tổng chi tiêu</th>
-                <th>Điểm tích lũy</th>
-                <th>Điểm đã tiêu</th>
-                <th>Điểm khả dụng</th>
-                <th>Điểm sắp hết hạn</th>
-                <th>Ngày hết hạn</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>9002000003199607</strong> <span class="badge bg-success">Đang dùng</span></td>
-                <td>Khách hàng STANDARD</td>
-                <td>02/06/2025</td>
-                <td>0 đ</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>-</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="alert alert-warning mt-3" role="alert">
-          🎯 Bạn cần tích lũy thêm <strong>3.000.000 đ</strong> để nâng hạng <strong>Khách hàng VIP</strong>.
-        </div>
-
-        <div class="progress">
-          <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-        </div>
-        <div class="text-end text-muted small mt-1">Mục tiêu: 3.000.000 đ</div>
-        </div> -->
-
         <!-- Voucher -->
         <div id="v" class="tab-content d-none mt-4">
           <h5 class="text-primary fw-bold mb-3">🎁 Voucher của bạn</h5>
@@ -589,16 +537,6 @@
         $('.tab-content').addClass('d-none');
         $('#' + targetId).removeClass('d-none').hide().fadeIn(300);
       });
-    });
-    // Vẫy tay
-    $(document).ready(function () {
-      const wave = $('#waveIcon');
-      wave.addClass('animate__wobble');
-
-      // Xóa hiệu ứng sau 1.5s để không lặp lại liên tục
-      setTimeout(() => {
-        wave.removeClass('animate__wobble');
-      }, 4000);
     });
     $(document).ready(function() {
       // Hiện hồ sơ người dùng với hiệu ứng fadeIn khi trang load xong
