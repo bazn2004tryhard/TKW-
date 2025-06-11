@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Chính sách & Điều khoản | CineTicket</title>
   <link rel="stylesheet" href="/TKW-/assets/bootstrap/css/bootstrap.min.css">
+  <script src="/TKW-/assets/javascript/jquery-3.7.1.min.js"></script>
   <style>
     ul, img {
       margin: 0;
@@ -48,10 +49,13 @@
       color: white;
       border: none;
     }  
+    .fade-in {
+      display: none;
+    }
   </style>
 </head>
 <body>
-  <div class="container-fluid">
+  <div class="container-fluid ">
     <div class="row sticky-top bg-dark h border border-2 border-light" >
       <div class="col-1"></div>
       <div class="col-10 ">
@@ -89,7 +93,7 @@
 
     <div class="row ">
       <div class="col-2"></div>
-      <div class="col-9">
+      <div class="col-9 fade-in">
         <div class="text-center display-5">📜 Chính sách & Điều khoản sử dụng</div>
         <h2>1. Giới thiệu</h2>
         <p>
@@ -142,6 +146,40 @@
           <li>Email: <a href="mailto:support@cineticket.vn">support@cineticket.vn</a></li>
           <li>Hotline: 1900 1234 (8:00 - 22:00 hàng ngày)</li>
         </ul>
+        <h2>7. Quy định về tài khoản</h2>
+        <ul>
+          <li>Mỗi người chỉ được phép đăng ký và sử dụng một tài khoản duy nhất.</li>
+          <li>Người dùng có trách nhiệm bảo mật thông tin tài khoản và mật khẩu. CineTicket không chịu trách nhiệm nếu có truy cập trái phép từ bên thứ ba.</li>
+          <li>CineTicket có quyền tạm khóa hoặc xóa tài khoản vi phạm điều khoản sử dụng mà không cần thông báo trước.</li>
+        </ul>
+
+        <h2>8. Quyền và nghĩa vụ của CineTicket</h2>
+        <ul>
+          <li>Bảo đảm hệ thống vận hành ổn định, bảo mật thông tin khách hàng.</li>
+          <li>Có quyền cập nhật, chỉnh sửa các nội dung điều khoản mà không cần báo trước. Các thay đổi sẽ được đăng tải trên website.</li>
+          <li>Hỗ trợ khách hàng xử lý khiếu nại liên quan đến đặt vé, thanh toán, hoặc sự cố phát sinh trong quá trình sử dụng dịch vụ.</li>
+        </ul>
+
+        <h2>9. Điều khoản miễn trừ trách nhiệm</h2>
+        <p>
+          CineTicket không chịu trách nhiệm cho các thiệt hại trực tiếp hoặc gián tiếp phát sinh từ:
+        </p>
+        <ul>
+          <li>Sự cố kỹ thuật, gián đoạn mạng Internet, hoặc tấn công từ bên thứ ba.</li>
+          <li>Thông tin người dùng cung cấp sai lệch dẫn đến việc giao dịch không thành công.</li>
+          <li>Rủi ro do người dùng tự ý chia sẻ thông tin tài khoản cho người khác.</li>
+        </ul>
+
+        <h2>10. Quy định về bản quyền</h2>
+        <p>
+          Mọi nội dung hiển thị trên website (bao gồm nhưng không giới hạn: văn bản, hình ảnh, video, mã nguồn, logo) đều thuộc sở hữu của CineTicket hoặc các đối tác được cấp phép. Nghiêm cấm sao chép, tái sử dụng dưới mọi hình thức nếu không được sự chấp thuận bằng văn bản.
+        </p>
+
+        <h2>11. Hiệu lực và áp dụng</h2>
+        <p>
+          Các điều khoản và chính sách này có hiệu lực kể từ thời điểm được đăng tải. Việc bạn tiếp tục sử dụng dịch vụ của CineTicket được xem là đồng ý với các điều khoản này.
+        </p>
+
     </div>
       </div>
 
@@ -180,5 +218,10 @@
     </div>
   
   </div>
+  <script>
+    $(document).ready(function () {
+      $('.fade-in').fadeIn(1000);
+    });
+  </script>
 </body>
 </html>

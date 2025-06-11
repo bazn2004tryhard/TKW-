@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hồ sơ người dùng | CineTicket</title>
   <link rel="stylesheet" href="/TKW-/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- Thêm jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Thêm Bootstrap Bundle (JS + Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -50,17 +58,34 @@
       background-color: darkcyan;
       padding: 0;
       margin: 0;
+      transition: all 0.3s ease;
     }
     .submenu li{
       width:165px;
       border:1px solid white;
       height:50px;
       line-height: 50px;
+      transition: all 0.3s ease;
     }
     .cha:hover .submenu{
       display:block;
     }
-    
+    .tab-item {
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .tab-item:hover {
+      background-color: #dee2e6;
+      transform: scale(1.03);
+    }
+    .tab-item.active {
+      background-color: #0d6efd;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    #userProfile {
+      display: none; /* Ẩn ban đầu */
+    }
   </style>
 
 </head>
@@ -69,9 +94,12 @@
     <!-- header  -->
     <div class="row bg-info border boder-2 border-dark sticky-top" >
       <div class="col-2 ">
-        <div class="list-inline-item">👋Xin chào, Nguyễn Huy Khởi </div>
+        <!-- <div class="list-inline-item">👋Xin chào, Nguyễn Huy Khởi </div> -->
+        <div class="list-inline-item">
+          <span id="waveIcon" class="animate__animated" style="font-size: 2rem;">👋</span> Xin chào, Nguyễn Huy Khởi
+        </div>
       </div>
-      <div class="col-8 text-center display-6 ">🗂️ Hồ sơ người dùng</div>
+      <div class="col-8 text-center display-6 " id="userProfile">🗂️ Hồ sơ người dùng</div>
       <div class="col-2">
         <div class="row "> 
           <div class="col-5"> </div>
@@ -517,6 +545,66 @@
         }
       });
     });
+
+    $(document).ready(function () {
+      $('.tab-item').on('click', function () {
+        $('.tab-item').removeClass('active');
+        $(this).addClass('active');
+
+        const targetId = $(this).data('target');
+
+        $('.tab-content').fadeOut(200, function () {
+          $('.tab-content').addClass('d-none');
+          $('#' + targetId).removeClass('d-none').hide().fadeIn(300);
+        });
+      });
+
+      // Optional: Hiệu ứng hover cho submenu
+      $('.cha').hover(
+        function () {
+          $(this).find('.submenu').stop(true, true).slideDown(200);
+        },
+        function () {
+          $(this).find('.submenu').stop(true, true).slideUp(200);
+        }
+      );
+    });
+
+    $(document).ready(function () {
+      $('.tab-item').on('click', function () {
+        // Bỏ active khỏi tab khác
+        $('.tab-item').removeClass('active');
+
+        // Thêm class animate vào tab được chọn
+        const $this = $(this);
+        $this.addClass('active animate__animated animate__pulse');
+
+        // Xóa hiệu ứng sau khi kết thúc
+        setTimeout(() => {
+          $this.removeClass('animate__animated animate__pulse');
+        }, 800);
+
+        // Hiển thị nội dung tab tương ứng
+        const targetId = $this.data('target');
+        $('.tab-content').addClass('d-none');
+        $('#' + targetId).removeClass('d-none').hide().fadeIn(300);
+      });
+    });
+    // Vẫy tay
+    $(document).ready(function () {
+      const wave = $('#waveIcon');
+      wave.addClass('animate__wobble');
+
+      // Xóa hiệu ứng sau 1.5s để không lặp lại liên tục
+      setTimeout(() => {
+        wave.removeClass('animate__wobble');
+      }, 4000);
+    });
+    $(document).ready(function() {
+      // Hiện hồ sơ người dùng với hiệu ứng fadeIn khi trang load xong
+      $('#userProfile').fadeIn(4000);
+    });
+
   </script>
 </body>
 </html>
