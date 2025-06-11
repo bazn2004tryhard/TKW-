@@ -231,6 +231,101 @@ nav i {
     }
 }
 
+/* ==================== Notification ==================== */
+.modal-content {
+    border-radius: 2rem !important;
+    background: linear-gradient(135deg, #1C1C1C, #2A2A2A);
+}
+
+.modal-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #FCC434, #1C1C1C);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.modal-icon svg {
+    width: 28px;
+    height: 28px;
+    color: white;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.btn-close {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    font-size: 2.4rem;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+}
+
+.btn-close:hover {
+    transform: scale(1.1);
+}
+
+.btn-close svg {
+    width: 18px;
+    height: 18px;
+    color: #666;
+}
+
+.notification-content {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 1rem;
+}
+
+.notification-text {
+    color: #333;
+    line-height: 1.6;
+    font-size: 1.2rem;
+}
+
+.notification-item {
+    cursor: pointer;
+}
+
+.notification-time {
+    color: #f18787;
+    font-size: 12px;
+}
+
+.notification-item.unread {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    color: #000;
+}
+
+
 /* ==================== Add info ==================== */
 #add-info {
     background-image: linear-gradient(#053BA3, #FCC434);
@@ -240,4 +335,18 @@ nav i {
 #footer,
 #footer .list-group-flush .list-group-item {
     background-color: #141212 !important;
+}
+
+/* Tinh chỉnh scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2A2A2A;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #F9CA50;
+    border-radius: 4px;
 }

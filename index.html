@@ -23,6 +23,78 @@
     <script src="assets/javascript/jquery-3.7.1.min.js"></script>
 
 <body>
+    <div id="notificationModal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header d-flex gap-5 align-items-center">
+                    <div class="modal-icon">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg>
+                    </div>
+                    <h1 class="modal-title ms">Notification</h1>
+                    <button type="button" class="btn-close d-flex align-items-center justify-content-center"
+                        data-bs-dismiss="modal">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="notification-content notification-item unread" data-id="1">
+                        <p class="notification-text">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel recusandae accusamus corporis
+                            quas voluptas eum fugit unde alias. Culpa, suscipit.
+                        </p>
+                        <div>
+                            <span class="notification-time">2 minutes ago</span>
+                        </div>
+                    </div>
+                    <div class="notification-content notification-item" data-id="2">
+                        <p class="notification-text">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel recusandae accusamus corporis
+                            quas voluptas eum fugit unde alias. Culpa, suscipit.
+                        </p>
+                        <div>
+                            <span class="notification-time">2 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notificationItemModal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header d-flex gap-5 align-items-center">
+                    <span class="text-white fs-5" id="btn-back"><i class="fa-solid fa-arrow-left"></i></span>
+                    <h1 class="modal-title ms mb-0">Detailed Notification</h1>
+                    <button type="button" class="btn-close d-flex align-items-center justify-content-center"
+                        data-bs-dismiss="modal">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="notification-content">
+                        <p class="notification-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem doloremque exercitationem,
+                            numquam assumenda saepe cum esse tenetur, ad et soluta velit repudiandae non in delectus
+                            omnis minus neque nam voluptate ut tempora quisquam? Soluta assumenda in id velit quod vero,
+                            magnam eligendi ullam eius, exercitationem, eveniet perferendis reprehenderit. Maiores,
+                            dolore.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
     <div class="header sticky-top">
         <nav class="navbar navbar-expand-lg">
@@ -32,7 +104,7 @@
                     <i class="fa-solid fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="headNav">
-                    <ul class="navbar-nav container-fluid align-items-center justify-content-between">
+                    <ul class="navbar-nav container-fluid align-items-md-center justify-content-between">
                         <li class="nav-item col-md-3 d-flex gap-6">
                             <div class="drop-down col-md-1" id="user-dropdown">
                                 <a role="button" class="nav-link dropdown-toggle text-white" href="#"
@@ -104,8 +176,11 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="nav-item col-md-3 d-flex justify-content-end">
-                            <a href="*" class="nav-link text-white"><i class="fa-solid fa-bell"></i></a>
+                        <li class="nav-item col-md-3 d-flex justify-content-md-end">
+                            <button id="notify" type="button" class="nav-link text-white" data-bs-toggle="modal"
+                                data-bs-target="#notificationModal">
+                                <i class="fa-solid fa-bell"></i>
+                            </button>
                         </li>
                     </ul>
                 </div>
@@ -308,7 +383,7 @@
                                             <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
                                             <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
                                         </p>
-                                        <a href="#"
+                                        <a href="pages/detail.html"
                                             class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
                                     </div>
                                 </div>
@@ -323,7 +398,7 @@
                                             <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
                                             <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
                                         </p>
-                                        <a href="#"
+                                        <a href="pages/detail.html"
                                             class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
                                     </div>
                                 </div>
@@ -338,7 +413,7 @@
                                             <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
                                             <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
                                         </p>
-                                        <a href="#"
+                                        <a href="pages/detail.html"
                                             class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
                                     </div>
                                 </div>
@@ -353,7 +428,7 @@
                                             <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
                                             <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
                                         </p>
-                                        <a href="#"
+                                        <a href="pages/detail.html"
                                             class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
                                     </div>
                                 </div>
@@ -372,7 +447,7 @@
                                             <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
                                             <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
                                         </p>
-                                        <a href="#"
+                                        <a href="pages/detail.html"
                                             class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
                                     </div>
                                 </div>
@@ -387,7 +462,7 @@
                                             <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
                                             <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
                                         </p>
-                                        <a href="#"
+                                        <a href="pages/detail.html"
                                             class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
                                     </div>
                                 </div>
@@ -402,7 +477,7 @@
                                             <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
                                             <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
                                         </p>
-                                        <a href="#"
+                                        <a href="pages/detail.html"
                                             class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
                                     </div>
                                 </div>
@@ -417,7 +492,7 @@
                                             <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
                                             <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
                                         </p>
-                                        <a href="#"
+                                        <a href="pages/detail.html"
                                             class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
                                     </div>
                                 </div>
@@ -436,7 +511,7 @@
                                             <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
                                             <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
                                         </p>
-                                        <a href="#"
+                                        <a href="pages/detail.html"
                                             class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
                                     </div>
                                 </div>
@@ -451,7 +526,7 @@
                                             <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
                                             <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
                                         </p>
-                                        <a href="#"
+                                        <a href="pages/detail.html"
                                             class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
                                     </div>
                                 </div>
@@ -466,7 +541,7 @@
                                             <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
                                             <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
                                         </p>
-                                        <a href="#"
+                                        <a href="pages/detail.html"
                                             class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
                                     </div>
                                 </div>
@@ -481,7 +556,7 @@
                                             <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
                                             <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
                                         </p>
-                                        <a href="#"
+                                        <a href="pages/detail.html"
                                             class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
                                     </div>
                                 </div>
@@ -500,7 +575,7 @@
                                             <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
                                             <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
                                         </p>
-                                        <a href="#"
+                                        <a href="pages/detail.html"
                                             class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
                                     </div>
                                 </div>
@@ -515,7 +590,7 @@
                                             <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
                                             <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
                                         </p>
-                                        <a href="#"
+                                        <a href="pages/detail.html"
                                             class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
                                     </div>
                                 </div>
@@ -530,7 +605,7 @@
                                             <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
                                             <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
                                         </p>
-                                        <a href="#"
+                                        <a href="pages/detail.html"
                                             class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
                                     </div>
                                 </div>
@@ -545,7 +620,7 @@
                                             <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
                                             <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
                                         </p>
-                                        <a href="#"
+                                        <a href="pages/detail.html"
                                             class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
                                     </div>
                                 </div>
@@ -980,6 +1055,25 @@
     </div>
 
     <script src="assets/javascript/index.js"></script>
+    <script>
+        $(document).ready(function () {
+            let lastNotificationItemClickedID = '';
+            $('.notification-item').click(function () {
+                lastNotificationItemClickedID = $(this).data('id');
+                bootstrap.Modal.getOrCreateInstance(document.getElementById('notificationItemModal')).show();
+                bootstrap.Modal.getOrCreateInstance(document.getElementById('notificationModal')).hide();
+            });
+            $('#btn-back').click(function () {
+                bootstrap.Modal.getOrCreateInstance(document.getElementById('notificationItemModal')).hide();
+                bootstrap.Modal.getOrCreateInstance(document.getElementById('notificationModal')).show();
+                let item = $('.notification-item[data-id="' + lastNotificationItemClickedID + '"]');
+                if (item.length > 0) {
+                    console.log(item);
+                    item.removeClass('unread')
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
