@@ -92,20 +92,100 @@
                     </div>
                 </div>
             </div>
-            <div>
-              <i class="fa-solid fa-video"></i>
-              <span>Movie</span>
-            </div>
-            <div>
-              <i class="fa-solid fa-user"></i>
-              <span>Log in</span>
-            </div>
-          </div>
         </div>
-        <div id="notification">
-          <i class="fa-solid fa-bell"></i>
-        </div>
-      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="header sticky-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#headNav">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="headNav">
+                    <ul class="navbar-nav container-fluid align-items-md-center justify-content-between">
+                        <li class="nav-item col-md-3 d-flex gap-6">
+                            <div class="drop-down col-md-1" id="user-dropdown">
+                                <a role="button" class="nav-link dropdown-toggle text-white" href="#"
+                                    data-bs-toggle="dropdown">
+                                    <i class="fa-solid fa-circle-user"></i>
+                                </a>
+                                <ul class="dropdown-menu" id="user-dropdown-menu">
+                                    <li>
+                                        <a href="" class="dropdown-item"><i class="fa-solid fa-ticket"></i> My
+                                            ticket</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dropdown-item"><i class="fa-solid fa-credit-card"></i>
+                                            Payment history</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dropdown-item"><i class="fa-solid fa-language"></i>
+                                            Change language</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dropdown-item"><i class="fa-solid fa-lock"></i> Change
+                                            password</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dropdown-item"><i class="fa-solid fa-right-from-bracket"></i>
+                                            Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="#" class="nav-link d-flex flex-column align-items-center col-md-1" id="homeInNav">
+                                <i class="fa-solid fa-house"></i>
+                                <span class="nav-span">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item col-md-6">
+                            <div class="container-fluid bg-F9CA50 p-3 rounded-5">
+                                <div class="row align-items-center">
+                                    <!-- Search -->
+                                    <div class="col-md-8 col-sm-12 mb-2 mb-md-0">
+                                        <div class="input-group bg-dark rounded-5">
+                                            <span class="input-group-text bg-dark border-end-0 text-white">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </span>
+                                            <input type="search" class="form-control bg-dark border-start-0" id="search"
+                                                placeholder="Search">
+                                        </div>
+                                    </div>
+
+                                    <!-- Ticket/Movie/Login -->
+                                    <div class="col-md-4 col-sm-12">
+                                        <div class="d-flex justify-content-around">
+                                            <a href=""
+                                                class="text-decoration-none text-dark p-2 d-flex flex-column align-items-center nav-hover">
+                                                <i class="fa-solid fa-ticket"></i>
+                                                <span class="nav-span">Ticket</span>
+                                            </a>
+                                            <a href=""
+                                                class="text-decoration-none text-dark p-2 d-flex flex-column align-items-center nav-hover">
+                                                <i class="fa-solid fa-video"></i>
+                                                <span class="nav-span">Movie</span>
+                                            </a>
+                                            <a href="pages/login.html"
+                                                class="text-decoration-none text-dark p-2 d-flex flex-column align-items-center nav-hover">
+                                                <i class="fa-solid fa-user"></i>
+                                                <span class="nav-span">Login</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item col-md-3 d-flex justify-content-md-end">
+                            <button id="notify" type="button" class="nav-link text-white" data-bs-toggle="modal"
+                                data-bs-target="#notificationModal">
+                                <i class="fa-solid fa-bell"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
 
     <!-- Hero -->
@@ -119,128 +199,144 @@
                 <button type="button" data-bs-target="#hero-content" data-bs-slide-to="3" class="carousel-dot"></button>
                 <button type="button" data-bs-target="#hero-content" data-bs-slide-to="4" class="carousel-dot"></button>
             </div>
-            <div class="hero__duration">
-              <i class="fa-solid fa-clock"></i> 3 Hours
-            </div>
-          </div>
-          <button class="hero__button">Detail</button>
-        </div>
-      </div>
-
-      <div class="hero-section" id="hero-second">
-        <img
-          src="assets/image/home_image/movie_img2.jpg"
-          alt="Movie Image 1"
-          class="hero__image"
-        />
-        <div class="hero__content">
-          <h1 class="hero__title">Movie 2</h1>
-          <p class="hero__desc">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-            dignissimos asperiores consequuntur repellat iste porro placeat
-            velit exercitationem sapiente, rem ducimus, et animi, dolorum
-            voluptate deleniti libero commodi reprehenderit! Vitae. Corporis
-            excepturi cum adipisci consequuntur vitae fugiat consectetur velit
-            blanditiis odio. Et necessitatibus beatae nihil dolorem,
-            reprehenderit molestias blanditiis ea tempora laudantium illo at
-            quas distinctio a eius quod laborum.
-          </p>
-          <div class="hero__meta">
-            <div class="hero__rating">
-              <i class="fa-solid fa-ranking-star"></i> 8/10
-            </div>
-            <div class="hero__duration">
-              <i class="fa-solid fa-clock"></i> 2.5 Hours
-            </div>
-          </div>
-          <button class="hero__button">Detail</button>
-        </div>
-      </div>
-
-      <div class="hero-section" id="hero-third">
-        <img
-          src="assets/image/home_image/movie_img4.jpg"
-          alt="Movie Image 1"
-          class="hero__image"
-        />
-        <div class="hero__content">
-          <h1 class="hero__title">Movie 3</h1>
-          <p class="hero__desc">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-            dignissimos asperiores consequuntur repellat iste porro placeat
-            velit exercitationem sapiente, rem ducimus, et animi, dolorum
-            voluptate deleniti libero commodi reprehenderit! Vitae. Corporis
-            excepturi cum adipisci consequuntur vitae fugiat consectetur velit
-            blanditiis odio. Et necessitatibus beatae nihil dolorem,
-            reprehenderit molestias blanditiis ea tempora laudantium illo at
-            quas distinctio a eius quod laborum.
-          </p>
-          <div class="hero__meta">
-            <div class="hero__rating">
-              <i class="fa-solid fa-ranking-star"></i> 8.5/10
-            </div>
-            <div class="hero__duration">
-              <i class="fa-solid fa-clock"></i> 3 Hours
-            </div>
-          </div>
-          <button class="hero__button">Detail</button>
-        </div>
-      </div>
-
-      <div class="hero-section" id="hero-fourth">
-        <img
-          src="assets/image/home_image/movie_img2.jpg"
-          alt="Movie Image 1"
-          class="hero__image"
-        />
-        <div class="hero__content">
-          <h1 class="hero__title">Movie 4</h1>
-          <p class="hero__desc">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-            dignissimos asperiores consequuntur repellat iste porro placeat
-            velit exercitationem sapiente, rem ducimus, et animi, dolorum
-            voluptate deleniti libero commodi reprehenderit! Vitae. Corporis
-            excepturi cum adipisci consequuntur vitae fugiat consectetur velit
-            blanditiis odio. Et necessitatibus beatae nihil dolorem,
-            reprehenderit molestias blanditiis ea tempora laudantium illo at
-            quas distinctio a eius quod laborum.
-          </p>
-          <div class="hero__meta">
-            <div class="hero__rating">
-              <i class="fa-solid fa-ranking-star"></i> 8.5/10
-            </div>
-            <div class="hero__duration">
-              <i class="fa-solid fa-clock"></i> 3 Hours
-            </div>
-          </div>
-          <button class="hero__button">Detail</button>
-        </div>
-      </div>
-
-      <div class="hero-section" id="hero-fifth">
-        <img
-          src="assets/image/home_image/movie_img4.jpg"
-          alt="Movie Image 1"
-          class="hero__image"
-        />
-        <div class="hero__content">
-          <h1 class="hero__title">Movie 5</h1>
-          <p class="hero__desc">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-            dignissimos asperiores consequuntur repellat iste porro placeat
-            velit exercitationem sapiente, rem ducimus, et animi, dolorum
-            voluptate deleniti libero commodi reprehenderit! Vitae. Corporis
-            excepturi cum adipisci consequuntur vitae fugiat consectetur velit
-            blanditiis odio. Et necessitatibus beatae nihil dolorem,
-            reprehenderit molestias blanditiis ea tempora laudantium illo at
-            quas distinctio a eius quod laborum.
-          </p>
-          <div class="hero__meta">
-            <div class="hero__rating">
-              <i class="fa-solid fa-ranking-star"></i> 8.5/10
-            </div>
-            <div class="hero__duration">
-              <i class="fa-solid fa-clock"></i> 3 Hours
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <div class="card text-bg-dark">
+                        <img src="assets/image/home_image/movie_img4.jpg" alt="" class="d-block w-100 img-fluid">
+                        <div class="card-img-overlay hero-content w-md-100">
+                            <h2 class="card-title">Movie 1</h2>
+                            <p class="card-text hero-desc">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
+                                dignissimos asperiores consequuntur repellat iste porro placeat velit exercitationem
+                                sapiente, rem ducimus, et animi, dolorum voluptate deleniti libero commodi
+                                reprehenderit! Vitae. Corporis excepturi cum adipisci consequuntur vitae fugiat
+                                consectetur velit blanditiis odio. Et necessitatibus beatae nihil dolorem, reprehenderit
+                                molestias blanditiis ea tempora laudantium illo at quas distinctio a eius quod laborum.
+                            </p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <span class="hero-meta"><i class="fa-solid fa-ranking-star"></i>
+                                        8/10</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="hero-meta"><i class="fa-solid fa-clock"></i> 3
+                                        hours</span>
+                                </div>
+                            </div>
+                            <div class="row mt-4 justify-content-center">
+                                <a href="#" class="col-8 btn btn-detail">Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="10000">
+                    <img src="assets/image/home_image/movie_img2.jpg" alt="" class="d-block w-100 img-fluid">
+                    <div class="card-img-overlay hero-content w-md-100">
+                        <h2 class="card-title">Movie 2</h2>
+                        <p class="card-text hero-desc">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
+                            dignissimos asperiores consequuntur repellat iste porro placeat velit exercitationem
+                            sapiente, rem ducimus, et animi, dolorum voluptate deleniti libero commodi
+                            reprehenderit! Vitae. Corporis excepturi cum adipisci consequuntur vitae fugiat
+                            consectetur velit blanditiis odio. Et necessitatibus beatae nihil dolorem, reprehenderit
+                            molestias blanditiis ea tempora laudantium illo at quas distinctio a eius quod laborum.
+                        </p>
+                        <div class="row">
+                            <div class="col-6">
+                                <span class="hero-meta"><i class="fa-solid fa-ranking-star"></i>
+                                    9/10</span>
+                            </div>
+                            <div class="col-6">
+                                <span class="hero-meta"><i class="fa-solid fa-clock"></i> 3
+                                    hours</span>
+                            </div>
+                        </div>
+                        <div class="row mt-4 justify-content-center">
+                            <a href="#" class="col-8 btn btn-detail">Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="10000">
+                    <img src="assets/image/home_image/movie_img4.jpg" alt="" class="d-block w-100 img-fluid">
+                    <div class="card-img-overlay hero-content w-md-100">
+                        <h2 class="card-title">Movie 3</h2>
+                        <p class="card-text hero-desc">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
+                            dignissimos asperiores consequuntur repellat iste porro placeat velit exercitationem
+                            sapiente, rem ducimus, et animi, dolorum voluptate deleniti libero commodi
+                            reprehenderit! Vitae. Corporis excepturi cum adipisci consequuntur vitae fugiat
+                            consectetur velit blanditiis odio. Et necessitatibus beatae nihil dolorem, reprehenderit
+                            molestias blanditiis ea tempora laudantium illo at quas distinctio a eius quod laborum.
+                        </p>
+                        <div class="row">
+                            <div class="col-6">
+                                <span class="hero-meta"><i class="fa-solid fa-ranking-star"></i>
+                                    8.5/10</span>
+                            </div>
+                            <div class="col-6">
+                                <span class="hero-meta"><i class="fa-solid fa-clock"></i> 3
+                                    hours</span>
+                            </div>
+                        </div>
+                        <div class="row mt-4 justify-content-center">
+                            <a href="#" class="col-8 btn btn-detail">Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="10000">
+                    <img src="assets/image/home_image/movie_img2.jpg" alt="" class="d-block w-100 img-fluid">
+                    <div class="card-img-overlay hero-content w-md-100">
+                        <h2 class="card-title">Movie 4</h2>
+                        <p class="card-text hero-desc">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
+                            dignissimos asperiores consequuntur repellat iste porro placeat velit exercitationem
+                            sapiente, rem ducimus, et animi, dolorum voluptate deleniti libero commodi
+                            reprehenderit! Vitae. Corporis excepturi cum adipisci consequuntur vitae fugiat
+                            consectetur velit blanditiis odio. Et necessitatibus beatae nihil dolorem, reprehenderit
+                            molestias blanditiis ea tempora laudantium illo at quas distinctio a eius quod laborum.
+                        </p>
+                        <div class="row">
+                            <div class="col-6">
+                                <span class="hero-meta"><i class="fa-solid fa-ranking-star"></i>
+                                    8/10</span>
+                            </div>
+                            <div class="col-6">
+                                <span class="hero-meta"><i class="fa-solid fa-clock"></i> 2.5
+                                    hours</span>
+                            </div>
+                        </div>
+                        <div class="row mt-4 justify-content-center">
+                            <a href="#" class="col-8 btn btn-detail">Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="10000">
+                    <img src="assets/image/home_image/movie_img4.jpg" alt="" class="d-block w-100 img-fluid">
+                    <div class="card-img-overlay hero-content w-md-100">
+                        <h2 class="card-title">Movie 5</h2>
+                        <p class="card-text hero-desc">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
+                            dignissimos asperiores consequuntur repellat iste porro placeat velit exercitationem
+                            sapiente, rem ducimus, et animi, dolorum voluptate deleniti libero commodi
+                            reprehenderit! Vitae. Corporis excepturi cum adipisci consequuntur vitae fugiat
+                            consectetur velit blanditiis odio. Et necessitatibus beatae nihil dolorem, reprehenderit
+                            molestias blanditiis ea tempora laudantium illo at quas distinctio a eius quod laborum.
+                        </p>
+                        <div class="row">
+                            <div class="col-6">
+                                <span class="hero-meta"><i class="fa-solid fa-ranking-star"></i>
+                                    8/10</span>
+                            </div>
+                            <div class="col-6">
+                                <span class="hero-meta"><i class="fa-solid fa-clock"></i> 3.5
+                                    hours</span>
+                            </div>
+                        </div>
+                        <div class="row mt-4 justify-content-center">
+                            <a href="#" class="col-8 btn btn-detail">Detail</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <button type="button" class="carousel-control-prev" data-bs-target="#hero-content" data-bs-slide="prev">
                 <span class="btn-carousel-control-icon"><i class="fa-solid fa-angle-left"></i></span>
@@ -554,168 +650,287 @@
                 <a href="#" class="text-decoration-none text-f9ca50 fs-3">See All <i
                         class="fa-solid fa-forward"></i></a>
             </div>
-            <div class="hero__duration">
-              <i class="fa-solid fa-clock"></i> 3 Hours
-            </div>
-          </div>
-          <button class="hero__button">Detail</button>
         </div>
-      </div>
-
-      <div class="hero__carousel">
-        <button class="carousel__nav prev" id="prevBtn">
-          <i class="fa-solid fa-angle-left"></i>
-        </button>
-        <span class="carousel-dot active"></span>
-        <span class="carousel-dot"></span>
-        <span class="carousel-dot"></span>
-        <span class="carousel-dot"></span>
-        <span class="carousel-dot"></span>
-        <span class="carousel-dot"></span>
-        <span class="carousel-dot"></span>
-        <button class="carousel__nav next" id="nextBtn">
-          <i class="fa-solid fa-angle-right"></i>
-        </button>
-      </div>
-    </section>
-
-    <!-- now playing -->
-    <section class="now-playing">
-      <div class="section-header">
-        <h2 class="section-title">NOW PLAYING</h2>
-        <span class="see-all">See All <i class="fa-solid fa-forward"></i></span>
-      </div>
-      <div class="movie-grid">
-        <div class="movie-card">
-          <img
-            src="assets/image/home_image/nowplaying1.png"
-            alt="Movie poster"
-            class="movie-poster"
-          />
-          <div class="movie-info">
-            <h3 class="movie-title">Avatar 2: The way of water</h3>
-            <div class="movie-meta">
-              <div class="movie-meta--left">
-                <span><i class="fa-solid fa-film"></i>Adventure, Sci-fi</span>
-                <span><i class="fa-solid fa-calendar-days"></i>20.12.2025</span>
-              </div>
-              <div class="movie-meta--right">
-                <button class="movie-button">Booking</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="movie-card">
-          <img
-            src="assets/image/home_image/nowplaying2.png"
-            alt="Movie poster"
-            class="movie-poster"
-          />
-          <div class="movie-info">
-            <h3 class="movie-title">Quantumania</h3>
-            <div class="movie-meta">
-              <div class="movie-meta--left">
-                <span><i class="fa-solid fa-film"></i>Adventure, Sci-fi</span>
-                <span><i class="fa-solid fa-calendar-days"></i>20.12.2025</span>
-              </div>
-              <div class="movie-meta--right">
-                <button class="movie-button">Booking</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="movie-card">
-          <img
-            src="assets/image/home_image/nowplaying3.jpg"
-            alt="Movie poster"
-            class="movie-poster"
-          />
-          <div class="movie-info">
-            <h3 class="movie-title">The MENU</h3>
-            <div class="movie-meta">
-              <div class="movie-meta--left">
-                <span><i class="fa-solid fa-film"></i>Adventure, Sci-fi</span>
-                <span><i class="fa-solid fa-calendar-days"></i>20.12.2025</span>
-              </div>
-              <div class="movie-meta--right">
-                <button class="movie-button">Booking</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="movie-card">
-          <img
-            src="assets/image/home_image/nowplaying4.png"
-            alt="Movie poster"
-            class="movie-poster"
-          />
-          <div class="movie-info">
-            <h3 class="movie-title">Kot B Canotax 2</h3>
-            <div class="movie-meta">
-              <div class="movie-meta--left">
-                <span><i class="fa-solid fa-film"></i>Adventure, Sci-fi</span>
-                <span><i class="fa-solid fa-calendar-days"></i>20.12.2025</span>
-              </div>
-              <div class="movie-meta--right">
-                <button class="movie-button">Booking</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section-carousel">
-        <span class="carousel-dot"></span>
-        <span class="carousel-dot"></span>
-        <span class="carousel-dot"></span>
-        <span class="carousel-dot active"></span>
-        <span class="carousel-dot"></span>
-        <span class="carousel-dot"></span>
-        <span class="carousel-dot"></span>
-      </div>
-    </section>
-
-    <!-- coming soon -->
-    <section class="coming-soon">
-      <div class="section-header">
-        <h2 class="section-title">COMING SOON</h2>
-        <span class="see-all">See All <i class="fa-solid fa-forward"></i></span>
-      </div>
-      <div class="movie-grid">
-        <div class="movie-card">
-          <img
-            src="assets/image/home_image/comingsoon1.jpg"
-            alt="Movie poster"
-            class="movie-poster"
-          />
-          <div class="movie-info">
-            <h3 class="movie-title">Vikings</h3>
-            <div class="movie-meta">
-              <div class="movie-meta--left">
-                <span><i class="fa-solid fa-film"></i>Adventure, Sci-fi</span>
-                <span><i class="fa-solid fa-calendar-days"></i>20.12.2025</span>
-              </div>
-              <div class="movie-meta--right">
-                <button class="movie-button">Booking</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="movie-card">
-          <img
-            src="assets/image/home_image/comingsoon2.png"
-            alt="Movie poster"
-            class="movie-poster"
-          />
-          <div class="movie-info">
-            <h3 class="movie-title">The Glory</h3>
-            <div class="movie-meta">
-              <div class="movie-meta--left">
-                <span><i class="fa-solid fa-film"></i>Adventure, Sci-fi</span>
-                <span><i class="fa-solid fa-calendar-days"></i>20.12.2025</span>
-              </div>
-              <div class="movie-meta--right">
-                <button class="movie-button">Booking</button>
-              </div>
+        <div class="row mt-4">
+            <div id="comingSoonCarousel" class="carousel slide col-12">
+                <div class="carousel-indicators">
+                    <button type="button" class="active carousel-dot" data-bs-target="#comingSoonCarousel"
+                        data-bs-slide-to="0"></button>
+                    <button type="button" data-bs-target="#comingSoonCarousel" data-bs-slide-to="1"
+                        class="carousel-dot"></button>
+                    <button type="button" data-bs-target="#comingSoonCarousel" data-bs-slide-to="2"
+                        class="carousel-dot"></button>
+                    <button type="button" data-bs-target="#comingSoonCarousel" data-bs-slide-to="3"
+                        class="carousel-dot"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="card rounded-5 col-sm-6 col-md-3 card-sm">
+                                <img src="assets/image/home_image/comingsoon1.jpg" alt=""
+                                    class="card-img-top rounded-5">
+                                <div class="card-body">
+                                    <h3 class="cart-title text-f9ca50">Vikings</h3>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-text d-flex flex-column mb-0">
+                                            <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
+                                            <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
+                                        </p>
+                                        <a href="#"
+                                            class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card rounded-5 col-sm-6 col-md-3 card-sm">
+                                <img src="assets/image/home_image/comingsoon2.png" alt=""
+                                    class="card-img-top rounded-5">
+                                <div class="card-body">
+                                    <h3 class="cart-title text-f9ca50">The Glory</h3>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-text d-flex flex-column mb-0">
+                                            <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
+                                            <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
+                                        </p>
+                                        <a href="#"
+                                            class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card rounded-5 col-sm-6 col-md-3 card-sm">
+                                <img src="assets/image/home_image/comingsoon3.png" alt=""
+                                    class="card-img-top rounded-5">
+                                <div class="card-body">
+                                    <h3 class="cart-title text-f9ca50">Avengers: END GAME</h3>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-text d-flex flex-column mb-0">
+                                            <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
+                                            <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
+                                        </p>
+                                        <a href="#"
+                                            class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card rounded-5 col-sm-6 col-md-3 card-sm">
+                                <img src="assets/image/home_image/comingsoon4.jpg" alt=""
+                                    class="card-img-top rounded-5">
+                                <div class="card-body">
+                                    <h3 class="cart-title text-f9ca50">Mortal kombat</h3>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-text d-flex flex-column mb-0">
+                                            <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
+                                            <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
+                                        </p>
+                                        <a href="#"
+                                            class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="card rounded-5 col-sm-6 col-md-3 card-sm">
+                                <img src="assets/image/home_image/comingsoon1.jpg" alt=""
+                                    class="card-img-top rounded-5">
+                                <div class="card-body">
+                                    <h3 class="cart-title text-f9ca50">Vikings</h3>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-text d-flex flex-column mb-0">
+                                            <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
+                                            <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
+                                        </p>
+                                        <a href="#"
+                                            class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card rounded-5 col-sm-6 col-md-3 card-sm">
+                                <img src="assets/image/home_image/comingsoon2.png" alt=""
+                                    class="card-img-top rounded-5">
+                                <div class="card-body">
+                                    <h3 class="cart-title text-f9ca50">The Glory</h3>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-text d-flex flex-column mb-0">
+                                            <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
+                                            <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
+                                        </p>
+                                        <a href="#"
+                                            class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card rounded-5 col-sm-6 col-md-3 card-sm">
+                                <img src="assets/image/home_image/comingsoon3.png" alt=""
+                                    class="card-img-top rounded-5">
+                                <div class="card-body">
+                                    <h3 class="cart-title text-f9ca50">Avengers: END GAME</h3>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-text d-flex flex-column mb-0">
+                                            <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
+                                            <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
+                                        </p>
+                                        <a href="#"
+                                            class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card rounded-5 col-sm-6 col-md-3 card-sm">
+                                <img src="assets/image/home_image/comingsoon4.jpg" alt=""
+                                    class="card-img-top rounded-5">
+                                <div class="card-body">
+                                    <h3 class="cart-title text-f9ca50">Mortal kombat</h3>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-text d-flex flex-column mb-0">
+                                            <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
+                                            <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
+                                        </p>
+                                        <a href="#"
+                                            class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="card rounded-5 col-sm-6 col-md-3 card-sm">
+                                <img src="assets/image/home_image/comingsoon1.jpg" alt=""
+                                    class="card-img-top rounded-5">
+                                <div class="card-body">
+                                    <h3 class="cart-title text-f9ca50">Vikings</h3>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-text d-flex flex-column mb-0">
+                                            <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
+                                            <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
+                                        </p>
+                                        <a href="#"
+                                            class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card rounded-5 col-sm-6 col-md-3 card-sm">
+                                <img src="assets/image/home_image/comingsoon2.png" alt=""
+                                    class="card-img-top rounded-5">
+                                <div class="card-body">
+                                    <h3 class="cart-title text-f9ca50">The Glory</h3>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-text d-flex flex-column mb-0">
+                                            <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
+                                            <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
+                                        </p>
+                                        <a href="#"
+                                            class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card rounded-5 col-sm-6 col-md-3 card-sm">
+                                <img src="assets/image/home_image/comingsoon3.png" alt=""
+                                    class="card-img-top rounded-5">
+                                <div class="card-body">
+                                    <h3 class="cart-title text-f9ca50">Avengers: END GAME</h3>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-text d-flex flex-column mb-0">
+                                            <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
+                                            <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
+                                        </p>
+                                        <a href="#"
+                                            class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card rounded-5 col-sm-6 col-md-3 card-sm">
+                                <img src="assets/image/home_image/comingsoon4.jpg" alt=""
+                                    class="card-img-top rounded-5">
+                                <div class="card-body">
+                                    <h3 class="cart-title text-f9ca50">Mortal kombat</h3>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-text d-flex flex-column mb-0">
+                                            <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
+                                            <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
+                                        </p>
+                                        <a href="#"
+                                            class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="card rounded-5 col-sm-6 col-md-3 card-sm">
+                                <img src="assets/image/home_image/comingsoon1.jpg" alt=""
+                                    class="card-img-top rounded-5">
+                                <div class="card-body">
+                                    <h3 class="cart-title text-f9ca50">Vikings</h3>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-text d-flex flex-column mb-0">
+                                            <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
+                                            <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
+                                        </p>
+                                        <a href="#"
+                                            class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card rounded-5 col-sm-6 col-md-3 card-sm">
+                                <img src="assets/image/home_image/comingsoon2.png" alt=""
+                                    class="card-img-top rounded-5">
+                                <div class="card-body">
+                                    <h3 class="cart-title text-f9ca50">The Glory</h3>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-text d-flex flex-column mb-0">
+                                            <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
+                                            <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
+                                        </p>
+                                        <a href="#"
+                                            class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card rounded-5 col-sm-6 col-md-3 card-sm">
+                                <img src="assets/image/home_image/comingsoon3.png" alt=""
+                                    class="card-img-top rounded-5">
+                                <div class="card-body">
+                                    <h3 class="cart-title text-f9ca50">Avengers: END GAME</h3>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-text d-flex flex-column mb-0">
+                                            <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
+                                            <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
+                                        </p>
+                                        <a href="#"
+                                            class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card rounded-5 col-sm-6 col-md-3 card-sm">
+                                <img src="assets/image/home_image/comingsoon4.jpg" alt=""
+                                    class="card-img-top rounded-5">
+                                <div class="card-body">
+                                    <h3 class="cart-title text-f9ca50">Mortal kombat</h3>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-text d-flex flex-column mb-0">
+                                            <span><i class="fa-solid fa-film me-2"></i>Adventure, Sci-fi</span>
+                                            <span><i class="fa-solid fa-calendar-days me-2"></i>20.12.2025</span>
+                                        </p>
+                                        <a href="#"
+                                            class="btn btn-f9ca50 d-flex justify-content-center align-items-center">Booking</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="carousel-control-prev" data-bs-target="#comingSoonCarousel"
+                    data-bs-slide="prev">
+                    <span class="btn-carousel-control-icon"><i class="fa-solid fa-angle-left"></i></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button type="button" class="carousel-control-next" data-bs-target="#comingSoonCarousel"
+                    data-bs-slide="next">
+                    <span class="btn-carousel-control-icon"><i class="fa-solid fa-angle-right"></i></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </div>
