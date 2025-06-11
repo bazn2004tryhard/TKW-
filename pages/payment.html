@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <!--Font-->
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.7.2-web/css/all.min.css" />
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="../assets/css/payment.css">
+
+    <!--Jquery-->
+    <script src="../assets/javascript/jquery-3.7.1.min.js"></script>
+
+</head>
+
+<body>
+    <div id="header-placeholder" class="sticky-top"></div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card p-5">
+                    <div class="qr-container mx-auto"></div>
+                    <p class="text-center mt-4 info-label">Scan this QR code to payment</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card bg-white">
+                    <div class="card-header text-center">
+                        <div class="d-flex align-items-center justify-content-center fs-1 fw-bold text-white mt-4">
+                            <i class="fas fa-exchange-alt me-2"></i>
+                            <h2 class="fs-1">Transfer money to the following account</h2>
+                        </div>
+                        <p class="text-white opacity-75 fs-4">You need to transfer within in 10 minutes or you
+                            will lose your
+                            seat</p>
+                    </div>
+                    <div class="card-body">
+                        <table class="table bg-white">
+                            <tr>
+                                <td class="py-3 info-label">Bank</td>
+                                <td class="text-center py-3" style="color: #333; font-weight: 550;">Ngân hàng TMCP Ngoại
+                                    thương Việt Nam (VCB)</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 info-label">Account number</td>
+                                <td class="text-center py-3" style="color: #333; font-weight: 550;">86870029</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 info-label">Account owner</td>
+                                <td class="text-center py-3" style="color: #333; font-weight: 550;">CONG TY TNHH MONET
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 info-label">Content</td>
+                                <td class="text-center py-3" style="color: #333; font-weight: 550;">MV800648</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 info-label">Amount</td>
+                                <td class="text-center py-3" style="color: #e91e63; font-weight: 700;">40,500 đ VND
+                                </td>
+                        </table>
+                        <div class="warning">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            The system automatically processes the ticket code within 30 seconds after your successful
+                            transfer.
+                        </div>
+                        <p class="mt-4 text-center">Please contact hotline
+                            <strong style="color: #e91e63;">024 7308 8890</strong>
+                            if you have any problem
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/javascript/loadHeaderFooter.js"></script>
+</body>
+
+</html>
