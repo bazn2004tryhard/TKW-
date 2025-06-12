@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thống kê người dùng & vé tháng | CineTicket</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    .h{ 
+      height:100px;
+    }
+    .f{
+      height:100px;
+    }
+    .list-inline-item{
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      height:50px;
+      padding:0 7px;
+      text-align: center;
+      width:auto;
+    }
+    .signup{
+      color:white;
+    }
+    .login{
+      color:white;
+      display: inline-flex;
+      padding: 10px 25px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      border: 1px solid #fff;
+    }
+    .signup:hover{
+      color: #fcc434;
+      text-shadow: 5px 5px 10px white;
+    }
+    .login:hover{
+      background: #fcc434;
+      box-shadow: 5px 5px 10px white;
+      cursor: pointer;
+      color: white;
+      border: none;
+    } 
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .year-buttons {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    canvas {
+      margin: 20px 0;
+    }
+    .user-icon {
+      width: 45px;
+      height: 45px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid white;
+    }
+    .dropdown-menu {
+      min-width: 160px;
+    }
+    .dropdown-item:hover {
+      background-color: #198754;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container-fluid px-2 px-md-4">
+    <div class="row sticky-top bg-dark border border-2 border-light align-items-center" style="height: 100px;">
+      <div class="col-12 col-md-1"></div>
+      <div class="col-12 col-md-10">
+        <div class="row align-items-center">
+          <div class="col-6 col-md-3 d-flex align-items-center">
+            <img src="/TKW-/assets/image/login_image/login_logo.png" alt="Logo" class="img-fluid" />
+          </div>
+          <div class="col-6 col-md-5 d-flex justify-content-center">
+            <ul class="list-inline d-flex gap-3 flex-wrap justify-content-center mb-0">
+              <li class="list-inline-item flex-fill text-center">
+                <a href="/TKW-/index.html" class="text-decoration-none text-white">Home</a>
+              </li>
+              <li class="list-inline-item flex-fill text-center">
+                <a href="#" class="text-decoration-none text-white">About</a>
+              </li>
+              <li class="list-inline-item flex-fill text-center">
+                <a href="#" class="text-decoration-none text-white">Contact</a>
+              </li>
+              <li class="list-inline-item flex-fill text-center">
+                <a href="#" class="text-decoration-none text-white">FAQ</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4 d-flex justify-content-md-end justify-content-center align-items-center mt-2 mt-md-0">
+            <div class="dropdown">
+              <img src="/TKW-/assets/image/login_image/avatarAdmin.jpg" alt="User" class="rounded-circle user-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" />
+                <ul class="dropdown-menu dropdown-menu-end bg-dark">
+                  <li><a class="dropdown-item text-white" href="/TKW-/pages/profile.html">Trang cá nhân</a></li>
+                  <li><a class="dropdown-item text-white" href="/TKW-/pages/admin.html">Quản trị</a></li>
+                  <li><hr class="dropdown-divider bg-light"></li>
+                  <li><a class="dropdown-item text-white" href="/TKW-/pages/logout.html">Đăng xuất</a></li>
+                </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-1"></div>
+    </div> 
+
+    <div class="row my-4">
+      <div class="col-0 col-md-2"></div>
+      <div class="col-12 col-md-8">
+        <div class="year-buttons text-center mb-4">
+          <div class="btn-group" role="group" aria-label="Chọn năm">
+            <div class="list-inline-item" ><strong>Năm : </strong></div>
+            <button class="btn btn-outline-primary" id="2022">2022</button>
+            <button class="btn btn-outline-primary" id="2023">2023</button>
+            <button class="btn btn-outline-primary" id="2024">2024</button>
+            <button class="btn btn-outline-primary" id="2025">2025</button>
+          </div>
+        </div>
+        <div class="border border-2">  
+          <h2>👥 Số lượng người dùng đặt vé theo tháng</h2>
+          <canvas id="userChart" height="100"></canvas> 
+        </div><br><br>
+        <div class="border border-2">  
+          <h2>🎟️ Số lượng vé bán theo tháng</h2>
+          <canvas id="ticketChart" height="100"></canvas>
+        </div>
+      </div>
+      <div class="col-0 col-md-2"></div>
+    </div>
+  </div>
+
+
+<script>
+  const months = ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"];
+
+  const DataPerYear = { //Khởi tạo dữ liệu từng năm vào từ điển DataPerYear
+    2022: {
+      users: [1800, 1000, 1300, 1100, 1500, 1900, 1600, 2200, 2500, 1000, 2800, 2100],
+      tickets: [2700, 2800, 2850, 2820, 3900, 3950, 4970, 4580, 4980, 3050, 2030, 3100]
+    },
+    2023: {
+      users: [1300, 1400, 1450, 1600, 1800, 2000, 2100, 2200, 2300, 2400, 2500, 2600],
+      tickets: [3700, 2800, 3850, 3800, 3900, 3250, 4670, 4580, 4980, 2850, 2630, 3100]
+    },
+    2024: {
+      users: [1800, 1500, 2300, 3100, 3200, 3000, 2600, 2800, 3500, 2300, 3200, 3600],
+      tickets: [3200, 3800, 3450, 3800, 4500, 4750, 5270, 5120, 4680, 5550, 3630, 4100]
+    },
+    2025: {
+      users: [2900, 3000, 2300, 1500, 2000, 2100, 2300, 2800, 1900, 2000, 2600, 1900],
+      tickets: [4200, 4800, 5450, 4800, 6500, 6750, 6270, 7120, 4680, 5550, 5630, 6100]
+    }
+  };
+  // Vẽ biểu đồ 2D bằng thư viện Canvas
+  const userCtx = document.getElementById('userChart').getContext('2d');
+  const ticketCtx = document.getElementById('ticketChart').getContext('2d');
+
+  const userChart = new Chart(userCtx, {
+    type: 'bar', //Loại biểu đồ cột bar-chart 
+    data: {
+      labels: months, //trục tháng 
+      datasets: [{
+        label: 'Người dùng mới',
+        data: [],
+        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,//auto co dãn
+      scales: {
+        y: {
+          beginAtZero: true,//trục Y bắt đầu từ 0
+          title: {
+            display: true, //có hiển thị 
+            text: 'Số người dùng' // tiêu đề trục Y
+          }
+        }
+      }
+    }
+  });
+
+  const ticketChart = new Chart(ticketCtx, {
+    type: 'line', //biểu đồ dạng line
+    data: {
+      labels: months, //trục tháng 
+      datasets: [{
+        label: 'Vé bán ra',
+        data: [],
+        fill: true,
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        tension: 0.5 // Độ cong của đường (0 là thẳng, 1 là rất cong)
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Số vé'
+          }
+        }
+      }
+    }
+  });
+
+  // Sự kiện click nút chọn năm
+  $('.year-buttons button').on('click', function () {
+    // Lấy id của từng nút
+    const year = $(this).attr("id");
+    const data = DataPerYear[year];
+    // Cập nhật biểu đồ
+    userChart.data.datasets[0].data = data.users;
+    userChart.update();
+
+    ticketChart.data.datasets[0].data = data.tickets;
+    ticketChart.update();
+
+    // Làm nổi bật nút được chọn
+    // Xóa màu nền các nút chỉ để viền được chọn trước đó
+    $('.year-buttons button').removeClass('btn-primary').addClass('btn-outline-primary');
+    // Thêm màu nền vào nút được chọn tiếp theo
+    $(this).removeClass('btn-outline-primary').addClass('btn-primary');
+  });
+</script>
+ <div class="container-fluid px-2 px-md-4">
+    <div class="row bg-dark h ">
+      <div class="col-4 align-content-center">
+        <p class="text-white">
+          Copyright © 2022 TicketBooker. All rights reserved.
+        </p>
+      </div>
+      <div class="col-4 align-content-center text-center">
+        <div >
+        <a href="">
+          <img
+            src="/TKW-/assets/image/login_image/ph_instagram-logo.svg"
+            alt="insta"
+          />
+        </a>
+        <a href="">
+          <img
+            src="/TKW-/assets/image/login_image/ri_linkedin-box-fill.svg"
+            alt="linkd"
+          />
+        </a>
+        <a href="">
+          <img src="/TKW-/assets/image/login_image/mdi_twitter.svg" alt="twitter" />
+        </a>
+      </div>
+      </div>
+
+      <div class="col-4  align-content-center text-center">
+        <div>
+        <a href="" class="text-decoration-none text-white m-5">Privacy Policy</a>
+        <a href="" class="text-decoration-none text-white">Term of Use</a>
+      </div>
+      </div>
+    </div>
+ </div>
+</body>
+</html>
