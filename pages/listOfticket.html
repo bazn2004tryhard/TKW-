@@ -384,7 +384,19 @@
       // Dừng animation sau 10 giây
       setTimeout(() => {
         selectedTicket.classList.remove("move-ticket", "shadow-active");
-      }, 10000);
+      }, 100000);
+      // Thêm hiệu ứng nổi bật cho phần chi tiết vé (phải)
+      const prelement = document.querySelector(".pr");
+      prelement.classList.add("active"); // giữ dòng cũ của bạn
+
+      prelement.classList.remove("animate-detail", "shadow-detail");
+      void prelement.offsetWidth; // reset reflow
+      prelement.classList.add("animate-detail", "shadow-detail");
+
+      // Tắt sau 10 giây
+      setTimeout(() => {
+        prelement.classList.remove("animate-detail", "shadow-detail");
+      }, 100000);
     }
 
     // Reset chi tiết vé và ẩn div.pr

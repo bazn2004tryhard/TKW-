@@ -332,3 +332,13 @@ main {
   border-radius: 12px;
   transition: box-shadow 0.3s ease-in-out;
 }
+/* animation & shadow cho phần chi tiết */
+.animate-detail {
+  animation: floatUpDown 2s ease-in-out infinite;
+}
+
+.shadow-detail {
+  box-shadow: 0 0 15px 4px rgba(255, 204, 52, 0.6);
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease-in-out;
+}
