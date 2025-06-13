@@ -1063,12 +1063,12 @@ main .seat_time .st_right button.subtime:active {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
   }
 }
 
 .power_left {
-  animation: floatUpDownInfinite 4s ease-in-out infinite;
+  animation: floatUpDownInfinite 3s ease-in-out infinite;
   box-shadow: 0 0 30px 8px rgba(255, 204, 52, 0.7);
   transition: box-shadow 0.5s ease-in-out;
   border-radius: 16px;
