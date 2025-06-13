@@ -1,0 +1,23 @@
+
+/* **********  footer ******** */
+#footer{
+    margin-top: 30px;
+}
+#footer,
+#footer .list-group-flush .list-group-item {
+    background-color: #141212 ;
+}
+
+/* Tinh chỉnh scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2A2A2A;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #F9CA50;
+    border-radius: 4px;
+}

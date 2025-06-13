@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Chính sách & Điều khoản | CineTicket</title>
-  <link rel="stylesheet" href="/TKW-/assets/bootstrap/css/bootstrap.min.css">
-  <script src="/TKW-/assets/javascript/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+  <script src="../assets/javascript/jquery-3.7.1.min.js"></script>
   <style>
     ul, img {
       margin: 0;
@@ -52,6 +52,30 @@
     .fade-in {
       display: none;
     }
+    .toggle-header {
+      cursor: pointer;
+      background-color: #f7f7f7;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .toggle-header:hover {
+      background-color: #ffe9b3;
+    }
+
+    .section-content {
+      margin-bottom: 20px;
+    }
+      .tab-content-box {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+
   </style>
 </head>
 <body>
@@ -60,11 +84,11 @@
       <div class="col-1"></div>
       <div class="col-10 ">
         <div class="row ">
-          <div class="col-3 h  d-flex align-items-center "><img src="/TKW-/assets/image/login_image/login_logo.png" alt=""></div>
+          <div class="col-3 h  d-flex align-items-center "><img src="../assets/image/login_image/login_logo.png" alt=""></div>
           <div class="col-5 h d-flex align-items-center justify-content-center">
             <ul class="list-inline d-flex gap-5 ">
               <li class="flex-fill">
-                  <a href="/TKW-/index.html" class="text-decoration-none text-white">Home</a>
+                  <a href="../index.html" class="text-decoration-none text-white">Home</a>
               </li>
               <li class="flex-fill">
                   <a href="" class="text-decoration-none text-white">About</a>
@@ -80,8 +104,8 @@
           <div class="row col-4 h" >
             <div class="col d-flex justify-content-end align-items-center">
               <div class="d-flex align-items-center">
-                <a href="/TKW-/pages/signup.html" class="text-decoration-none me-3 signup " >Sign up</a>
-                <a href="/TKW-/pages/login.html" class="text-decoration-none login">Log In</a>
+                <a href="../pages/signup.html" class="text-decoration-none me-3 signup " >Sign up</a>
+                <a href="../pages/login.html" class="text-decoration-none login">Log In</a>
               </div>
             </div>
           </div>
@@ -95,92 +119,185 @@
       <div class="col-2"></div>
       <div class="col-9 fade-in">
         <div class="text-center display-5">📜 Chính sách & Điều khoản sử dụng</div>
-        <h2>1. Giới thiệu</h2>
-        <p>
-          Chào mừng bạn đến với CineTicket – nền tảng đặt vé xem phim trực tuyến nhanh chóng, tiện lợi và an toàn. 
-          Khi truy cập hoặc sử dụng dịch vụ của chúng tôi, bạn mặc định đồng ý tuân theo các điều khoản và chính sách dưới đây.
-        </p>
 
-        <h2>2. Chính sách bảo mật</h2>
-        <p>Chúng tôi cam kết giữ bí mật mọi thông tin cá nhân của người dùng. Thông tin thu thập bao gồm:</p>
-        <ul >
-          <li >Họ tên, email, số điện thoại, lịch sử đặt vé</li>
-          <li>Thông tin thanh toán (không lưu trữ số thẻ tín dụng)</li>
-        </ul>
-        <p>
-          Mục đích thu thập: xác nhận giao dịch, gửi thông báo lịch chiếu, chăm sóc khách hàng. CineTicket không bán hoặc chia sẻ dữ liệu cá nhân cho bên thứ ba, trừ khi được pháp luật yêu cầu.
-        </p>
+        <h2 class="toggle-header">1. Giới thiệu</h2>
+        <div class="section-content tab-content-box">
+          <p>CineTicket là hệ thống rạp chiếu phim hiện đại, được xây dựng nhằm mang đến trải nghiệm giải trí điện ảnh chất lượng cao cho khán giả trên toàn quốc. Chúng tôi không chỉ cung cấp không gian xem phim đạt chuẩn quốc tế với âm thanh Dolby, màn hình lớn sắc nét và ghế ngồi êm ái, mà còn tích hợp nền tảng đặt vé trực tuyến tiện lợi, nhanh chóng và an toàn.
+              Với mong muốn trở thành điểm đến hàng đầu của người yêu điện ảnh, CineTicket cam kết mang đến các suất chiếu đa dạng – từ phim bom tấn Hollywood, điện ảnh Việt đến phim nghệ thuật đặc sắc – cùng với các dịch vụ khách hàng tận tâm, giá cả minh bạch và chính sách hoàn vé rõ ràng.</p>
+        </div>
 
-        <h2>3. Điều khoản sử dụng</h2>
-        <ul>
-          <li>Người dùng phải từ 16 tuổi trở lên để đăng ký tài khoản và đặt vé.</li>
-          <li>Nghiêm cấm sử dụng website cho mục đích gian lận, phát tán mã độc, hay thu thập dữ liệu trái phép.</li>
-          <li>Nội dung, hình ảnh, mã nguồn trên website thuộc quyền sở hữu của CineTicket – nghiêm cấm sao chép khi chưa có sự cho phép bằng văn bản.</li>
-        </ul>
+        <h2 class="toggle-header">2. Chính sách bảo mật</h2>
+        <div class="section-content tab-content-box">
+          <p>CineTicket cam kết bảo vệ tuyệt đối quyền riêng tư và dữ liệu cá nhân của khách hàng trong quá trình sử dụng dịch vụ đặt vé trực tuyến.
+              <br>
+              1. Thông tin thu thập:
+              Chúng tôi có thể thu thập các thông tin sau khi người dùng đăng ký hoặc thực hiện giao dịch:
 
-        <h2>4. Chính sách đặt vé và hoàn vé</h2>
-        <p>
-          Sau khi thanh toán thành công, vé điện tử sẽ được gửi đến email của bạn và hiển thị trong mục “Vé của tôi”.
-        </p>
-        <ul>
-          <li>Vé đã mua <strong>không được huỷ, không được hoàn tiền</strong>.</li>
-          <li>Nếu suất chiếu bị huỷ do lỗi hệ thống hoặc rạp phim, bạn sẽ được hoàn 100% qua hình thức thanh toán ban đầu trong vòng 5–7 ngày làm việc.</li>
-        </ul>
+              Họ tên, số điện thoại, địa chỉ email
 
-        <h2>5. Thanh toán & bảo mật</h2>
-        <p>
-          CineTicket sử dụng các cổng thanh toán bảo mật cao như Momo, ZaloPay, VNPay. 
-          Chúng tôi không lưu trữ thông tin thẻ của bạn, và mọi giao dịch đều được mã hoá SSL để bảo vệ tối đa.
-        </p>
+              Lịch sử đặt vé, phương thức thanh toán
 
-        <h2>6. Trách nhiệm của người dùng</h2>
-        <ul>
-          <li>Kiểm tra kỹ thông tin suất chiếu, giờ chiếu và số lượng vé trước khi thanh toán.</li>
-          <li>Không chia sẻ mã vé cá nhân công khai để tránh bị kẻ gian sử dụng.</li>
-          <li>Bạn chịu hoàn toàn trách nhiệm với tài khoản cá nhân của mình trên hệ thống.</li>
-        </ul>
+              Địa chỉ IP và hành vi duyệt web (cookie)
+              <br>
+              2. Mục đích sử dụng:
+              Thông tin được sử dụng để:
 
-        <h2>7. Liên hệ và hỗ trợ</h2>
-        <p>Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ, hãy liên hệ với chúng tôi qua:</p>
-        <ul>
-          <li>Email: <a href="mailto:support@cineticket.vn">support@cineticket.vn</a></li>
-          <li>Hotline: 1900 1234 (8:00 - 22:00 hàng ngày)</li>
-        </ul>
-        <h2>7. Quy định về tài khoản</h2>
-        <ul>
-          <li>Mỗi người chỉ được phép đăng ký và sử dụng một tài khoản duy nhất.</li>
-          <li>Người dùng có trách nhiệm bảo mật thông tin tài khoản và mật khẩu. CineTicket không chịu trách nhiệm nếu có truy cập trái phép từ bên thứ ba.</li>
-          <li>CineTicket có quyền tạm khóa hoặc xóa tài khoản vi phạm điều khoản sử dụng mà không cần thông báo trước.</li>
-        </ul>
+              Xác nhận và xử lý giao dịch đặt vé
 
-        <h2>8. Quyền và nghĩa vụ của CineTicket</h2>
-        <ul>
-          <li>Bảo đảm hệ thống vận hành ổn định, bảo mật thông tin khách hàng.</li>
-          <li>Có quyền cập nhật, chỉnh sửa các nội dung điều khoản mà không cần báo trước. Các thay đổi sẽ được đăng tải trên website.</li>
-          <li>Hỗ trợ khách hàng xử lý khiếu nại liên quan đến đặt vé, thanh toán, hoặc sự cố phát sinh trong quá trình sử dụng dịch vụ.</li>
-        </ul>
+              Gửi thông báo về lịch chiếu, khuyến mãi
 
-        <h2>9. Điều khoản miễn trừ trách nhiệm</h2>
-        <p>
-          CineTicket không chịu trách nhiệm cho các thiệt hại trực tiếp hoặc gián tiếp phát sinh từ:
-        </p>
-        <ul>
-          <li>Sự cố kỹ thuật, gián đoạn mạng Internet, hoặc tấn công từ bên thứ ba.</li>
-          <li>Thông tin người dùng cung cấp sai lệch dẫn đến việc giao dịch không thành công.</li>
-          <li>Rủi ro do người dùng tự ý chia sẻ thông tin tài khoản cho người khác.</li>
-        </ul>
+              Cải thiện chất lượng dịch vụ và hỗ trợ khách hàng
+              <br>
+              3. Bảo mật dữ liệu:
 
-        <h2>10. Quy định về bản quyền</h2>
-        <p>
-          Mọi nội dung hiển thị trên website (bao gồm nhưng không giới hạn: văn bản, hình ảnh, video, mã nguồn, logo) đều thuộc sở hữu của CineTicket hoặc các đối tác được cấp phép. Nghiêm cấm sao chép, tái sử dụng dưới mọi hình thức nếu không được sự chấp thuận bằng văn bản.
-        </p>
+              Thông tin cá nhân được lưu trữ trên hệ thống bảo mật SSL đạt chuẩn quốc tế.
 
-        <h2>11. Hiệu lực và áp dụng</h2>
-        <p>
-          Các điều khoản và chính sách này có hiệu lực kể từ thời điểm được đăng tải. Việc bạn tiếp tục sử dụng dịch vụ của CineTicket được xem là đồng ý với các điều khoản này.
-        </p>
+              Mọi giao dịch thanh toán được thực hiện qua các cổng trung gian uy tín như MoMo, ZaloPay, VNPay và không lưu trữ thông tin thẻ tín dụng trên hệ thống.
+              <br>
+              4. Quyền của người dùng:
+              Khách hàng có quyền truy cập, chỉnh sửa hoặc yêu cầu xóa thông tin cá nhân của mình bất kỳ lúc nào bằng cách liên hệ với bộ phận chăm sóc khách hàng.
+              <br>
+              5. Cam kết:
+              CineTicket không chia sẻ, chuyển nhượng hay bán thông tin khách hàng cho bên thứ ba, trừ khi có yêu cầu từ cơ quan chức năng theo quy định pháp luật.</p>
+          <ul>
+            <li>Họ tên, email, số điện thoại...</li>
+            <li>Thông tin thanh toán...</li>
+          </ul>
+          <p>Mục đích thu thập: xác nhận giao dịch...</p>
+        </div>
 
-    </div>
+        <h2 class="toggle-header">3. Điều khoản sử dụng</h2>
+        <div class="section-content tab-content-box">
+          <p>Khi truy cập và sử dụng dịch vụ của CineTicket, bạn mặc định đồng ý với các điều khoản sử dụng sau:</p>
+
+          <strong>1. Đăng ký và sử dụng tài khoản:</strong>
+          <ul>
+            <li>Người dùng phải từ 16 tuổi trở lên để đăng ký tài khoản và sử dụng dịch vụ.</li>
+            <li>Thông tin đăng ký phải chính xác và đầy đủ. Người dùng chịu trách nhiệm với mọi hoạt động phát sinh từ tài khoản cá nhân.</li>
+            <li>Mỗi cá nhân chỉ được sở hữu một tài khoản duy nhất. CineTicket có quyền khóa tài khoản nếu phát hiện hành vi gian lận, giả mạo.</li>
+          </ul>
+
+          <strong>2. Quy tắc sử dụng dịch vụ:</strong>
+          <ul>
+            <li>Nghiêm cấm sử dụng website để thực hiện các hành vi trái pháp luật như gian lận giao dịch, phát tán mã độc, thu thập trái phép dữ liệu cá nhân.</li>
+            <li>Người dùng không được can thiệp vào hệ thống, gây cản trở hoạt động của website hoặc làm ảnh hưởng đến trải nghiệm của người dùng khác.</li>
+          </ul>
+
+          <strong>3. Quyền sở hữu nội dung:</strong>
+          <ul>
+            <li>Toàn bộ nội dung trên website CineTicket bao gồm văn bản, hình ảnh, video, mã nguồn và logo là tài sản của CineTicket hoặc các đối tác được cấp phép.</li>
+            <li>Mọi hành vi sao chép, chỉnh sửa, phân phối hoặc sử dụng trái phép đều bị nghiêm cấm và có thể bị xử lý theo quy định của pháp luật.</li>
+          </ul>
+
+          <strong>4. Trách nhiệm và giới hạn pháp lý:</strong>
+          <ul>
+            <li>CineTicket không chịu trách nhiệm đối với các thiệt hại phát sinh từ việc sử dụng dịch vụ sai mục đích, cung cấp thông tin sai lệch hoặc do lỗi từ phía người dùng.</li>
+            <li>Chúng tôi có quyền tạm ngừng hoặc chấm dứt dịch vụ bất kỳ lúc nào để bảo trì hệ thống, nâng cấp hoặc xử lý vi phạm.</li>
+          </ul>
+        </div>
+
+
+        <h2 class="toggle-header">4. Chính sách đặt vé và hoàn vé</h2>
+        <div class="section-content tab-content-box">
+          <p>Sau khi thanh toán thành công, hệ thống sẽ gửi vé điện tử qua email hoặc tin nhắn SMS. Vé chỉ có giá trị khi giao dịch đã được xác nhận và không thể chỉnh sửa thông tin sau khi hoàn tất thanh toán.</p>
+          <ul>
+            <li>Vé đã mua <strong>không được huỷ hoặc hoàn tiền</strong> trong mọi trường hợp, trừ khi suất chiếu bị hủy do lỗi từ phía rạp chiếu.</li>
+            <li>Nếu suất chiếu bị huỷ do lỗi kỹ thuật, thời tiết, hoặc lý do bất khả kháng, khách hàng sẽ được hoàn tiền hoặc đổi vé theo quy định.</li>
+            <li>Yêu cầu hỗ trợ đổi vé (chỉ áp dụng cho cùng phim, cùng rạp, khác suất chiếu) cần được gửi ít nhất <strong>2 giờ trước giờ chiếu</strong> và phụ thuộc vào tình trạng ghế trống.</li>
+            <li>Khách hàng vui lòng kiểm tra kỹ thông tin phim, suất chiếu và số lượng vé trước khi thanh toán để tránh sai sót không mong muốn.</li>
+          </ul>
+        </div>
+        <h2 class="toggle-header">5. Thanh toán & bảo mật</h2>
+        <div class="section-content tab-content-box">
+          <p>CineTicket sử dụng các cổng thanh toán điện tử uy tín và bảo mật cao như MoMo, ZaloPay, VietQR, và thẻ ngân hàng nội địa/visa để đảm bảo an toàn tuyệt đối cho mọi giao dịch của khách hàng.</p>
+          <ul>
+            <li>Thông tin thanh toán của khách hàng được mã hóa và xử lý thông qua hệ thống đạt tiêu chuẩn bảo mật quốc tế (SSL/TLS, PCI DSS).</li>
+            <li>Chúng tôi **không lưu trữ thông tin thẻ thanh toán** của khách hàng trên hệ thống, nhằm tránh rủi ro đánh cắp dữ liệu.</li>
+            <li>Mọi giao dịch đều được xác thực 2 lớp (OTP, xác nhận ví điện tử) nhằm đảm bảo an toàn khi thanh toán.</li>
+            <li>Khách hàng cần đảm bảo sử dụng thiết bị an toàn và không chia sẻ thông tin tài khoản/thanh toán cho bên thứ ba.</li>
+            <li>Trong trường hợp phát sinh vấn đề liên quan đến thanh toán, khách hàng vui lòng liên hệ bộ phận hỗ trợ của chúng tôi trong vòng 24 giờ kể từ khi giao dịch phát sinh.</li>
+          </ul>
+        </div>
+
+        <h2 class="toggle-header">6. Trách nhiệm của người dùng</h2>
+        <div class="section-content tab-content-box">
+          <ul>
+            <li>Người dùng có trách nhiệm cung cấp thông tin chính xác và cập nhật khi đăng ký tài khoản và đặt vé.</li>
+            <li>Kiểm tra kỹ các thông tin liên quan đến suất chiếu, thời gian, rạp và số lượng vé trước khi tiến hành thanh toán.</li>
+            <li>Không được chia sẻ, chuyển nhượng mã vé hoặc tài khoản cá nhân cho người khác dưới mọi hình thức nhằm tránh các rủi ro gian lận.</li>
+            <li>Chịu trách nhiệm bảo mật thông tin đăng nhập và các thông tin cá nhân liên quan đến tài khoản của mình.</li>
+            <li>Tuân thủ các quy định và điều khoản sử dụng của CineTicket trong quá trình sử dụng dịch vụ.</li>
+            <li>Thông báo ngay cho CineTicket khi phát hiện các hành vi sử dụng trái phép tài khoản hoặc các vấn đề liên quan đến bảo mật.</li>
+          </ul>
+        </div>
+
+
+        <h2 class="toggle-header">7. Liên hệ và hỗ trợ</h2>
+        <div class="section-content tab-content-box">
+          <p>Nếu bạn có bất kỳ câu hỏi, thắc mắc hoặc cần hỗ trợ trong quá trình sử dụng dịch vụ của CineTicket, vui lòng liên hệ với chúng tôi qua các kênh sau:</p>
+          <ul>
+            <li>Email hỗ trợ: <a href="mailto:support@cineticket.vn">support@cineticket.vn</a> – Chúng tôi sẽ phản hồi trong vòng 24 giờ làm việc.</li>
+            <li>Hotline chăm sóc khách hàng: <strong>1900 1234</strong> (Thời gian hỗ trợ: 8:00 - 22:00 hàng ngày)</li>
+            <li>Hỗ trợ trực tiếp qua chat hoặc các mạng xã hội của CineTicket để nhận được phản hồi nhanh nhất.</li>
+          </ul>
+          <p>Chúng tôi luôn sẵn sàng hỗ trợ và giải đáp mọi thắc mắc để đảm bảo trải nghiệm đặt vé của bạn được thuận tiện và an toàn nhất.</p>
+        </div>
+        <h2 class="toggle-header">8. Quy định về tài khoản</h2>
+        <div class="section-content tab-content-box">
+          <ul>
+            <li>Mỗi người chỉ được phép đăng ký và sử dụng một tài khoản duy nhất để đặt vé và sử dụng các dịch vụ của CineTicket.</li>
+            <li>Người dùng có trách nhiệm bảo mật thông tin đăng nhập (tên đăng nhập, mật khẩu, mã OTP) và chịu trách nhiệm với mọi hoạt động phát sinh từ tài khoản của mình.</li>
+            <li>Trong trường hợp phát hiện tài khoản bị truy cập trái phép, người dùng cần liên hệ ngay với bộ phận hỗ trợ khách hàng để được xử lý kịp thời.</li>
+            <li>CineTicket có quyền tạm khóa hoặc chấm dứt quyền sử dụng tài khoản nếu phát hiện hành vi gian lận, vi phạm điều khoản sử dụng, hoặc sử dụng sai mục đích.</li>
+            <li>Người dùng không được phép chia sẻ, cho mượn hoặc chuyển nhượng tài khoản dưới bất kỳ hình thức nào.</li>
+          </ul>
+        </div>
+
+
+        <h2 class="toggle-header">9. Quyền và nghĩa vụ của CineTicket</h2>
+        <div class="section-content tab-content-box">
+          <ul>
+            <li>Bảo đảm hệ thống website hoạt động ổn định, an toàn, không gián đoạn để phục vụ khách hàng tốt nhất.</li>
+            <li>Có quyền cập nhật, chỉnh sửa hoặc bổ sung các điều khoản, chính sách phù hợp với quy định pháp luật và nhu cầu thực tế mà không cần báo trước.</li>
+            <li>Bảo mật thông tin cá nhân và dữ liệu giao dịch của khách hàng theo đúng quy định pháp luật về bảo vệ dữ liệu cá nhân.</li>
+            <li>Hỗ trợ khách hàng trong việc xử lý các khiếu nại, tranh chấp liên quan đến việc đặt vé, thanh toán hoặc các sự cố phát sinh trong quá trình sử dụng dịch vụ.</li>
+            <li>Có quyền từ chối hoặc khóa tài khoản người dùng vi phạm nghiêm trọng các điều khoản sử dụng mà không cần thông báo trước.</li>
+          </ul>
+        </div>
+
+        <h2 class="toggle-header">10. Điều khoản miễn trừ trách nhiệm</h2>
+        <div class="section-content tab-content-box">
+          <p>CineTicket không chịu trách nhiệm đối với bất kỳ thiệt hại nào phát sinh trực tiếp hoặc gián tiếp từ việc sử dụng dịch vụ trên website nếu những thiệt hại đó không thuộc lỗi của chúng tôi. Các trường hợp miễn trừ trách nhiệm bao gồm nhưng không giới hạn:</p>
+          <ul>
+            <li>Sự cố kỹ thuật, gián đoạn mạng, hoặc lỗi hệ thống khiến quá trình đặt vé hoặc thanh toán không thực hiện được hoặc bị gián đoạn.</li>
+            <li>Thông tin người dùng cung cấp sai lệch, thiếu chính xác dẫn đến việc không nhận được vé hoặc đặt sai suất chiếu.</li>
+            <li>Rủi ro do người dùng tự ý chia sẻ thông tin tài khoản, mã xác nhận, hoặc thông tin thanh toán với bên thứ ba.</li>
+            <li>Hành vi truy cập trái phép, phá hoại hệ thống, hoặc các hành vi vi phạm pháp luật của bên thứ ba ảnh hưởng đến dịch vụ của CineTicket.</li>
+            <li>Sự thay đổi hoặc hủy lịch chiếu từ phía rạp chiếu phim, trong trường hợp CineTicket chỉ là đơn vị trung gian cung cấp nền tảng đặt vé.</li>
+          </ul>
+        </div>
+
+        <h2 class="toggle-header">11. Quy định về bản quyền</h2>
+        <div class="section-content tab-content-box">
+          <p>
+            Mọi nội dung hiển thị trên website CineTicket, bao gồm nhưng không giới hạn: văn bản, hình ảnh, video, biểu tượng, mã nguồn và các tài liệu khác đều là tài sản sở hữu trí tuệ của CineTicket hoặc các đối tác có bản quyền.
+          </p>
+          <p>
+            Người dùng không được sao chép, tái sử dụng, phân phối, chỉnh sửa hoặc phát hành lại bất kỳ nội dung nào trên website dưới bất kỳ hình thức nào nếu không có sự cho phép bằng văn bản của CineTicket.
+          </p>
+          <p>
+            Việc vi phạm các quy định về bản quyền có thể dẫn đến các biện pháp pháp lý nghiêm khắc theo quy định của pháp luật.
+          </p>
+        </div>
+
+
+        <h2 class="toggle-header">12. Hiệu lực và áp dụng</h2>
+        <div class="section-content tab-content-box">
+          <p>Các điều khoản và chính sách này có hiệu lực kể từ thời điểm được đăng tải trên website CineTicket và áp dụng cho tất cả người dùng khi truy cập, đăng ký tài khoản hoặc sử dụng bất kỳ dịch vụ nào do CineTicket cung cấp.</p>
+          <p>Chúng tôi có quyền sửa đổi, bổ sung các điều khoản trong chính sách mà không cần thông báo trước. Người dùng có trách nhiệm theo dõi và cập nhật nội dung chính sách mới nhất được đăng tải tại website.</p>
+          <p>Việc tiếp tục sử dụng dịch vụ sau khi có thay đổi được xem là người dùng đã đồng ý với những điều khoản được cập nhật.</p>
+        </div>
+
       </div>
 
     <div class="row bg-dark h ">
@@ -193,18 +310,18 @@
         <div >
         <a href="">
           <img
-            src="/TKW-/assets/image/login_image/ph_instagram-logo.svg"
+            src="../assets/image/login_image/ph_instagram-logo.svg"
             alt="insta"
           />
         </a>
         <a href="">
           <img
-            src="/TKW-/assets/image/login_image/ri_linkedin-box-fill.svg"
+            src="../assets/image/login_image/ri_linkedin-box-fill.svg"
             alt="linkd"
           />
         </a>
         <a href="">
-          <img src="/TKW-/assets/image/login_image/mdi_twitter.svg" alt="twitter" />
+          <img src="../assets/image/login_image/mdi_twitter.svg" alt="twitter" />
         </a>
       </div>
       </div>
@@ -222,6 +339,18 @@
     $(document).ready(function () {
       $('.fade-in').fadeIn(1000);
     });
+    $(document).ready(function () {
+      $('.fade-in').fadeIn(500);
+      
+      // Ẩn tất cả nội dung khi tải trang
+      $('.section-content').hide();
+
+      // Bật/tắt khi click vào tiêu đề
+      $('.toggle-header').click(function () {
+        $(this).next('.section-content').slideToggle(300);
+      });
+    });
+
   </script>
 </body>
 </html>
