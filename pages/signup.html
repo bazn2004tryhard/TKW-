@@ -39,7 +39,7 @@
       <h1>Create an account</h1>
       <div class="already">
         <span>Already have one ? </span>
-        <a href="./login.html">Login</a>
+        <a href="login.html">Login</a>
       </div>
       <div class="check_role">
         <input type="radio" name="role" id="individual" value="individual" />
@@ -94,7 +94,12 @@
         >
       </div>
 
-      <input type="button" value="Create account" class="cre_account" />
+      <input
+        id="btn-create"
+        type="button"
+        value="Create account"
+        class="cre_account"
+      />
     </form>
     <footer>
       <p class="Copyright">
@@ -114,7 +119,10 @@
           />
         </a>
         <a href="">
-          <img src="../assets/image/signup_image/mdi_twitter.svg" alt="twitter" />
+          <img
+            src="../assets/image/signup_image/mdi_twitter.svg"
+            alt="twitter"
+          />
         </a>
       </div>
       <div class="pt">
@@ -122,5 +130,13 @@
         <a href="">Term of Use</a>
       </div>
     </footer>
+
+    <script>
+      document
+        .getElementById("btn-create")
+        .addEventListener("click", function () {
+          window.location.href = "/pages/login.html";
+        });
+    </script>
   </body>
 </html>

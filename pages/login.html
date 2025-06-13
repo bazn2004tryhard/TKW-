@@ -86,7 +86,7 @@
           <input type="checkbox" class="remember_checkbox" />
           <span>Remember me</span>
         </div>
-        <input type="button" value="Login" class="login_btn" />
+        <input id="btn-login" type="button" value="Login" class="login_btn" />
       </form>
     </div>
     <!-- footer -->
@@ -108,7 +108,10 @@
           />
         </a>
         <a href="">
-          <img src="../assets/image/login_image/mdi_twitter.svg" alt="twitter" />
+          <img
+            src="../assets/image/login_image/mdi_twitter.svg"
+            alt="twitter"
+          />
         </a>
       </div>
       <div class="pt">
@@ -116,5 +119,13 @@
         <a href="">Term of Use</a>
       </div>
     </footer>
+
+    <script>
+      document
+        .getElementById("btn-login")
+        .addEventListener("click", function () {
+          window.location.href = "/index.html";
+        });
+    </script>
   </body>
 </html>
