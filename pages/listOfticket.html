@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/listOfticket.css" />
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="header-placeholder" class="sticky-top">
+      <header>
+        <nav>
+          <img
+            src="../assets/image/login_image/login_logo.png"
+            alt=""
+            class="logo_icon"
+          />
+          <ul class="menu">
+            <li>
+              <a href="../index.html">Home</a>
+            </li>
+            <li>
+              <a href="">About</a>
+            </li>
+            <li>
+              <a href="">Contact</a>
+            </li>
+            <li>
+              <a href="">FAQ</a>
+            </li>
+          </ul>
+          <div class="login_up">
+            <a href="./signup.html" class="signup">Sign up</a>
+            <a href="./login.html" class="login">Log In</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <!-- Vị trí để chèn header -->
+
+    <main>
+      <div class="pay">
+        <div class="head-list-detail">
+          <h1>LIST OF TICKET</h1>
+          <h1>DETAIL OF TICKET</h1>
+        </div>
+        <div class="payment">
+          <div class="pl">
+            <ul class="menu">
+              <li
+                id="toggleElement"
+                class="toggle-element"
+                onclick="showTicketDetail(0)"
+              >
+                <div class="left">
+                  <img
+                    src="../assets/image/listOfticket_image/avatar.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="middle">
+                  <p class="namefilm">AVATAR: Dangerously</p>
+                  <div class="time">
+                    <p class="date">Date : 21/12/2024</p>
+                    <p class="hour">Time : 10:00 AM</p>
+                  </div>
+                  <p class="mseat">Seats : A1,B1</p>
+                </div>
+                <div class="right">></div>
+              </li>
+              <li
+                id="toggleElement"
+                class="toggle-element"
+                onclick="showTicketDetail(1)"
+              >
+                <div class="left">
+                  <img
+                    src="../assets/image/listOfticket_image/harry poter.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="middle">
+                  <p class="namefilm">Harry Potter và chiếc cốc lửa</p>
+                  <div class="time">
+                    <p class="date">Date : 21/12/2024</p>
+                    <p class="hour">Time : 10:00 AM</p>
+                  </div>
+                  <p class="mseat">Seats : A1,B1</p>
+                </div>
+
+                <div class="right">></div>
+              </li>
+              <li
+                id="toggleElement"
+                class="toggle-element"
+                onclick="showTicketDetail(2)"
+              >
+                <div class="left">
+                  <img
+                    src="../assets/image/listOfticket_image/songoku.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="middle">
+                  <p class="namefilm">Songoku multi univers</p>
+                  <div class="time">
+                    <p class="date">Date : 21/12/2024</p>
+                    <p class="hour">Time : 10:00 AM</p>
+                  </div>
+                  <p class="mseat">Seats : A1,B1</p>
+                </div>
+
+                <div class="right">></div>
+              </li>
+              <li
+                id="toggleElement"
+                class="toggle-element"
+                onclick="showTicketDetail(3)"
+              >
+                <div class="left">
+                  <img
+                    src="../assets/image/listOfticket_image/anhhoi.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="middle">
+                  <p class="namefilm">One Punch Man</p>
+                  <div class="time">
+                    <p class="date">Date : 21/12/2024</p>
+                    <p class="hour">Time : 10:00 AM</p>
+                  </div>
+                  <p class="mseat">Seats : A1,B1</p>
+                </div>
+
+                <div class="right">></div>
+              </li>
+              <li
+                id="toggleElement"
+                class="toggle-element"
+                onclick="showTicketDetail(4)"
+              >
+                <div class="left">
+                  <img
+                    src="../assets/image/listOfticket_image/doremon.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="middle">
+                  <p class="namefilm">Doraemon phiêu lưu ký</p>
+                  <div class="time">
+                    <p class="date">Date : 21/12/2024</p>
+                    <p class="hour">Time : 10:00 AM</p>
+                  </div>
+                  <p class="mseat">Seats : A1,B1</p>
+                </div>
+
+                <div class="right">></div>
+              </li>
+            </ul>
+          </div>
+          <div class="pr">
+            <div class="line">
+              <p>Order ID</p>
+              <p id="orderID">XXXXXXXXX</p>
+            </div>
+            <div class="line">
+              <span>Seats</span>
+              <p id="seats_buy">XX</p>
+            </div>
+            <div class="line">
+              <span>Date</span>
+              <p id="datetimeticket">XX/XX/XXXX</p>
+            </div>
+            <div class="line">
+              <span>Time</span>
+              <p id="time">XX:XX am</p>
+            </div>
+            <div class="line">
+              <span>Room</span>
+              <p id="Room">XXXXXXXXXX</p>
+            </div>
+            <div class="line">
+              <span>Price</span>
+              <p id="price">XXXXXXXXXX <span>VND</span></p>
+            </div>
+            <div class="line">
+              <span>Discount</span>
+              <p id="discount">XX%</p>
+            </div>
+            <div class="line thanh"></div>
+            <div class="line total">
+              <span>Total Price</span>
+              <p class="totalprice" id="totalPrice">
+                XXXXXXXX <span> VND</span>
+              </p>
+            </div>
+            <div class="line buytick">
+              <button
+                type="button"
+                onclick="resetDetail()"
+                id="showMessageButton"
+                class="buyticket"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--// thông báo -->
+        <!-- <div id="customMessage" class="hidden">
+          <div class="list_tt">
+            <p>You want to cancel movie ticket?</p>
+          </div>
+          <div class="list_tt">
+            <button id="closeMessageButton">Close</button>
+            <button id="acceptMessageButton">Accept</button>
+          </div>
+        </div> -->
+      </div>
+      <section class="detailOfticket"></section>
+    </main>
+    <div id="footer-placeholder">
+      <footer>
+        <p class="Copyright">
+          Copyright © 2022 TicketBooker. All rights reserved.
+        </p>
+        <div class="icon">
+          <a href="">
+            <img
+              src="/TKW-/assets/image/login_image/ph_instagram-logo.svg"
+              alt="insta"
+            />
+          </a>
+          <a href="">
+            <img
+              src="/TKW-/assets/image/login_image/ri_linkedin-box-fill.svg"
+              alt="linkd"
+            />
+          </a>
+          <a href="">
+            <img
+              src="/TKW-/assets/image/login_image/mdi_twitter.svg"
+              alt="twitter"
+            />
+          </a>
+        </div>
+        <div class="pt">
+          <a href="">Privacy Policy</a>
+          <a href="">Term of Use</a>
+        </div>
+      </footer>
+    </div>
+    <!-- Vị trí để chèn footer -->
+  </body>
+  <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/javascript/loadHeaderFooter.js"></script>
+  <script>
+    // Lắng nghe sự kiện click vào tất cả các phần tử có class "toggle-element"
+    document.querySelectorAll(".toggle-element").forEach(function (element) {
+      element.addEventListener("click", function () {
+        // Tự động loại bỏ class "active" khỏi tất cả các phần tử
+        document.querySelectorAll(".toggle-element").forEach(function (el) {
+          el.classList.remove("active");
+        });
+
+        // Thêm class "active" vào phần tử hiện tại
+        this.classList.add("active");
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const showButton = document.getElementById("showMessageButton");
+      const closeButton = document.getElementById("closeMessageButton");
+      const acceptButton = document.getElementById("acceptMessageButton");
+      const customMessage = document.getElementById("customMessage");
+
+      // Hiển thị thông báo với hiệu ứng
+      showButton.addEventListener("click", () => {
+        customMessage.classList.remove("hidden");
+        customMessage.classList.add("show");
+      });
+
+      // Ẩn thông báo với hiệu ứng
+      closeButton.addEventListener("click", () => {
+        customMessage.classList.remove("show");
+        customMessage.classList.add("hidden");
+      });
+
+      acceptButton.addEventListener("click", () => {
+        customMessage.classList.remove("show");
+        customMessage.classList.add("hidden");
+      });
+    });
+
+    // Fake ticket data
+    const tickets = [
+      {
+        orderID: "AVT123456",
+        seats: "A1, A2",
+        date: "25/12/2024",
+        time: "7:00 PM",
+        room: "Room 1",
+        price: "200,000",
+        discount: "10%",
+        totalPrice: "180,000",
+      },
+      {
+        orderID: "HP987654",
+        seats: "B1, B2",
+        date: "01/01/2025",
+        time: "8:00 PM",
+        room: "Room 2",
+        price: "300,000",
+        discount: "5%",
+        totalPrice: "285,000",
+      },
+      {
+        orderID: "SGK555555",
+        seats: "C1, C2",
+        date: "10/02/2025",
+        time: "9:00 PM",
+        room: "Room 3",
+        price: "250,000",
+        discount: "15%",
+        totalPrice: "212,500",
+      },
+      {
+        orderID: "OPM111111",
+        seats: "D1, D2",
+        date: "20/03/2025",
+        time: "6:00 PM",
+        room: "Room 4",
+        price: "150,000",
+        discount: "0%",
+        totalPrice: "150,000",
+      },
+      {
+        orderID: "DR999999",
+        seats: "E1, E2",
+        date: "05/04/2025",
+        time: "5:00 PM",
+        room: "Room 5",
+        price: "100,000",
+        discount: "20%",
+        totalPrice: "80,000",
+      },
+    ];
+
+    // Hiển thị chi tiết vé
+    function showTicketDetail(index) {
+      const ticket = tickets[index];
+      document.getElementById("orderID").textContent = ticket.orderID;
+      document.getElementById("seats_buy").textContent = ticket.seats;
+      document.getElementById("datetimeticket").textContent = ticket.date;
+      document.getElementById("time").textContent = ticket.time;
+      document.getElementById("Room").textContent = ticket.room;
+      document.getElementById("price").textContent = ticket.price + " VND";
+      document.getElementById("discount").textContent = ticket.discount;
+      document.getElementById("totalPrice").textContent =
+        ticket.totalPrice + " VND";
+
+      // Hiển thị div.pr
+      const prElement = document.querySelector(".pr");
+      prElement.classList.add("active");
+
+      // Tự động loại bỏ class "active" khỏi tất cả các phần tử
+      document.querySelectorAll(".toggle-element").forEach(function (el) {
+        el.classList.remove("active");
+      });
+
+      // Thêm class "active" vào phần tử hiện tại
+      document
+        .querySelectorAll(".toggle-element")
+        [index].classList.add("active");
+    }
+
+    // Reset chi tiết vé và ẩn div.pr
+    function resetDetail() {
+      document.getElementById("orderID").textContent = "XXXXXXXXX";
+      document.getElementById("seats_buy").textContent = "XX";
+      document.getElementById("datetimeticket").textContent = "XX/XX/XXXX";
+      document.getElementById("time").textContent = "XX:XX am";
+      document.getElementById("Room").textContent = "XXXXXXXXXX";
+      document.getElementById("price").textContent = "XXXXXXXXXX VND";
+      document.getElementById("discount").textContent = "XX%";
+      document.getElementById("totalPrice").textContent = "XXXXXXXX VND";
+
+      // Ẩn div.pr
+      const prElement = document.querySelector(".pr");
+      prElement.classList.remove("active");
+
+      // Loại bỏ class "active" khỏi tất cả các toggle-element
+      document.querySelectorAll(".toggle-element").forEach(function (el) {
+        el.classList.remove("active");
+      });
+    }
+  </script>
+</html>
