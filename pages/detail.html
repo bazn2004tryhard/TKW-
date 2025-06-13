@@ -109,43 +109,71 @@
 
 
                 </div>
-                <div class="dicrector">
-                    <p>Director</p>
-                    <div class="line"></div>
-                    <div class="list_director">
-                        <div class="dir">
-                            <img src="../assets/image/detail_imgae/director.png" alt="director" class="pic_director">
-                            <p class="name_director">James Gunn </p>
-                        </div>
-                        <div class="dir">
-                            <img src="/assets/image/detail_imgae/robert downey junioe.png" alt="director" class="pic_director">
-                            <p class="name_director">Robert Downey Jr. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="Actor">
-                    <p>Actor</p>
-                    <div class="line"></div>
-                    <div class="list_actor">
-                        <div class="act">
-                            <img src="../assets/image/detail_imgae/neymar.png" alt="actor" class="pic_actor">
-                            <p class="name_director">Neymar Junior</p>
-                        </div>
-                        <div class="act">
-                            <img src="../assets/image/detail_imgae/tom holland.png" alt="actor" class="pic_actor">
-                            <p class="name_director">Tom Holland</p>
-                        </div>
-                        <div class="act">
-                            <img src="../assets/image/detail_imgae/ronakldo.png" alt="actor" class="pic_actor">
-                            <p class="name_director">Cristiano Ronaldo</p>
-                        </div>
-                        <div class="act">
-                            <img src="../assets/image/detail_imgae/messi.png" alt="actor" class="pic_actor">
-                            <p class="name_director">Lionek Messi</p>
-                        </div>
+                <!-- DIRECTOR -->
+<div class="dicrector">
+  <p>Director</p>
+  <div class="line"></div>
+  <div class="list_director">
+    <div class="dir custom-tooltip">
+      <img src="../assets/image/detail_imgae/director.png" alt="director" class="pic_director">
+      <p class="name_director">James Gunn</p>
+      <div class="tooltip-content">
+        <p>Birth: August 5, 1966</p>
+        <p><strong>Known for:</strong> Guardians of the Galaxy</p>
+      </div>
+    </div>
+    <div class="dir custom-tooltip">
+      <img src="/assets/image/detail_imgae/robert downey junioe.png" alt="director" class="pic_director">
+      <p class="name_director">Robert Downey Jr.</p>
+      <div class="tooltip-content">
+        <p>Birth: April 4, 1965</p>
+        <p><strong>Known for:</strong> Iron Man, Sherlock Holmes</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-                    </div>
-                </div>
+<!-- ACTOR -->
+<div class="Actor">
+  <p>Actor</p>
+  <div class="line"></div>
+  <div class="list_actor">
+    <div class="act custom-tooltip">
+      <img src="../assets/image/detail_imgae/neymar.png" alt="actor" class="pic_actor">
+      <p class="name_director">Neymar Junior</p>
+      <div class="tooltip-content">
+        <p>Birth: February 5, 1992</p>
+        <p><strong>Known for:</strong> xXx: Return of Xander Cage (cameo)</p>
+      </div>
+    </div>
+    <div class="act custom-tooltip">
+      <img src="../assets/image/detail_imgae/tom holland.png" alt="actor" class="pic_actor">
+      <p class="name_director">Tom Holland</p>
+      <div class="tooltip-content">
+        <p>Birth: June 1, 1996</p>
+        <p><strong>Known for:</strong> Spider-Man in MCU</p>
+      </div>
+    </div>
+    <div class="act custom-tooltip">
+      <img src="../assets/image/detail_imgae/ronakldo.png" alt="actor" class="pic_actor">
+      <p class="name_director">Cristiano Ronaldo</p>
+      <div class="tooltip-content">
+        <p>Birth: February 5, 1985</p>
+        <p><strong>Known for:</strong> Global football icon, media appearances</p>
+      </div>
+    </div>
+    <div class="act custom-tooltip">
+      <img src="../assets/image/detail_imgae/messi.png" alt="actor" class="pic_actor">
+      <p class="name_director">Lionel Messi</p>
+      <div class="tooltip-content">
+        <p>Birth: June 24, 1987</p>
+        <p><strong>Known for:</strong> FIFA ambassador, football legend</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
                 <div class="descript_bottom">
                     <div class="thacamxuc">
                         <div class="like">
@@ -492,16 +520,22 @@
         // });
         // Lắng nghe sự kiện click vào tất cả các phần tử có class "toggle-element"
         document.querySelectorAll('.toggle-element').forEach(function (element) {
-            element.addEventListener('click', function () {
-                // Tự động loại bỏ class "active" khỏi tất cả các phần tử
-                document.querySelectorAll('.toggle-element').forEach(function (el) {
-                    el.classList.remove('active');
-                });
+  element.addEventListener('click', function () {
+    // Xóa class active + hiệu ứng cũ khỏi tất cả
+    document.querySelectorAll('.toggle-element').forEach(function (el) {
+      el.classList.remove('active', 'animate-payment');
+    });
 
-                // Thêm class "active" vào phần tử hiện tại
-                this.classList.add('active');
-            });
-        });
+    // Thêm class mới vào phần tử được chọn
+    this.classList.add('active', 'animate-payment');
+
+    // Dừng animation sau 10 giây
+    setTimeout(() => {
+      this.classList.remove('animate-payment');
+    }, 10000);
+  });
+});
+
 
         // xuwr lys su kien
         function submit_seats() {

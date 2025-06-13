@@ -1057,3 +1057,85 @@ main .seat_time .st_right button.subtime:active {
   text-decoration: none;
   color: white;
 }
+@keyframes floatUpDownInfinite {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.power_left {
+  animation: floatUpDownInfinite 4s ease-in-out infinite;
+  box-shadow: 0 0 30px 8px rgba(255, 204, 52, 0.7);
+  transition: box-shadow 0.5s ease-in-out;
+  border-radius: 16px;
+}
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Hiệu ứng animation + bóng */
+.payment .toggle-element.animate-payment {
+  animation: floatUpDown 2s ease-in-out infinite;
+  box-shadow: 0 0 30px 8px rgba(255, 204, 52, 0.7);
+  border-radius: 12px;
+}
+
+.custom-tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.custom-tooltip:hover {
+  transform: scale(1.08);
+  z-index: 10;
+}
+
+.custom-tooltip .tooltip-content {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  background-color: rgba(0, 0, 0, 0.95);
+  color: white;
+  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px 4px rgba(255, 204, 52, 0.7);
+  font-size: 0.9rem;
+  text-align: left;
+  white-space: normal;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.custom-tooltip:hover .tooltip-content {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tooltip-content p {
+  margin: 0;
+  line-height: 1.4;
+}
+.tooltip-content p:first-child {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.tooltip-content p:last-child {
+  font-size: 0.85rem;
+  margin-top: 4px;
+  color: #ccc;
+}
