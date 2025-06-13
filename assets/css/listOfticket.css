@@ -312,3 +312,23 @@ main {
   opacity: 1; /* Mờ dần vào */
   transform: translate(-50%, -50%) scale(1.1); /* Phóng to nhẹ khi xuất hiện */
 }
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Áp dụng chuyển động và đổ bóng chỉ khi chọn */
+.move-ticket {
+  animation: floatUpDown 2s ease-in-out infinite;
+}
+
+.shadow-active {
+  box-shadow: 0 0 15px 4px rgba(255, 204, 52, 0.6);
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease-in-out;
+}

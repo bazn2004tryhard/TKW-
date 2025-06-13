@@ -373,6 +373,18 @@
       document
         .querySelectorAll(".toggle-element")
         [index].classList.add("active");
+      // Thêm hiệu ứng animation + bóng đổ
+      const ticketElements = document.querySelectorAll(".toggle-element");
+      ticketElements.forEach((el) => {
+        el.classList.remove("move-ticket", "shadow-active");
+      });
+      const selectedTicket = ticketElements[index];
+      selectedTicket.classList.add("move-ticket", "shadow-active");
+
+      // Dừng animation sau 10 giây
+      setTimeout(() => {
+        selectedTicket.classList.remove("move-ticket", "shadow-active");
+      }, 10000);
     }
 
     // Reset chi tiết vé và ẩn div.pr
