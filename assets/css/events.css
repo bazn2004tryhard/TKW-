@@ -5,43 +5,82 @@
 .container_1{
       padding-top: 100px;
     }
-.card {
-      background-color: #1e1e1e;
-      color: white;
-      display: none;
+ a {
+      color: #0dcaf0;
+      text-decoration: none;
+    }
+a:hover {
+      text-decoration: underline;
+    }
+.section-title {
+      border-bottom: 2px solid #0dcaf0;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+.main-feature {
+      position: relative;
+      background-image: url('https://via.placeholder.com/800x400');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+.main-feature-text {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      padding: 1rem;
+    }
+.tag {
+      background-color: #0dcaf0;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      color: #000;
+      font-weight: bold;
+    }
+.sidebar {
+      background-color: #222;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+.post-card {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
       opacity: 0;
       transform: translateY(30px);
-      transition: all 0.6s ease;
+      transition: all 0.5s ease;
     }
-
-.card.visible {
+.post-card img {
+      width: 130px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+.post-card.visible {
       opacity: 1;
       transform: translateY(0);
     }
-
-.btn-outline-light {
-      border-color: #00bfff;
-      color: #00bfff;
+.category-list a {
+      display: block;
+      color: #ccc;
+      margin: 0.25rem 0;
     }
-
-.btn-outline-light:hover {
-      background-color: #00bfff;
-      color: black;
+.subscribe-box input {
+      margin-bottom: 0.5rem;
     }
-
-.zoom-on-hover img {
-      transition: transform 0.4s ease;
-    }
-
-.zoom-on-hover:hover img {
-      transform: scale(1.05);
-    }
-.btn-light {
-  background-color: #ffc107;
-  color: #000;
-  border: none;
+.event-page {
+  transition: all 0.5s ease;
 }
-.btn-light:hover {
-  background-color: #ffdd57;
+.pagination .active {
+  background-color: #333;
+  color: #fff;
+}
+.pagination button.active {
+  background-color: #ffffff;
   color: #000;
+  font-weight: bold;
 }
