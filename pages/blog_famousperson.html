@@ -1,344 +1,691 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog Famous Person</title>
-    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/css/blog_famousperson.css" />
-  </head>
 
-  <body class="bg-dark text-white">
-    <!-- Header -->
-    <div id="header-placeholder" class="sticky-top">
-      <header>
-        <nav
-          class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-light px-4"
-        >
-          <a class="navbar-brand" href="#">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Famous Person</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      --hover-transform: translateY(-5px);
+    }
+
+    body {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .navbar {
+      background: rgba(0, 0, 0, 0.9) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-brand .logo_icon {
+      height: 40px;
+      width: auto;
+      filter: brightness(1.2);
+    }
+
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: #667eea !important;
+      transform: translateY(-2px);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background: var(--primary-gradient);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .btn-outline-light {
+      border: 2px solid #667eea;
+      color: #667eea;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-light:hover {
+      background: var(--primary-gradient);
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-light {
+      background: var(--primary-gradient);
+      border: none;
+      color: white;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-light:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .hero-section {
+      background: var(--dark-gradient);
+      border-radius: 20px;
+      padding: 3rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="rgba(255,255,255,.1)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><rect width="100" height="20" fill="url(%23a)"/></svg>');
+      opacity: 0.1;
+    }
+
+    .hero-image {
+      border-radius: 15px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .hero-image:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .badge {
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      margin: 0.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .text-bg-success {
+      background: linear-gradient(45deg, #28a745, #20c997) !important;
+    }
+
+    .text-bg-info {
+      background: linear-gradient(45deg, #17a2b8, #6f42c1) !important;
+    }
+
+    .text-bg-warning {
+      background: linear-gradient(45deg, #ffc107, #fd7e14) !important;
+    }
+
+    .text-bg-danger {
+      background: linear-gradient(45deg, #dc3545, #e83e8c) !important;
+    }
+
+    .blog-card {
+      background: var(--dark-gradient) !important;
+      border: none;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: var(--card-shadow);
+      height: 100%;
+    }
+
+    .blog-card:hover {
+      transform: var(--hover-transform);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .blog-card .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      transition: all 0.3s ease;
+    }
+
+    .blog-card:hover .card-img-top {
+      transform: scale(1.05);
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    .card-text {
+      color: #b8b8b8;
+      line-height: 1.6;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--primary-gradient);
+      border-radius: 2px;
+    }
+
+    .newsletter-section {
+      background: var(--dark-gradient);
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: var(--card-shadow);
+      margin-top: 3rem;
+    }
+
+    .form-control {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #667eea;
+      box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+      color: #fff;
+    }
+
+    .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .btn-primary {
+      background: var(--primary-gradient);
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    .read-time {
+      color: #667eea;
+      font-weight: 600;
+    }
+
+    .date-text {
+      color: #b8b8b8;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive improvements */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 2rem 1.5rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .newsletter-section {
+        padding: 2rem 1.5rem;
+      }
+
+      .navbar-nav {
+        margin-top: 1rem;
+      }
+
+      .d-flex.me-auto {
+        margin-top: 1rem;
+        width: 100%;
+      }
+
+      .btn-outline-light,
+      .btn-light {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-section {
+        padding: 1.5rem 1rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .card-body {
+        padding: 1rem;
+      }
+
+      .newsletter-section {
+        padding: 1.5rem 1rem;
+      }
+    }
+
+    /* Animation keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    /* Loading animation for images */
+    .img-loading {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+    }
+
+    @keyframes loading {
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
+    }
+  </style>
+</head>
+
+<body class="text-white">
+  <!-- Header -->
+  <div id="header-placeholder" class="sticky-top">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark px-4">
+        <a class="navbar-brand" href="#">
+          <i class="fas fa-blog fa-2x text-primary"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html"><i class="fas fa-home me-2"></i>Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-user me-2"></i>About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-envelope me-2"></i>Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-question-circle me-2"></i>FAQ</a>
+            </li>
+          </ul>
+          <div class="d-flex flex-column flex-lg-row">
+            <a href="./signup.html" class="btn btn-outline-light me-lg-2 mb-2 mb-lg-0">
+              <i class="fas fa-user-plus me-2"></i>Sign up
+            </a>
+            <a href="./login.html" class="btn btn-light">
+              <i class="fas fa-sign-in-alt me-2"></i>Log In
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </div>
+
+  <main class="container py-5">
+    <!-- Hero Section -->
+    <section class="hero-section fade-in-up">
+      <h1 class="section-title">Cristiano Ronaldo</h1>
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <img
+            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            class="img-fluid hero-image" alt="Cristiano Ronaldo" />
+        </div>
+        <div class="col-lg-6">
+          <h3 class="fw-bold mb-3">Thông tin cá nhân</h3>
+          <p class="date-text mb-3"><i class="far fa-calendar-alt me-2"></i>12 July 2022</p>
+          <div class="mb-3">
+            <span class="badge text-bg-success">#cristianoronaldo</span>
+            <span class="badge text-bg-info">#cr7</span>
+            <span class="badge text-bg-warning">#portugal</span>
+          </div>
+          <p class="lead">
+            "CR7" chuyển hướng đến đây. Đối với các mục đích sử dụng khác, xem
+            Cristiano Ronaldo (định hướng) và CR7 (định hướng). Trong tên
+            tiếng Bồ Đào Nha này, họ đầu tiên hoặc họ mẹ là dos Santos và họ
+            thứ hai hoặc họ cha là Aveiro.
+          </p>
+          <p class="read-time"><i class="far fa-clock me-2"></i>5-7 minutes read</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portugal Achievements Section -->
+    <section class="mb-5 fade-in-up">
+      <h2 class="section-title">Portugal Achievements</h2>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="card blog-card">
             <img
-              src="../assets/image/login_image/login_logo.png"
-              alt=""
-              class="logo_icon"
-            />
-          </a>
-          <div class="collapse navbar-collapse">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="../index.html">Home</a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
-            </ul>
-            <div class="d-flex">
-              <a href="./signup.html" class="btn btn-outline-light me-2"
-                >Sign up</a
-              >
-              <a href="./login.html" class="btn btn-light">Log In</a>
+              src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              class="card-img-top" alt="Nations League" />
+            <div class="card-body">
+              <h5 class="card-title">Bồ Đào Nha vô địch Nations League</h5>
+              <div class="mb-3">
+                <span class="badge text-bg-success">#nationsleague</span>
+                <span class="badge text-bg-info">#portugal</span>
+                <span class="badge text-bg-danger">#spain</span>
+              </div>
+              <p class="card-text">
+                Sáng 10/6/2019, trận chung kết UEFA Nations League đầu tiên
+                trong lịch sử đã khép lại với thắng lợi 1-0 đầy kịch tính dành
+                cho đội bóng chủ nhà Bồ Đào Nha trước đội tuyển Hà Lan...
+              </p>
+              <div class="d-flex justify-content-between small mt-3">
+                <span class="read-time"><i class="far fa-clock me-1"></i>5-7 minutes read</span>
+                <span class="date-text">12 July 2022</span>
+              </div>
             </div>
           </div>
-        </nav>
-      </header>
-    </div>
+        </div>
 
-    <main class="container py-5">
-      <!-- Latest Section -->
-      <section class="latest-section mb-5">
-        <h2 class="fw-bold text-uppercase mb-4">Cristiano Ronaldo</h2>
-        <div class="row g-4">
-          <div class="col-lg-6">
+        <div class="col-lg-4 col-md-6">
+          <div class="card blog-card">
             <img
-              src="../assets/image/blog_famousperson_image/ảnh ronaldo.jpg"
-              class="img-fluid rounded"
-              alt="Main Blog"
-            />
-          </div>
-          <div class="col-lg-6">
-            <h3 class="fw-bold">Thông tin cá nhân</h3>
-            <p class="text-muted">12 July 2022</p>
-            <p>
-              <span class="badge text-bg-success"
-                >#cristianoronaldoronaldo</span
-              >
-              <span class="badge text-bg-info">#cr7</span>
-              <span class="badge text-bg-warning">#portugal</span>
-            </p>
-            <p>
-              "CR7" chuyển hướng đến đây. Đối với các mục đích sử dụng khác, xem
-              Cristiano Ronaldo (định hướng) và CR7 (định hướng) . Trong tên
-              tiếng Bồ Đào Nha này , họ đầu tiên hoặc họ mẹ là dos Santos và họ
-              thứ hai hoặc họ cha là Aveiro .
-            </p>
-            <p><i class="bi bi-clock"></i> 5-7 minutes read</p>
-          </div>
-        </div>
-        <div class="row mt-4 g-4">
-          <div class="col-md-4">
-            <div class="card blog-card bg-secondary text-white">
-              <img
-                src="../assets/image/blog_famousperson_image/nation19.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Bồ đào nha vô địch National Leage</h5>
-                <p>
-                  <span class="badge text-bg-success">#nationleage</span>
-                  <span class="badge text-bg-info">#portugal</span>
-                  <span class="badge text-bg-danger">#spain</span>
-                </p>
-                <p class="card-text">
-                  Sáng 10/6/2019, trận chung kết UEFA Nations League đầu tiên
-                  trong lịch sử đã khép lại với thắng lợi 1-0 đầy kịch tính dành
-                  cho đội bóng chủ nhà Bồ Đào Nha trước đội tuyển Hà Lan với
-                  nhiều cầu thủ trẻ trung, sung mãn. Goncalo Guedes (số 17) là
-                  cầu thủ ghi bàn thắng duy nhất của trận chung kết UEFA Nations
-                  League 2019 với cú sút hiểm hóc ở phút 60. "Kép phụ" Guedes
-                  tỏa sáng, nhưng sự góp công của danh thủ Cristiano Ronaldo
-                  trong suốt 90 phút trận thi đấu của trận chung kết và cả những
-                  trận đấu trước đó là không hề nhỏ. Ảnh: TTXVN phát
-                </p>
-                <div class="d-flex justify-content-between small">
-                  <span>5-7 minutes read</span>
-                  <span>12 July 2022</span>
-                </div>
+              src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              class="card-img-top" alt="Euro Championship" />
+            <div class="card-body">
+              <h5 class="card-title">Bồ Đào Nha vô địch Euro nhờ công lớn từ CLB cũ của Ronaldo</h5>
+              <div class="mb-3">
+                <span class="badge text-bg-success">#france</span>
+                <span class="badge text-bg-info">#portugal</span>
+                <span class="badge text-bg-danger">#euro</span>
               </div>
-            </div>
-          </div>
-          <!-- Repeat two more cards -->
-          <div class="col-md-4">
-            <div class="card blog-card bg-secondary text-white">
-              <img
-                src="../assets/image/blog_famousperson_image/euro.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">
-                  Bồ Đào Nha vô địch Euro nhờ công lớn từ CLB cũ của Ronaldo
-                </h5>
-                <p>
-                  <span class="badge text-bg-success">#France</span>
-                  <span class="badge text-bg-info">#Portugal</span>
-                  <span class="badge text-bg-danger">#Euro</span>
-                </p>
-                <p class="card-text">
-                  Tuyển Bồ Đào Nha sử dụng tất cả 14 cầu thủ trong trận chung
-                  kết thắng Pháp tại Stade de France hôm chủ nhật 10/7. Mười
-                  người trong số đó trưởng thành từ Academia Sporting – tên của
-                  Học viện đào tạo bóng đá trẻ của Sporting Lisbon. Những ngôi
-                  sao nổi bật của lò này là Cristiano Ronaldo, Nani, Ricardo
-                  Quaresma, và thủ thành hay nhất Euro 2016 Rui Patricio.
-                </p>
-                <div class="d-flex justify-content-between small">
-                  <span>5-7 minutes read</span>
-                  <span>12 July 2022</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card blog-card bg-secondary text-white">
-              <img
-                src="../assets/image/blog_famousperson_image/nation25.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">
-                  Hạ Tây Ban Nha, Bồ Đào Nha giành chức vô địch Nations League
-                </h5>
-                <p>
-                  <span class="badge text-bg-success">#Spain</span>
-                  <span class="badge text-bg-info">#Portugal</span>
-                  <span class="badge text-bg-danger">#CR7</span>
-                </p>
-                <p class="card-text">
-                  Đội tuyển Bồ Đào Nha đã trở thành nhà vô địch Nations League
-                  2024-25 sau chiến thắng kịch tính trước Tây Ban Nha ở chung
-                  kết tại Allianz Arena. Bồ Đào Nha hòa 2-2 trong 120 phút thi
-                  đấu kịch tính trước khi đánh bại nhà vô địch châu Âu 5-3 ở
-                  loạt sút luân lưu may rủi. Cristiano Ronaldo tiếp tục tỏa sáng
-                  để góp công lớn giúp Bồ Đào Nha bước lên bục vinh danh ở giải
-                  đấu năm nay. Ronaldo chính là người đã ghi bàn gỡ hòa 2-2 ở
-                  phút 61 sau khi Tây Ban Nha hai lần ghi bàn vượt lên dẫn trước
-                  nhờ công Martín Zubimendi và Mikel Oyarzabal. Bàn thắng còn
-                  lại của trận đấu này thuộc về Nuno Mendes. Tuy nhiên, CR7 đã
-                  phải rời sân ở phút 88 và không thể sát cánh cùng đồng đội
-                  trong phần còn lại của trận đấu do gặp phải chấn thương. Đánh
-                  bại Tây Ban Nha, Bồ Đào Nha lần thứ hai trong lịch sử giành
-                  được chức vô địch Nations League sau khi từng làm được điều
-                  tương tự ở mùa giải 2018-19, qua đó trở thành đội bóng có
-                  nhiều danh hiệu nhất giải đấu.
-                </p>
-                <div class="d-flex justify-content-between small">
-                  <span>5-7 minutes read</span>
-                  <span>12 July 2022</span>
-                </div>
+              <p class="card-text">
+                Tuyển Bồ Đào Nha sử dụng tất cả 14 cầu thủ trong trận chung
+                kết thắng Pháp tại Stade de France. Mười người trong số đó
+                trưởng thành từ Academia Sporting...
+              </p>
+              <div class="d-flex justify-content-between small mt-3">
+                <span class="read-time"><i class="far fa-clock me-1"></i>5-7 minutes read</span>
+                <span class="date-text">12 July 2022</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- JavaScript Section -->
-      <section class="javascript-section mb-5">
-        <h2 class="fw-bold text-uppercase mb-4">JavaScript</h2>
-        <div class="row g-4 align-items-center">
-          <div class="col-md-6">
-            <h3 class="fw-bold">Typescript in 21 steps, best in-depth guide</h3>
-            <p class="text-muted">12 July 2022</p>
-            <p>
-              <span class="badge text-bg-success">#javascript</span>
-              <span class="badge text-bg-info">#nextjs</span>
-              <span class="badge text-bg-warning">#stripe</span>
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-              ullamcorper accumsan nisl...
-            </p>
-            <p><i class="bi bi-clock"></i> 5-7 minutes read</p>
-          </div>
-          <div class="col-md-6">
+        <div class="col-lg-4 col-md-6">
+          <div class="card blog-card">
             <img
-              src="../assets/image/blog_famousperson_image/ảnh ngang cr7.jpg"
-              class="img-fluid rounded"
-              alt="JS Blog"
-            />
-          </div>
-        </div>
-        <div class="row mt-4 g-4">
-          <!-- 3 cards like above -->
-          <!-- You can copy the previous 3 .card blocks here -->
-          <div class="col-md-4">
-            <div class="card blog-card bg-secondary text-white">
-              <img
-                src="../assets/image/blog_famousperson_image/nation25.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Javascript TDD with VITE and NextJS</h5>
-                <p>
-                  <span class="badge text-bg-success">#javascript</span>
-                  <span class="badge text-bg-info">#nextjs</span>
-                  <span class="badge text-bg-danger">#vite</span>
-                </p>
-                <p class="card-text">Lorem ipsum dolor sit amet...</p>
-                <div class="d-flex justify-content-between small">
-                  <span>5-7 minutes read</span>
-                  <span>12 July 2022</span>
-                </div>
+              src="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              class="card-img-top" alt="Spain vs Portugal" />
+            <div class="card-body">
+              <h5 class="card-title">Hạ Tây Ban Nha, Bồ Đào Nha giành chức vô địch Nations League</h5>
+              <div class="mb-3">
+                <span class="badge text-bg-success">#spain</span>
+                <span class="badge text-bg-info">#portugal</span>
+                <span class="badge text-bg-danger">#cr7</span>
               </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card blog-card bg-secondary text-white">
-              <img
-                src="../assets/image/blog_famousperson_image/euro.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Javascript TDD with VITE and NextJS</h5>
-                <p>
-                  <span class="badge text-bg-success">#javascript</span>
-                  <span class="badge text-bg-info">#nextjs</span>
-                  <span class="badge text-bg-danger">#vite</span>
-                </p>
-                <p class="card-text">Lorem ipsum dolor sit amet...</p>
-                <div class="d-flex justify-content-between small">
-                  <span>5-7 minutes read</span>
-                  <span>12 July 2022</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card blog-card bg-secondary text-white">
-              <img
-                src="../assets/image/blog_famousperson_image/nation19.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Javascript TDD with VITE and NextJS</h5>
-                <p>
-                  <span class="badge text-bg-success">#javascript</span>
-                  <span class="badge text-bg-info">#nextjs</span>
-                  <span class="badge text-bg-danger">#vite</span>
-                </p>
-                <p class="card-text">Lorem ipsum dolor sit amet...</p>
-                <div class="d-flex justify-content-between small">
-                  <span>5-7 minutes read</span>
-                  <span>12 July 2022</span>
-                </div>
+              <p class="card-text">
+                Đội tuyển Bồ Đào Nha đã trở thành nhà vô địch Nations League
+                2024-25 sau chiến thắng kịch tính trước Tây Ban Nha ở chung
+                kết tại Allianz Arena...
+              </p>
+              <div class="d-flex justify-content-between small mt-3">
+                <span class="read-time"><i class="far fa-clock me-1"></i>5-7 minutes read</span>
+                <span class="date-text">12 July 2022</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Newsletter -->
-      <section class="newsletter-section">
-        <h2 class="fw-bold text-uppercase mb-4">Newsletter</h2>
-        <div class="row">
-          <div class="col-md-6">
-            <p>
-              Are you passionate about programming and always looking for ways
-              to learn more?
-            </p>
-            <p>
-              If so, our programming blog newsletter is the perfect fit for you!
-            </p>
-            <p>
-              With our newsletter, you’ll receive regular updates and exclusive
-              content.
-            </p>
+    <!-- Career Highlights Section -->
+    <section class="mb-5 fade-in-up">
+      <h2 class="section-title">Career Highlights</h2>
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6">
+          <h3 class="fw-bold mb-3">From Sporting to Global Superstar</h3>
+          <p class="date-text mb-3"><i class="far fa-calendar-alt me-2"></i>Career Overview</p>
+          <div class="mb-3">
+            <span class="badge text-bg-success">#manchester</span>
+            <span class="badge text-bg-info">#realmadrid</span>
+            <span class="badge text-bg-warning">#juventus</span>
           </div>
-          <div class="col-md-6">
-            <p>Join now – sign up for our newsletter today!</p>
-            <div class="input-group mt-3">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Register newsletter"
-              />
-              <button class="btn btn-primary">Submit</button>
+          <p>
+            From his early days at Sporting Lisbon to becoming one of the greatest footballers
+            of all time, Cristiano Ronaldo's journey has been nothing short of extraordinary.
+            His dedication, skill, and relentless pursuit of excellence have made him a global icon.
+          </p>
+          <p class="read-time"><i class="far fa-clock me-2"></i>5-7 minutes read</p>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            class="img-fluid hero-image" alt="Ronaldo Career" />
+        </div>
+      </div>
+
+      <div class="row mt-4 g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="card blog-card">
+            <img
+              src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              class="card-img-top" alt="Manchester United" />
+            <div class="card-body">
+              <h5 class="card-title">Manchester United Era (2003-2009)</h5>
+              <div class="mb-3">
+                <span class="badge text-bg-success">#manchester</span>
+                <span class="badge text-bg-info">#premierleague</span>
+                <span class="badge text-bg-danger">#champions</span>
+              </div>
+              <p class="card-text">
+                Ronaldo's breakthrough at Manchester United under Sir Alex Ferguson,
+                where he won his first Ballon d'Or and established himself as a world-class player.
+              </p>
+              <div class="d-flex justify-content-between small mt-3">
+                <span class="read-time"><i class="far fa-clock me-1"></i>8-10 minutes read</span>
+                <span class="date-text">Career Timeline</span>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-    </main>
 
-    <!-- Footer -->
-    <div id="footer-placeholder">
-      <footer class="bg-dark text-center text-white py-4">
-        <p class="mb-2">Copyright © 2022 TicketBooker. All rights reserved.</p>
-        <div class="mb-2">
-          <a href="#"
-            ><img
-              src="/TKW-/assets/image/login_image/ph_instagram-logo.svg"
-              alt="insta"
-          /></a>
-          <a href="#"
-            ><img
-              src="/TKW-/assets/image/login_image/ri_linkedin-box-fill.svg"
-              alt="linkd"
-          /></a>
-          <a href="#"
-            ><img
-              src="/TKW-/assets/image/login_image/mdi_twitter.svg"
-              alt="twitter"
-          /></a>
+        <div class="col-lg-4 col-md-6">
+          <div class="card blog-card">
+            <img
+              src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              class="card-img-top" alt="Real Madrid" />
+            <div class="card-body">
+              <h5 class="card-title">Real Madrid Legacy (2009-2018)</h5>
+              <div class="mb-3">
+                <span class="badge text-bg-success">#realmadrid</span>
+                <span class="badge text-bg-info">#laliga</span>
+                <span class="badge text-bg-danger">#ucl</span>
+              </div>
+              <p class="card-text">
+                The galáctico era where Ronaldo became Real Madrid's all-time top scorer
+                and won four Champions League titles, cementing his legendary status.
+              </p>
+              <div class="d-flex justify-content-between small mt-3">
+                <span class="read-time"><i class="far fa-clock me-1"></i>12-15 minutes read</span>
+                <span class="date-text">Career Timeline</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <a href="#" class="text-white me-3">Privacy Policy</a>
-          <a href="#" class="text-white">Terms of Use</a>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card blog-card">
+            <img
+              src="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              class="card-img-top" alt="Juventus" />
+            <div class="card-body">
+              <h5 class="card-title">Juventus & Beyond (2018-Present)</h5>
+              <div class="mb-3">
+                <span class="badge text-bg-success">#juventus</span>
+                <span class="badge text-bg-info">#seriea</span>
+                <span class="badge text-bg-warning">#alnassr</span>
+              </div>
+              <p class="card-text">
+                Continuing to break records and defy age, Ronaldo's recent chapters
+                in Italy and Saudi Arabia showcase his enduring excellence and global appeal.
+              </p>
+              <div class="d-flex justify-content-between small mt-3">
+                <span class="read-time"><i class="far fa-clock me-1"></i>6-8 minutes read</span>
+                <span class="date-text">Recent Updates</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </footer>
-    </div>
-    <script src="../assets/javascript/loadHeaderFooter.js"></script>
-  </body>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section fade-in-up">
+      <h2 class="section-title">Stay Updated</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h4 class="fw-bold mb-3">Never Miss a Story</h4>
+          <p class="mb-3">
+            Are you passionate about football and always looking for the latest updates
+            on your favorite players and teams?
+          </p>
+          <p class="mb-3">
+            If so, our sports blog newsletter is the perfect fit for you!
+          </p>
+          <p>
+            With our newsletter, you'll receive regular updates, exclusive content,
+            and insider insights from the world of football.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h5 class="fw-bold mb-3">
+            <i class="fas fa-envelope me-2 text-primary"></i>
+            Join our community today!
+          </h5>
+          <div class="input-group mt-3">
+            <input type="email" class="form-control" placeholder="Enter your email address" />
+            <button class="btn btn-primary">
+              <i class="fas fa-paper-plane me-2"></i>Subscribe
+            </button>
+          </div>
+          <small class="text-muted mt-2 d-block">
+            <i class="fas fa-shield-alt me-1"></i>
+            We respect your privacy. Unsubscribe at any time.
+          </small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Add smooth scrolling animation on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      const elements = document.querySelectorAll('.fade-in-up');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      });
+
+      elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
+      });
+
+      // Add loading effect to images
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        img.addEventListener('load', function () {
+          this.classList.remove('img-loading');
+        });
+        if (!img.complete) {
+          img.classList.add('img-loading');
+        }
+      });
+    });
+
+    // Add form validation
+    document.querySelector('.input-group button').addEventListener('click', function (e) {
+      const email = document.querySelector('.input-group input').value;
+      if (!email || !email.includes('@')) {
+        e.preventDefault();
+        alert('Please enter a valid email address.');
+        return;
+      }
+      alert('Thank you for subscribing! You will receive updates soon.');
+    });
+  </script>
+</body>
+
 </html>
