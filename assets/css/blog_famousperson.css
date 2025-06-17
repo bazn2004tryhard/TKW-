@@ -1,225 +1,342 @@
-/* blog_famousperson.css */
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --hover-transform: translateY(-5px);
+}
 
 body {
-  font-family: "Roboto", sans-serif;
-  background: var(--Background---Dark, #000);
-  color: #fff;
-  margin: 0;
-  padding: 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h2,
-h3,
-h5 {
-  color: #fff;
+.navbar {
+  background: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 }
 
-h2.section-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #fff;
-  display: inline-block;
+.navbar-brand .logo_icon {
+  height: 40px;
+  width: auto;
+  filter: brightness(1.2);
 }
 
-.latest-section,
-.js-section,
-.newsletter-section {
-  padding: 80px 0;
+.nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-.featured-post .card {
-  background-color: transparent;
-  border: none;
-  color: #fff;
+.nav-link:hover {
+  color: #667eea !important;
+  transform: translateY(-2px);
 }
 
-.featured-post .card-title {
-  font-size: 1.75rem;
-  font-weight: bold;
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background: var(--primary-gradient);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 
-.featured-post .card-text {
-  font-size: 0.95rem;
-  color: #ccc;
-  line-height: 1.6;
+.nav-link:hover::after {
+  width: 100%;
 }
 
-.tags span {
-  font-size: 0.8rem;
+.btn-outline-light {
+  border: 2px solid #667eea;
+  color: #667eea;
   font-weight: 600;
-  margin-right: 10px;
+  transition: all 0.3s ease;
 }
 
-.post-meta {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.8rem;
-  color: #aaa;
-  margin-top: 10px;
+.btn-outline-light:hover {
+  background: var(--primary-gradient);
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
-.card.blog-card,
-.latest-section .card {
-  background-color: #111;
+.btn-light {
+  background: var(--primary-gradient);
   border: none;
-  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.hero-section {
+  background: var(--dark-gradient);
+  border-radius: 20px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--card-shadow);
+  position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 114px;
 }
 
-.card.blog-card:hover,
-.latest-section .card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 0 30px rgba(255, 204, 52, 0.6);
-  z-index: 2;
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="rgba(255,255,255,.1)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><rect width="100" height="20" fill="url(%23a)"/></svg>');
+  opacity: 0.1;
 }
 
-.card.blog-card img,
-.latest-section .card-img-top {
-  border-radius: 30px;
-  height: 250px;
+.hero-image {
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
   object-fit: cover;
-  border-bottom: 4px solid #fcc434;
-  transition: transform 0.3s ease;
+  height: 300px;
 }
 
-.card.blog-card:hover img,
-.latest-section .card:hover .card-img-top {
+.hero-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  margin: 0.2rem;
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.text-bg-success {
+  background: linear-gradient(45deg, #28a745, #20c997) !important;
+}
+
+.text-bg-info {
+  background: linear-gradient(45deg, #17a2b8, #6f42c1) !important;
+}
+
+.text-bg-warning {
+  background: linear-gradient(45deg, #ffc107, #fd7e14) !important;
+}
+
+.text-bg-danger {
+  background: linear-gradient(45deg, #dc3545, #e83e8c) !important;
+}
+
+.blog-card {
+  background: var(--dark-gradient) !important;
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: var(--card-shadow);
+  height: 100%;
+}
+
+.blog-card:hover {
+  transform: var(--hover-transform);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.blog-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.blog-card:hover .card-img-top {
   transform: scale(1.05);
 }
 
-.card-body h5 {
-  font-size: 1rem;
-  font-weight: bold;
+.card-body {
+  padding: 1.5rem;
 }
 
-.card-body p {
-  font-size: 0.85rem;
-  color: #ccc;
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff;
+  line-height: 1.4;
 }
 
-.card-footer,
-.latest-section .small {
-  font-size: 0.8rem;
-  color: #aaa;
-  display: flex;
-  justify-content: space-between;
+.card-text {
+  color: #b8b8b8;
+  line-height: 1.6;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--primary-gradient);
+  border-radius: 2px;
 }
 
 .newsletter-section {
-  background-color: #0f0f1f;
-  padding: 80px 0;
+  background: var(--dark-gradient);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: var(--card-shadow);
+  margin-top: 3rem;
 }
 
-.newsletter-section h2 {
-  font-weight: bold;
+.form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
   color: #fff;
 }
 
-.newsletter-section p {
-  color: #ccc;
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-primary {
+  background: var(--primary-gradient);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.read-time {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.date-text {
+  color: #b8b8b8;
   font-size: 0.9rem;
 }
 
-.input-group .form-control {
-  background-color: #1a1a2e;
-  color: #fff;
-  border: none;
-}
-
-.input-group .form-control:focus {
-  box-shadow: none;
-}
-
-.input-group .btn {
-  background-color: #3b5bff;
-  color: #fff;
-  border: none;
-  transition: background-color 0.3s ease;
-}
-
-.input-group .btn:hover {
-  background-color: #1a3cff;
-}
-
-/* Featured image in Ronaldo info block */
-.latest-section .row > .col-lg-6:first-child img {
-  width: 100%;
-  height: 100%;
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-/* Right-side content (info block) styling */
-.latest-section .row > .col-lg-6:last-child {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: linear-gradient(
-    135deg,
-    rgba(26, 26, 26, 0.9),
-    rgba(34, 34, 34, 0.9)
-  );
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 0 25px rgba(255, 204, 52, 0.15);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.latest-section .row > .col-lg-6:last-child h3 {
-  font-size: 1.75rem;
-  margin-bottom: 20px;
-}
-
-.latest-section .row > .col-lg-6:last-child p {
-  font-size: 1rem;
-  color: #e0e0e0;
-  line-height: 1.8;
-}
-
-.latest-section .row > .col-lg-6:last-child .badge {
-  font-size: 0.85rem;
-  padding: 0.5em 1em;
-  margin-right: 8px;
-  font-weight: 600;
-  border-radius: 20px;
-}
-
-/* Responsive tweaks */
+/* Responsive improvements */
 @media (max-width: 768px) {
-  .featured-post .card-body {
-    text-align: center;
-  }
-
-  .featured-post .card-text {
-    font-size: 0.85rem;
+  .hero-section {
+    padding: 2rem 1.5rem;
   }
 
   .section-title {
     font-size: 2rem;
   }
 
-  .latest-section {
-    padding: 20px 10px;
+  .newsletter-section {
+    padding: 2rem 1.5rem;
   }
 
-  .latest-section .card-img-top {
-    height: 180px;
+  .navbar-nav {
+    margin-top: 1rem;
   }
 
-  .latest-section .row > .col-lg-6:first-child img {
-    max-height: 250px;
+  .d-flex.me-auto {
+    margin-top: 1rem;
+    width: 100%;
   }
 
-  .latest-section .row > .col-lg-6:last-child {
-    padding: 20px 15px;
+  .btn-outline-light,
+  .btn-light {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    padding: 1.5rem 1rem;
   }
 
-  .latest-section .row > .col-lg-6:last-child h3 {
-    font-size: 1.3rem;
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .newsletter-section {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Loading animation for images */
+.img-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
   }
 }
