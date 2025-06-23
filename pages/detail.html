@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/css/detail.css">
     <link rel="stylesheet" href="../assets/css/header.css" />
     <link rel="stylesheet" href="../assets/css/footer.css">
-    
+
     <title>Chi tiết phim và đặt vé</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
@@ -17,35 +17,7 @@
 </head>
 
 <body>
-    <div id="header-placeholder" class="sticky-top">
-        <header>
-        <nav>
-            <img
-            src="../assets/image/login_image/login_logo.png"
-            alt=""
-            class="logo_icon"
-            />
-            <ul class="menu">
-            <li>
-                <a href="../index.html">Home</a>
-            </li>
-            <li>
-                <a href="">About</a>
-            </li>
-            <li>
-                <a href="">Contact</a>
-            </li>
-            <li>
-                <a href="">FAQ</a>
-            </li>
-            </ul>
-            <div class="login_up">
-            <a href="./signup.html" class="signup">Sign up</a>
-            <a href="./login.html" class="login">Log In</a>
-            </div>
-        </nav>
-        </header>
-    </div>
+    <div id="header-placeholder" class="sticky-top"></div>
     <!-- Vị trí để chèn header -->
 
     <main>
@@ -81,8 +53,9 @@
 
                             <input type="radio" id="star1" name="rating_input" value="1">
                             <label for="star1">★</label>
-                          </div>
-                        <button type="button" class="readnews"><img src="/assets/image/detail_imgae/readnewa poligon.png" alt=""> Read news</button>
+                        </div>
+                        <button type="button" class="readnews"><img
+                                src="/assets/image/detail_imgae/readnewa poligon.png" alt=""> <a href="../pages/tintuc.html">Read news</a></button>
                     </div>
                 </div>
             </div>
@@ -109,43 +82,71 @@
 
 
                 </div>
-                <div class="dicrector">
-                    <p>Director</p>
-                    <div class="line"></div>
-                    <div class="list_director">
-                        <div class="dir">
-                            <img src="../assets/image/detail_imgae/director.png" alt="director" class="pic_director">
-                            <p class="name_director">James Gunn </p>
-                        </div>
-                        <div class="dir">
-                            <img src="/assets/image/detail_imgae/robert downey junioe.png" alt="director" class="pic_director">
-                            <p class="name_director">Robert Downey Jr. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="Actor">
-                    <p>Actor</p>
-                    <div class="line"></div>
-                    <div class="list_actor">
-                        <div class="act">
-                            <img src="../assets/image/detail_imgae/neymar.png" alt="actor" class="pic_actor">
-                            <p class="name_director">Neymar Junior</p>
-                        </div>
-                        <div class="act">
-                            <img src="../assets/image/detail_imgae/tom holland.png" alt="actor" class="pic_actor">
-                            <p class="name_director">Tom Holland</p>
-                        </div>
-                        <div class="act">
-                            <img src="../assets/image/detail_imgae/ronakldo.png" alt="actor" class="pic_actor">
-                            <p class="name_director">Cristiano Ronaldo</p>
-                        </div>
-                        <div class="act">
-                            <img src="../assets/image/detail_imgae/messi.png" alt="actor" class="pic_actor">
-                            <p class="name_director">Lionek Messi</p>
-                        </div>
+                <!-- DIRECTOR -->
+<div class="dicrector">
+  <p>Director</p>
+  <div class="line"></div>
+  <div class="list_director">
+    <div class="dir custom-tooltip">
+      <img src="../assets/image/detail_imgae/director.png" alt="director" class="pic_director">
+      <p class="name_director">James Gunn</p>
+      <div class="tooltip-content">
+        <p>Birth: August 5, 1966</p>
+        <p><strong>Known for:</strong> Guardians of the Galaxy</p>
+      </div>
+    </div>
+    <div class="dir custom-tooltip">
+      <img src="/assets/image/detail_imgae/robert downey junioe.png" alt="director" class="pic_director">
+      <p class="name_director">Robert Downey Jr.</p>
+      <div class="tooltip-content">
+        <p>Birth: April 4, 1965</p>
+        <p><strong>Known for:</strong> Iron Man, Sherlock Holmes</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-                    </div>
-                </div>
+<!-- ACTOR -->
+<div class="Actor">
+  <p>Actor</p>
+  <div class="line"></div>
+  <div class="list_actor">
+    <div class="act custom-tooltip">
+      <img src="../assets/image/detail_imgae/neymar.png" alt="actor" class="pic_actor">
+      <p class="name_director">Neymar Junior</p>
+      <div class="tooltip-content">
+        <p>Birth: February 5, 1992</p>
+        <p><strong>Known for:</strong> xXx: Return of Xander Cage (cameo)</p>
+      </div>
+    </div>
+    <div class="act custom-tooltip">
+      <img src="../assets/image/detail_imgae/tom holland.png" alt="actor" class="pic_actor">
+      <p class="name_director">Tom Holland</p>
+      <div class="tooltip-content">
+        <p>Birth: June 1, 1996</p>
+        <p><strong>Known for:</strong> Spider-Man in MCU</p>
+      </div>
+    </div>
+    <div class="act custom-tooltip">
+      <img src="../assets/image/detail_imgae/ronakldo.png" alt="actor" class="pic_actor">
+      <p class="name_director"><a href="../pages/blog_famousperson.html">Cristiano Ronaldo</a></p>
+      <div class="tooltip-content">
+        <p>Birth: February 5, 1985</p>
+        <p><strong>Known for:</strong> Global football icon, media appearances</p>
+      </div>
+    </div>
+    <div class="act custom-tooltip">
+      <img src="../assets/image/detail_imgae/messi.png" alt="actor" class="pic_actor">
+      <p class="name_director">Lionel Messi</p>
+      <div class="tooltip-content">
+        <p>Birth: June 24, 1987</p>
+        <p><strong>Known for:</strong> FIFA ambassador, football legend</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
                 <div class="descript_bottom">
                     <div class="thacamxuc">
                         <div class="like">
@@ -172,7 +173,8 @@
                     </div>
                     <div class="booking_trailer">
                         <button type="button" class="booking"><a href="#seattime-top">Booking</a></button>
-                        <button type="button" class="trailer"><img src="/assets/image/detail_imgae/trailer poligon.png" alt=""> Trailer</button>
+                        <button type="button" class="trailer"><img src="/assets/image/detail_imgae/trailer poligon.png"
+                                alt=""> Trailer</button>
                     </div>
                 </div>
             </div>
@@ -362,34 +364,7 @@
         </div>
 
     </main>
-    <div id="footer-placeholder">
-        <footer>
-        <p class="Copyright">
-            Copyright © 2022 TicketBooker. All rights reserved.
-        </p>
-        <div class="icon">
-            <a href="">
-            <img
-                src="/TKW-/assets/image/login_image/ph_instagram-logo.svg"
-                alt="insta"
-            />
-            </a>
-            <a href="">
-            <img
-                src="/TKW-/assets/image/login_image/ri_linkedin-box-fill.svg"
-                alt="linkd"
-            />
-            </a>
-            <a href="">
-            <img src="/TKW-/assets/image/login_image/mdi_twitter.svg" alt="twitter" />
-            </a>
-        </div>
-        <div class="pt">
-            <a href="">Privacy Policy</a>
-            <a href="">Term of Use</a>
-        </div>
-        </footer>
-    </div>
+    <div id="footer-placeholder"></div>
     <!-- Vị trí để chèn footer -->
     <script src="../assets/javascript/loadHeaderFooter.js"></script>
     <script>
@@ -492,16 +467,22 @@
         // });
         // Lắng nghe sự kiện click vào tất cả các phần tử có class "toggle-element"
         document.querySelectorAll('.toggle-element').forEach(function (element) {
-            element.addEventListener('click', function () {
-                // Tự động loại bỏ class "active" khỏi tất cả các phần tử
-                document.querySelectorAll('.toggle-element').forEach(function (el) {
-                    el.classList.remove('active');
-                });
+  element.addEventListener('click', function () {
+    // Xóa class active + hiệu ứng cũ khỏi tất cả
+    document.querySelectorAll('.toggle-element').forEach(function (el) {
+      el.classList.remove('active', 'animate-payment');
+    });
 
-                // Thêm class "active" vào phần tử hiện tại
-                this.classList.add('active');
-            });
-        });
+    // Thêm class mới vào phần tử được chọn
+    this.classList.add('active', 'animate-payment');
+
+    // Dừng animation sau 10 giây
+    setTimeout(() => {
+      this.classList.remove('animate-payment');
+    }, 10000);
+  });
+});
+
 
         // xuwr lys su kien
         function submit_seats() {

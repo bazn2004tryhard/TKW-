@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Events</title>
+    <script src="../assets/javascript/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/admin_event.css" />
+  </head>
+  <body>
+    <div id="header-placeholder" class="sticky-top"></div>
+    <!-- Vị trí để chèn header -->
+    <div class="container py-5">
+      <h2 class="text-center mb-4">🎬 Quản trị Sự kiện Phim - Hà Nội</h2>
+
+      <table class="table table-dark table-bordered align-middle text-center">
+        <thead class="table-secondary text-dark">
+          <tr>
+            <th>#</th>
+            <th>Tên phim</th>
+            <th>Thể loại</th>
+            <th>Thời gian</th>
+            <th>Địa điểm</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody id="film-table-body"></tbody>
+      </table>
+
+      <h4 class="mt-5 mb-3">➕ Thêm phim mới</h4>
+      <form id="add-film-form" class="row g-3">
+        <div class="col-md-6">
+          <input
+            type="text"
+            class="form-control"
+            id="film-title"
+            placeholder="Tên phim"
+            required
+          />
+        </div>
+        <div class="col-md-6">
+          <input
+            type="text"
+            class="form-control"
+            id="film-genre"
+            placeholder="Thể loại"
+            required
+          />
+        </div>
+        <div class="col-md-6">
+          <input
+            type="datetime-local"
+            class="form-control"
+            id="film-time"
+            required
+          />
+        </div>
+        <div class="col-md-6">
+          <input
+            type="text"
+            class="form-control"
+            id="film-location"
+            placeholder="Địa điểm"
+            required
+          />
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-light">Thêm sự kiện</button>
+        </div>
+      </form>
+    </div>
+    <div id="footer-placeholder"></div>
+    <!-- Vị trí để chèn footer -->
+    <script src="../assets/javascript/loadHeaderFooter.js"></script>
+    <script>
+      let films = [
+        {
+          title: "Doraemon: Nobita và vùng đất lý tưởng",
+          genre: "Hoạt hình",
+          time: "2025-05-29T16:00",
+          location: "CGV Aeon Mall Long Biên",
+        },
+        {
+          title: "Conan: Tàu ngầm sắt màu đen",
+          genre: "Trinh thám",
+          time: "2025-05-30T18:30",
+          location: "Lotte Cinema Hà Nội Center Point",
+        },
+      ];
+
+      function renderTable() {
+        const tbody = $("#film-table-body");
+        tbody.empty();
+        films.forEach((film, index) => {
+          tbody.append(`
+        <tr>
+          <td>${index + 1}</td>
+          <td>${film.title}</td>
+          <td>${film.genre}</td>
+          <td>${new Date(film.time).toLocaleString("vi-VN")}</td>
+          <td>${film.location}</td>
+          <td>
+            <button class="btn btn-sm btn-light me-2 edit-btn" data-index="${index}">✏️</button>
+            <button class="btn btn-sm btn-danger delete-btn" data-index="${index}">🗑️</button>
+          </td>
+        </tr>
+      `);
+        });
+      }
+
+      $(document).ready(function () {
+        renderTable();
+
+        $("#add-film-form").on("submit", function (e) {
+          e.preventDefault();
+          const newFilm = {
+            title: $("#film-title").val(),
+            genre: $("#film-genre").val(),
+            time: $("#film-time").val(),
+            location: $("#film-location").val(),
+          };
+          films.push(newFilm);
+          renderTable();
+          this.reset();
+        });
+
+        $(document).on("click", ".delete-btn", function () {
+          const index = $(this).data("index");
+          if (confirm("Bạn có chắc muốn xóa phim này?")) {
+            films.splice(index, 1);
+            renderTable();
+          }
+        });
+
+        $(document).on("click", ".edit-btn", function () {
+          const index = $(this).data("index");
+          const film = films[index];
+          $("#film-title").val(film.title);
+          $("#film-genre").val(film.genre);
+          $("#film-time").val(film.time);
+          $("#film-location").val(film.location);
+
+          films.splice(index, 1);
+          renderTable();
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    .admin-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 0;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: white !important;
+      font-size: 1.5rem;
+    }
+
+    .navbar-nav .nav-link {
+      color: rgba(255, 255, 255, 0.9) !important;
+      font-weight: 500;
+      padding: 12px 20px !important;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      margin: 0 5px;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: white !important;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .navbar-nav .nav-link i {
+      margin-right: 8px;
+      font-size: 1.1rem;
+    }
+
+    .navbar-toggler {
+      border: none;
+      padding: 8px 12px;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    .admin-info {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.9rem;
+    }
+
+    .admin-avatar {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      margin-left: 10px;
+    }
+
+    .dropdown-menu {
+      border: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .dropdown-item {
+      padding: 10px 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f8f9fa;
+    }
+
+    #event:hover,
+    #statistic:hover,
+    #favourite:hover {
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .navbar-nav {
+        padding: 15px 0;
+      }
+
+      .navbar-nav .nav-link {
+        margin: 5px 0;
+        text-align: center;
+      }
+
+      .admin-info {
+        text-align: center;
+        padding: 15px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        margin-top: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg admin-header">
+    <div class="container-fluid">
+      <!-- Brand/Logo -->
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-cogs me-2"></i>
+        Admin Panel
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Menu -->
+      <div class="collapse navbar-collapse" id="adminNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/admin_event.html">
+              <i class="fas fa-calendar-alt"></i>
+              Sự kiện phim
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/ThongKe.html">
+              <i class="fas fa-chart-bar"></i>
+              Thống kê
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/favorite_statistics.html">
+              <i class="fas fa-heart"></i>
+              Ưa thích
+            </a>
+          </li>
+        </ul>
+
+        <!-- Admin Info -->
+        <div class="d-flex align-items-center">
+          <div class="dropdown">
+            <a class="d-flex align-items-center admin-info text-decoration-none dropdown-toggle" href="#" role="button"
+              data-bs-toggle="dropdown">
+              <span class="d-none d-md-inline me-2">
+                <i class="fas fa-user-shield me-1"></i>
+                Admin User
+              </span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a class="dropdown-item" href="../pages/profile.html">
+                  <i class="fas fa-user me-2"></i>Hồ sơ
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#settings">
+                  <i class="fas fa-cog me-2"></i>Cài đặt
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item text-danger" href="#logout">
+                  <i class="fas fa-sign-out-alt me-2"></i>Đăng xuất
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="container-fluid mt-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="alert alert-info" role="alert">
+          <i class="fas fa-info-circle me-2"></i>
+          <strong>Chào mừng đến với Admin Panel!</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <div class="card" id="event">
+          <div class="card-body text-center">
+            <i class="fas fa-calendar-alt fa-3x text-primary mb-3"></i>
+            <h5 class="card-title">Sự kiện phim</h5>
+            <p class="card-text">Quản lý các sự kiện và lịch chiếu phim</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card" id="statistic">
+          <div class="card-body text-center">
+            <i class="fas fa-chart-bar fa-3x text-success mb-3"></i>
+            <h5 class="card-title">Thống kê</h5>
+            <p class="card-text">Xem báo cáo và phân tích dữ liệu</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card" id="favourite">
+          <div class="card-body text-center">
+            <i class="fas fa-heart fa-3x text-danger mb-3"></i>
+            <h5 class="card-title">Ưa thích</h5>
+            <p class="card-text">
+              Quản lý danh sách yêu thích của người dùng
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const eventCard = document.getElementById("event");
+      const statisticCard = document.getElementById("statistic");
+      const favouriteCard = document.getElementById("favourite");
+
+      eventCard.addEventListener("click", function () {
+        window.location.href = "../pages/admin_event.html";
+      });
+
+      statisticCard.addEventListener("click", function () {
+        window.location.href = "../pages/ThongKe.html";
+      });
+
+      favouriteCard.addEventListener("click", function () {
+        window.location.href = "../pages/favorite_statistics.html";
+      });
+    });
+  </script>
+</body>
+
+</html>

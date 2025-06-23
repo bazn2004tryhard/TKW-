@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Movies</title>
+    <script src="../assets/javascript/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/events.css" />
+    <link rel="stylesheet" href="../assets/css/header.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+  </head>
+  <body>
+    <!-- ****** header ***** -->
+    <header>
+      <nav>
+        <img
+          src="../assets/image/login_image/login_logo.png"
+          alt=""
+          class="logo_icon"
+        />
+        <ul class="menu">
+          <li>
+            <a href="../index.html">Home</a>
+          </li>
+          <li>
+            <a href="">About</a>
+          </li>
+          <li>
+            <a href="">Contact</a>
+          </li>
+          <li>
+            <a href="">FAQ</a>
+          </li>
+        </ul>
+        <div class="login_up">
+          <a href="../pages/signup.html" class="signup">Sign up</a>
+          <a href="../pages/login.html" class="login">Log In</a>
+        </div>
+      </nav>
+    </header>
+    <div id="header-placeholder" class="sticky-top"></div>
+    <!-- Vị trí để chèn header -->
+    <div class="container_1">
+      <div class="container py-4">
+        <h1 class="mb-4">🎬 Sự Kiện Phim - Tháng 6/2025</h1>
+        <div class="row">
+          <!-- Main content -->
+          <div class="col-lg-8">
+            <!-- Phim sắp ra mắt -->
+            <div class="section-title">Phim Sắp Ra Mắt</div>
+            <div
+              class="main-feature"
+              style="
+                background-image: url('../assets/image/event_image/ttk_poster_official_fa_1638x2048px_1_.jpg');
+              "
+            >
+              <div class="main-feature-text">
+                <div class="tag">Tháng 6</div>
+                <h2 class="mt-2">Thám Tử Kiên: Kỳ Án Không Đầu</h2>
+                <p>
+                  Ra rạp ngày 20/06/2025 - Một vụ án rúng động khiến cả vùng quê
+                  chìm trong hoang mang, bóng tối bao trùm sự thật...
+                </p>
+              </div>
+            </div>
+
+            <!-- Lịch nghỉ chiếu -->
+            <div class="section-title mt-4">📅 Lịch Nghỉ Chiếu</div>
+            <div id="schedule-page-1" class="schedule-page">
+              <ul>
+                <li>
+                  10/06/2025 - Tạm dừng chiếu do bảo trì hệ thống tại rạp Galaxy
+                  Nguyễn Du
+                </li>
+                <li>
+                  17/06/2025 - Hủy suất chiếu buổi tối do sự kiện thể thao tại
+                  cụm CGV AEON
+                </li>
+                <li>
+                  24/06/2025 - Không chiếu phim hoạt hình do sự kiện lễ hội
+                  thiếu nhi
+                </li>
+              </ul>
+            </div>
+
+            <div id="schedule-page-2" class="schedule-page d-none">
+              <ul>
+                <li>
+                  26/06/2025 - Dừng chiếu phim hành động do kiểm duyệt nội dung
+                </li>
+                <li>27/06/2025 - Rạp BHD Quang Trung nghỉ lễ nội bộ</li>
+                <li>
+                  30/06/2025 - Không chiếu phim sau 22h do bảo trì máy chiếu
+                </li>
+              </ul>
+            </div>
+            <div class="pagination mt-2">
+              <button
+                class="btn btn-outline-secondary btn-sm schedule-page-btn active"
+                data-page="1"
+              >
+                1
+              </button>
+              <button
+                class="btn btn-outline-secondary btn-sm schedule-page-btn"
+                data-page="2"
+              >
+                2
+              </button>
+            </div>
+            <!-- Sự kiện phim -->
+            <div class="section-title mt-4">📢 Sự Kiện Liên Quan</div>
+
+            <div id="event-page-1" class="event-page">
+              <div class="post-card">
+                <img
+                  src="../assets/image/event_image/conan-tieu-thuyet_tau-ngam-sat-den_2f235e50f71d4e1f9ddf3e9570c7bd99_6da9abdb436a4911bd860901ee14e36a.webp"
+                  alt="Giao lưu đạo diễn"
+                />
+                <div>
+                  <strong
+                    >Giao lưu với đạo diễn phim "Conan: Tàu ngầm sắt màu
+                    đen"</strong
+                  ><br />
+                  <small>15/06 tại Lotte Cinema Q.7</small>
+                </div>
+              </div>
+
+              <div class="post-card">
+                <img
+                  src="../assets/image/event_image/review-phim-lat-mat-7-mot-dieu-uoc-thanh-hien.jpg.webp"
+                  alt="Workshop làm phim"
+                />
+                <div>
+                  <strong
+                    >Workshop: Làm phim ngắn cùng nhà sản xuất "Lật Mặt"</strong
+                  ><br />
+                  <small>22/06 tại BHD Star Bitexco</small>
+                </div>
+              </div>
+
+              <div class="post-card">
+                <img
+                  src="../assets/image/event_image/doraemon-utopia-2_1684121814838.jpg"
+                  alt="Công bố trailer"
+                />
+                <div>
+                  <strong
+                    >Sự kiện công bố trailer "Doraemon: Nobita và vùng đất lý
+                    tưởng"</strong
+                  ><br />
+                  <small>29/06 tại CGV Landmark 81</small>
+                </div>
+              </div>
+            </div>
+
+            <div id="event-page-2" class="event-page d-none">
+              <div class="post-card">
+                <img
+                  src="../assets/image/event_image/images.jpg"
+                  alt="Fast X Fan Event"
+                />
+                <div>
+                  <strong>Fan Event: Gặp gỡ Vin Diesel và đội đua Fast X</strong
+                  ><br />
+                  <small>18/06 tại CGV Vincom Đồng Khởi</small>
+                </div>
+              </div>
+
+              <div class="post-card">
+                <img
+                  src="../assets/image/event_image/kubo.webp"
+                  alt="Chiếu thử phim hoạt hình"
+                />
+                <div>
+                  <strong
+                    >Chiếu thử phim hoạt hình "Kubo-kun: Phép thuật mùa
+                    hè"</strong
+                  ><br />
+                  <small>25/06 tại BHD Star Thảo Điền</small>
+                </div>
+              </div>
+
+              <div class="post-card">
+                <img
+                  src="../assets/image/event_image/6-1576140151-1576140161-2105-1576140169.webp"
+                  alt="Phỏng vấn ngôi sao"
+                />
+                <div>
+                  <strong
+                    >Phỏng vấn trực tiếp ngôi sao "Giấc Mơ Thành Phố"</strong
+                  ><br />
+                  <small>30/06 livestream trên YouTube</small>
+                </div>
+              </div>
+            </div>
+            <div class="pagination mt-3">
+              <button
+                class="btn btn-outline-secondary btn-sm event-page-btn active"
+                data-page="1"
+              >
+                1
+              </button>
+              <button
+                class="btn btn-outline-secondary btn-sm event-page-btn"
+                data-page="2"
+              >
+                2
+              </button>
+            </div>
+          </div>
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <div class="sidebar mb-4">
+              <h5>Kết nối với chúng tôi</h5>
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="#" class="btn btn-primary btn-sm">Facebook</a>
+                <a href="#" class="btn btn-info btn-sm">Twitter</a>
+                <a href="#" class="btn btn-danger btn-sm">YouTube</a>
+              </div>
+            </div>
+
+            <div class="sidebar mb-4 subscribe-box">
+              <h5>📧 Nhận thông báo mới</h5>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Nhập email..."
+              />
+              <button class="btn btn-warning w-100 mt-2">Đăng ký</button>
+            </div>
+
+            <div class="sidebar">
+              <h5>📂 Danh mục</h5>
+              <div class="category-list">
+                <a href="#">Phim mới</a>
+                <a href="../pages/favorite_statistics.html">Ưa thích</a>
+                <a href="#">Lịch chiếu</a>
+                <a href="#">Giao lưu</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer>
+      <p class="Copyright">
+        Copyright © 2022 TicketBooker. All rights reserved.
+      </p>
+      <div class="icon">
+        <a href="">
+          <img
+            src="../assets/image/login_image/ph_instagram-logo.svg"
+            alt="insta"
+          />
+        </a>
+        <a href="">
+          <img
+            src="../assets/image/login_image/ri_linkedin-box-fill.svg"
+            alt="linkd"
+          />
+        </a>
+        <a href="">
+          <img
+            src="../assets/image/login_image/mdi_twitter.svg"
+            alt="twitter"
+          />
+        </a>
+      </div>
+      <div class="pt">
+        <a href="">Privacy Policy</a>
+        <a href="">Term of Use</a>
+      </div>
+    </footer>
+    <div id="footer-placeholder"></div>
+    <!-- Vị trí để chèn footer -->
+    <script src="../assets/javascript/loadHeaderFooter.js"></script>
+    <script>
+      $(document).ready(function () {
+        function revealPosts() {
+          $(".post-card").each(function () {
+            const top = $(this).offset().top;
+            const bottom = $(window).scrollTop() + $(window).height();
+
+            if (top < bottom - 100) {
+              $(this).addClass("visible");
+            }
+          });
+        }
+
+        $(window).on("scroll load", revealPosts);
+      });
+      $(document).ready(function () {
+        $(".event-page-btn").on("click", function () {
+          const page = $(this).data("page");
+
+          // Ẩn tất cả trang
+          $(".event-page").addClass("d-none");
+
+          // Hiển thị trang tương ứng
+          $("#event-page-" + page).removeClass("d-none");
+
+          // Đổi active button
+          $(".event-page-btn").removeClass("active");
+          $(this).addClass("active");
+        });
+      });
+      $(document).ready(function () {
+        $(".schedule-page-btn").on("click", function () {
+          const page = $(this).data("page");
+
+          // Ẩn tất cả các trang lịch
+          $(".schedule-page").addClass("d-none");
+
+          // Hiện trang được chọn
+          $("#schedule-page-" + page).removeClass("d-none");
+
+          // Đổi trạng thái active nút
+          $(".schedule-page-btn").removeClass("active");
+          $(this).addClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>

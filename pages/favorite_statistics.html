@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorite Movies</title>
+    <script src="../assets/javascript/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/f_s.css" />
+    <link rel="stylesheet" href="../assets/css/header.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+  </head>
+  <body>
+    <!-- ****** header ***** -->
+    <div id="header-placeholder" class="sticky-top"></div>
+    <!-- Vị trí để chèn header -->
+    <!--***** contain *****-->
+    <div class="container_1">
+      <div class="container py-5">
+        <h2 class="text-center mb-4">
+          📊 Thống kê độ yêu thích và lượt xem phim
+        </h2>
+
+        <div class="mb-4 text-center">
+          <label for="monthSelect" class="form-label">Chọn tháng:</label>
+          <select id="monthSelect" class="form-select w-auto d-inline-block">
+            <option value="01-2025">Tháng 1/2025</option>
+            <option value="02-2025">Tháng 2/2025</option>
+            <option value="03-2025">Tháng 3/2025</option>
+            <option value="04-2025">Tháng 4/2025</option>
+            <option value="05-2025" selected>Tháng 5/2025</option>
+            <option value="06-2025">Tháng 6/2025</option>
+          </select>
+        </div>
+
+        <div id="ranking-list"></div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div id="footer-placeholder"></div>
+    <!-- Vị trí để chèn footer -->
+    <script src="../assets/javascript/loadHeaderFooter.js"></script>
+
+    <script>
+      const rankingData = {
+        "01-2025": [
+          { title: "Hành Trình Năm Mới", likes: 3100, views: 8500 },
+          { title: "Ký Ức Mùa Đông", likes: 2900, views: 8000 },
+        ],
+        "02-2025": [
+          { title: "Yêu Thầm", likes: 4200, views: 11000 },
+          { title: "Valentine Kỳ Diệu", likes: 3900, views: 9700 },
+        ],
+        "03-2025": [
+          { title: "Cuộc Phiêu Lưu Mùa Xuân", likes: 3600, views: 8800 },
+          { title: "Bí Ẩn Trong Rừng", likes: 3400, views: 7700 },
+        ],
+        "04-2025": [
+          { title: "Fast & Furious X", likes: 3500, views: 10500 },
+          { title: "Nhà bà Nữ", likes: 3100, views: 9100 },
+        ],
+        "05-2025": [
+          { title: "Doraemon: Utopia", likes: 4200, views: 11000 },
+          { title: "Conan: Tàu ngầm", likes: 3900, views: 10400 },
+          { title: "Lật mặt 7", likes: 2800, views: 7600 },
+        ],
+        "06-2025": [
+          { title: "Thám tử Kiên", likes: 5200, views: 15000 },
+          { title: "Người Ngoài Hành Tinh", likes: 4000, views: 10000 },
+          { title: "Phép Thuật Bí Ẩn", likes: 3500, views: 8500 },
+        ],
+      };
+
+      function renderRanking(month) {
+        const list = document.getElementById("ranking-list");
+        list.innerHTML = "";
+
+        const films = rankingData[month] || [];
+
+        if (films.length === 0) {
+          list.innerHTML = `<p class="text-center text-muted">Không có dữ liệu cho tháng này.</p>`;
+          return;
+        }
+
+        films.sort((a, b) => b.likes - a.likes);
+
+        films.forEach((film, index) => {
+          const html = `
+          <div class="ranking-card">
+            <div class="rank-number">#${index + 1}</div>
+            <div class="film-info">
+              <div class="film-title">${film.title}</div>
+              <p>❤️ Lượt yêu thích: ${film.likes.toLocaleString()}</p>
+              <p>👁️‍🗨️ Lượt xem: ${film.views.toLocaleString()}</p>
+            </div>
+          </div>
+        `;
+          list.insertAdjacentHTML("beforeend", html);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const select = document.getElementById("monthSelect");
+        renderRanking(select.value);
+        select.addEventListener("change", () => {
+          renderRanking(select.value);
+        });
+      });
+    </script>
+  </body>
+</html>
