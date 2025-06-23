@@ -89,7 +89,7 @@
       <div class="col-2 ">
         <!-- <div class="list-inline-item">👋Xin chào, Nguyễn Huy Khởi </div> -->
         <div class="list-inline-item">
-          <span id="waveIcon" class="animate__animated" style="font-size: 2rem;">👋</span> Xin chào, Nguyễn Huy Khởi
+          <span id="waveIcon" class="animate__animated" style="font-size: 2rem;">👋</span> Nguyễn Huy Khởi
         </div>
       </div>
       <div class="col-8 text-center display-6 " id="userProfile">🗂️ Hồ sơ người dùng</div>
@@ -109,8 +109,8 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-2"></div>
-      <div class="col-8 bg-secondary text-white rounded-3 mg-0">
+      <div class="col-1"></div>
+      <div class="col-10 bg-secondary text-white rounded-3 mg-0">
         <div class="row">
           <div class="col-1 list-inline-item"><img src="../assets/image/login_image/login_logo.png" alt="" class="bg-dark"></div>
           <div class="col-11">
@@ -127,7 +127,7 @@
           </div>
         </div>
       </div>
-      <div class="col-2"></div>
+      <div class="col-1"></div>
     </div>
     <!-- noi dung -->
     <div class="row mt-4">
@@ -366,7 +366,7 @@
                   </tr>
                   <tr>
                     <td>3</td>
-                    <td>Your Name</td>
+                    <td>Your Father</td>
                     <td>Anime, Tình cảm</td>
                     <td>112 phút</td>
                     <td><button class="btn btn-sm btn-outline-danger">❌ Xóa</button></td>
@@ -397,14 +397,24 @@
                 <p class="card-text">Một bộ phim độc đáo, sáng tạo và rất cảm xúc. Đáng xem!</p>
               </div>
             </div>
-
+            <div class="mt-4" id="reviewList">
+              <!-- Các đánh giá mới sẽ được thêm vào đây -->
+            </div>
             <!-- Thêm đánh giá mới -->
             <div class="mt-4">
-              <h6 class="text-success fw-bold">Gửi đánh giá mới</h6>
+              <h6 class="text-success fw-bold text-center">Gửi đánh giá mới</h6>
               <div class="mb-3">
                 <label for="filmName" class="form-label">Tên phim</label>
-                <input type="text" class="form-control" id="filmName" placeholder="Nhập tên phim...">
+                <select class="form-select" id="filmName">
+                  <option value="">-- Chọn phim --</option>
+                  <option value="Interstellar">Interstellar</option>
+                  <option value="Inception">Inception</option>
+                  <option value="Avengture 2">Avengture 2</option>
+                  <option value="Piter Parker Noway Home">Piter Parker Noway Home</option>
+                  <option value="We are lower">We are lower</option>
+                </select>
               </div>
+
               <div class="mb-3">
                 <label for="rating" class="form-label">Số sao</label>
                 <select class="form-select" id="rating">
@@ -419,7 +429,8 @@
                 <label for="comment" class="form-label">Nội dung đánh giá</label>
                 <textarea class="form-control" id="comment" rows="3" placeholder="Viết cảm nghĩ của bạn..."></textarea>
               </div>
-              <button class="btn btn-primary">Gửi đánh giá</button>
+              <button class="btn btn-primary" id="submitReview">Gửi đánh giá</button>
+
             </div>
           </div>
         </div>
@@ -541,6 +552,56 @@
     $(document).ready(function() {
       // Hiện hồ sơ người dùng với hiệu ứng fadeIn khi trang load xong
       $('#userProfile').fadeIn(4000);
+    });
+    //Xóa yêu thích :
+    document.addEventListener("DOMContentLoaded", function () {
+      const deleteButtons = document.querySelectorAll(".btn-outline-danger");
+      deleteButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          const row = btn.closest("tr");
+          if (row) {
+            row.remove();
+            // Hiển thị thông báo
+            alert("✅ Bạn đã xóa khỏi danh sách phim yêu thích thành công!");
+          }
+        });
+      });
+    });
+    //thêm đánh giá 
+    document.addEventListener("DOMContentLoaded", function () {
+      const submitBtn = document.getElementById("submitReview");
+
+      submitBtn.addEventListener("click", function () {
+        const filmName = document.getElementById("filmName").value.trim();
+        const rating = parseInt(document.getElementById("rating").value);
+        const comment = document.getElementById("comment").value.trim();
+        const reviewList = document.getElementById("reviewList");
+
+        if (filmName === "" || comment === "") {
+          alert("Vui lòng nhập đầy đủ tên phim và nội dung đánh giá!");
+          return;
+        }
+
+        const newReview = document.createElement("div");
+        newReview.innerHTML = `
+          <div class="card mb-3">
+            <div class="card-body">
+              <h6 class="card-title">🎬 <strong>${filmName}</strong></h6>
+              <p class="mb-1">${"⭐️".repeat(rating)}</p>
+              <p class="card-text">${comment}</p>
+            </div>
+          </div>
+        `;
+
+        reviewList.appendChild(newReview);
+
+        // Reset form
+        document.getElementById("filmName").value = "";
+        document.getElementById("rating").value = "5";
+        document.getElementById("comment").value = "";
+
+        alert("✅ Gửi đánh giá thành công!");
+      });
     });
 
   </script>
